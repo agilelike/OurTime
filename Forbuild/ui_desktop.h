@@ -14,7 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,7 +22,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Desktop
 {
 public:
-    QLabel *label;
+    QPushButton *Button1;
 
     void setupUi(QWidget *Desktop)
     {
@@ -32,9 +32,9 @@ public:
         Desktop->setMinimumSize(QSize(450, 600));
         Desktop->setMaximumSize(QSize(450, 600));
         Desktop->setBaseSize(QSize(450, 600));
-        label = new QLabel(Desktop);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(140, 130, 72, 15));
+        Button1 = new QPushButton(Desktop);
+        Button1->setObjectName(QStringLiteral("Button1"));
+        Button1->setGeometry(QRect(370, 530, 60, 60));
 
         retranslateUi(Desktop);
 
@@ -44,7 +44,7 @@ public:
     void retranslateUi(QWidget *Desktop)
     {
         Desktop->setWindowTitle(QApplication::translate("Desktop", "Widget", Q_NULLPTR));
-        label->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
+        Button1->setText(QApplication::translate("Desktop", "\344\270\252\344\272\272", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -17,6 +17,11 @@ public:
     ~Desktop();
     HWND findDesktopIconWnd();
 
+private slots:
+    void on_Button1_clicked();
+
+    void on_Button2_clicked();
+
 private:
     Ui::Desktop *ui;
 };
