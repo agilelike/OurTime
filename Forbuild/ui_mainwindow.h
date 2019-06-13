@@ -14,10 +14,10 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCommandLinkButton>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,7 +30,7 @@ public:
     QCommandLinkButton *commandLinkButton_2;
     QCommandLinkButton *commandLinkButton_3;
     QCommandLinkButton *commandLinkButton_4;
-    QToolBar *mainToolBar;
+    QFrame *line;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -43,27 +43,29 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         commandLinkButton = new QCommandLinkButton(centralWidget);
         commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
-        commandLinkButton->setGeometry(QRect(100, 70, 111, 51));
+        commandLinkButton->setGeometry(QRect(140, 40, 111, 51));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\215\216\346\226\207\345\275\251\344\272\221"));
         font.setPointSize(18);
         commandLinkButton->setFont(font);
         commandLinkButton_2 = new QCommandLinkButton(centralWidget);
         commandLinkButton_2->setObjectName(QStringLiteral("commandLinkButton_2"));
-        commandLinkButton_2->setGeometry(QRect(300, 70, 101, 61));
+        commandLinkButton_2->setGeometry(QRect(360, 40, 101, 61));
         commandLinkButton_2->setFont(font);
         commandLinkButton_3 = new QCommandLinkButton(centralWidget);
         commandLinkButton_3->setObjectName(QStringLiteral("commandLinkButton_3"));
-        commandLinkButton_3->setGeometry(QRect(560, 70, 111, 51));
+        commandLinkButton_3->setGeometry(QRect(650, 40, 111, 51));
         commandLinkButton_3->setFont(font);
         commandLinkButton_4 = new QCommandLinkButton(centralWidget);
         commandLinkButton_4->setObjectName(QStringLiteral("commandLinkButton_4"));
-        commandLinkButton_4->setGeometry(QRect(810, 70, 187, 51));
+        commandLinkButton_4->setGeometry(QRect(890, 40, 187, 51));
         commandLinkButton_4->setFont(font);
+        line = new QFrame(centralWidget);
+        line->setObjectName(QStringLiteral("line"));
+        line->setGeometry(QRect(-10, 150, 1211, 20));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
         MainWindow->setCentralWidget(centralWidget);
-        mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
