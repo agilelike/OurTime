@@ -33,7 +33,13 @@
      <font>
       <family>华文彩云</family>
       <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;华文彩云&quot;;</string>
     </property>
     <property name="text">
      <string>团队</string>
@@ -52,7 +58,13 @@
      <font>
       <family>华文彩云</family>
       <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;华文彩云&quot;;</string>
     </property>
     <property name="text">
      <string>日程</string>
@@ -71,7 +83,13 @@
      <font>
       <family>华文彩云</family>
       <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;华文彩云&quot;;</string>
     </property>
     <property name="text">
      <string>日志</string>
@@ -90,7 +108,13 @@
      <font>
       <family>华文彩云</family>
       <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;华文彩云&quot;;</string>
     </property>
     <property name="text">
      <string>个人信息</string>
@@ -107,19 +131,6 @@
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>320</y>
-      <width>201</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Test 5 专属</string>
     </property>
    </widget>
   </widget>
