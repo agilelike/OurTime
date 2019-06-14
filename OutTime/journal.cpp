@@ -21,6 +21,9 @@ journal::journal(QWidget *parent) :
     ui->label->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     ui->label_2->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     ui->label_3->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
+    hide();
+    this->setParent(parent);
 }
 
 journal::~journal()

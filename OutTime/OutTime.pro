@@ -25,13 +25,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    journal.cpp
+    journal.cpp \
+    personaldetails.cpp
 
 HEADERS  += mainwindow.h \
-    journal.h
+    journal.h \
+    personaldetails.h
 
 FORMS    += mainwindow.ui \
-    journal.ui
+    journal.ui \
+    personaldetails.ui
 
 RESOURCES += \
     image.qrc

@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <journal.h>
+#include <personaldetails.h>
 
 namespace Ui {
 class MainWindow;
@@ -13,10 +15,20 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    void currentInterfaceHide();
     ~MainWindow();
+
+private slots:
+    void on_commandLinkButton_3_clicked();
+
+    void on_commandLinkButton_4_clicked();
 
 private:
     Ui::MainWindow *ui;
+
+    int flag = 1;
+    journal* w_journal;
+    personalDetails* w_personalDetails;
 };
 
 #endif // MAINWINDOW_H
