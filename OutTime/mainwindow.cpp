@@ -7,6 +7,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     initTitleBar();
     ui->setupUi(this);
+    t=new TimeTable(this);
+    t->move(0,120);
+    t->show();
 }
 
 MainWindow::~MainWindow()

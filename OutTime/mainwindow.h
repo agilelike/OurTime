@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QMainWindow>
 #include <BaseWindow.h>
+#include <timetable.h>
 namespace Ui {
 class MainWindow;
 }
@@ -18,6 +19,7 @@ public:
 private:
     void initTitleBar();
     Ui::MainWindow *ui;
+    TimeTable *t;
 };
 
 #endif // MAINWINDOW_H

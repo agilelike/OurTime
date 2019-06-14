@@ -5,5 +5,6 @@
         <file>MyTitle/min.png</file>
         <file>MyTitle/restore.png</file>
         <file>MyTitle.css</file>
+        <file>image/日程表（假）.png</file>
     </qresource>
 </RCC>

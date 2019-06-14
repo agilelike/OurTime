@@ -2,12 +2,11 @@
 #define TIMETABLE_H
 
 #include <QWidget>
-#include <BaseWindow.h>
 namespace Ui {
 class TimeTable;
 }
 
-class TimeTable : public BaseWindow
+class TimeTable : public QWidget
 {
     Q_OBJECT
 
@@ -16,7 +15,6 @@ public:
     ~TimeTable();
 
 private:
-    void initTitleBar();
     Ui::TimeTable *ui;
 };
 
