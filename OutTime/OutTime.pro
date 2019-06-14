@@ -26,13 +26,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     BaseTitleBar.cpp \
-    BaseWindow.cpp
+    BaseWindow.cpp \
+    timetable.cpp
 
 HEADERS  += mainwindow.h \
     BaseTitleBar.h \
-    BaseWindow.h
+    BaseWindow.h \
+    timetable.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    timetable.ui
 
 RESOURCES += \
     resource.qrc

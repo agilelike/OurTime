@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\BaseTitleBar.o
+./release\BaseWindow.o
+./release\timetable.o
+./release\qrc_resource.o
+./release\moc_mainwindow.o
+./release\moc_BaseTitleBar.o
+./release\moc_BaseWindow.o
+./release\moc_timetable.o
+);
