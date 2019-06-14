@@ -26,12 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     login.cpp \
-    signup.cpp
+    signup.cpp \
+    teaminfor.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
-    signup.h
+    signup.h \
+    teaminfor.h
 
 FORMS    += mainwindow.ui \
     login.ui \
-    signup.ui
+    signup.ui \
+    teaminfor.ui
