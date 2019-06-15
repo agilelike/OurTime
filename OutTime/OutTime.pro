@@ -44,4 +44,5 @@ FORMS    += mainwindow.ui \
     teaminfo.ui
 
 RESOURCES += \
-    resource.qrc
+    resource.qrc \
+    image/image.qrc

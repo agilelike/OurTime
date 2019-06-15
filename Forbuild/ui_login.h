@@ -30,6 +30,7 @@ public:
     QLineEdit *lineEdit_2;
     QLabel *label;
     QLabel *label_2;
+    QLabel *label_3;
 
     void setupUi(QWidget *login)
     {
@@ -44,16 +45,26 @@ public:
         pushButton_2->setGeometry(QRect(280, 280, 93, 28));
         lineEdit = new QLineEdit(login);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(150, 110, 181, 21));
+        lineEdit->setGeometry(QRect(130, 140, 211, 21));
         lineEdit_2 = new QLineEdit(login);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(150, 180, 181, 21));
+        lineEdit_2->setGeometry(QRect(130, 210, 211, 21));
         label = new QLabel(login);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(40, 110, 72, 15));
+        label->setGeometry(QRect(50, 130, 72, 41));
+        label->setStyleSheet(QStringLiteral("border-image: url(:/login/account.png);"));
         label_2 = new QLabel(login);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(40, 190, 72, 15));
+        label_2->setGeometry(QRect(60, 200, 51, 41));
+        label_2->setStyleSheet(QStringLiteral("border-image: url(:/login/password.png);"));
+        label_2->setPixmap(QPixmap(QString::fromUtf8(":/login/\347\224\250\346\210\267\345\233\276\346\240\207.png")));
+        label_3 = new QLabel(login);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(170, 60, 151, 41));
+        QFont font;
+        font.setFamily(QStringLiteral("Algerian"));
+        font.setPointSize(20);
+        label_3->setFont(font);
 
         retranslateUi(login);
 
@@ -65,8 +76,9 @@ public:
         login->setWindowTitle(QApplication::translate("login", "Form", Q_NULLPTR));
         pushButton->setText(QApplication::translate("login", "\347\231\273\345\275\225", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("login", "\346\263\250\345\206\214", Q_NULLPTR));
-        label->setText(QApplication::translate("login", "\347\224\250\346\210\267\345\220\215\357\274\232", Q_NULLPTR));
-        label_2->setText(QApplication::translate("login", "\345\257\206 \347\240\201\357\274\232", Q_NULLPTR));
+        label->setText(QString());
+        label_2->setText(QString());
+        label_3->setText(QApplication::translate("login", "Ourtime", Q_NULLPTR));
     } // retranslateUi
 
 };

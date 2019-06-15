@@ -2,12 +2,12 @@
 #define SIGNUP_H
 
 #include <QWidget>
-
+#include "BaseWindow.h"
 namespace Ui {
 class signup;
 }
 
-class signup : public QWidget
+class signup : public BaseWindow
 {
     Q_OBJECT
 
@@ -17,6 +17,7 @@ public:
 private slots:
     void receivelogin();
 private:
+    void initTitleBar();
     Ui::signup *ui;
 };
 

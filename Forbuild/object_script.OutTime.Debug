@@ -7,6 +7,7 @@ INPUT(
 ./debug\BaseWindow.o
 ./debug\teaminfo.o
 ./debug\qrc_resource.o
+./debug\qrc_image.o
 ./debug\moc_mainwindow.o
 ./debug\moc_login.o
 ./debug\moc_signup.o
