@@ -64,6 +64,7 @@ public:
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
         scrollAreaWidgetContents->setGeometry(QRect(0, 0, 483, 398));
+        scrollAreaWidgetContents->setStyleSheet(QStringLiteral("background-color: rgb(215, 221, 228);"));
         verticalScrollBar = new QScrollBar(scrollAreaWidgetContents);
         verticalScrollBar->setObjectName(QStringLiteral("verticalScrollBar"));
         verticalScrollBar->setGeometry(QRect(470, 0, 16, 401));

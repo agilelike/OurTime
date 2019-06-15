@@ -40,25 +40,25 @@ public:
         signup->resize(452, 313);
         label = new QLabel(signup);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(110, 70, 72, 15));
+        label->setGeometry(QRect(110, 90, 72, 15));
         label_2 = new QLabel(signup);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(110, 130, 72, 15));
+        label_2->setGeometry(QRect(110, 150, 72, 15));
         label_3 = new QLabel(signup);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(110, 190, 72, 15));
+        label_3->setGeometry(QRect(110, 210, 72, 15));
         lineEdit = new QLineEdit(signup);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(220, 70, 113, 21));
+        lineEdit->setGeometry(QRect(220, 90, 113, 21));
         lineEdit_2 = new QLineEdit(signup);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(220, 130, 113, 21));
+        lineEdit_2->setGeometry(QRect(220, 150, 113, 21));
         lineEdit_3 = new QLineEdit(signup);
         lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(220, 190, 113, 21));
+        lineEdit_3->setGeometry(QRect(220, 210, 113, 21));
         label_4 = new QLabel(signup);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(30, 20, 231, 31));
+        label_4->setGeometry(QRect(30, 40, 231, 31));
         QFont font;
         font.setFamily(QStringLiteral("Adobe Arabic"));
         font.setPointSize(12);
@@ -67,7 +67,7 @@ public:
         label_4->setFont(font);
         pushButton = new QPushButton(signup);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(230, 260, 93, 28));
+        pushButton->setGeometry(QRect(230, 270, 93, 28));
 
         retranslateUi(signup);
 

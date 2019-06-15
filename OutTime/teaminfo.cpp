@@ -7,7 +7,7 @@ teaminfo::teaminfo(QWidget *parent) :
 {
     setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
     hide();
-
+    //ui->scrollAreaWidgetContents->setStyleSheet("background-color: rgb(255, 255, 0);");
     ui->setupUi(this);
 }
 
