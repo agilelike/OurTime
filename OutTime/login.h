@@ -2,12 +2,12 @@
 #define LOGIN_H
 
 #include <QWidget>
-
+#include "BaseWindow.h"
 namespace Ui {
 class login;
 }
 
-class login : public QWidget
+class login : public BaseWindow
 {
     Q_OBJECT
 
@@ -20,6 +20,7 @@ private slots:
 signals:
     void showsignup();
 private:
+    void initTitleBar();
     Ui::login *ui;
 };
 

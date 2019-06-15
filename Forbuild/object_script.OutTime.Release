@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\login.o
+./release\signup.o
+./release\BaseTitleBar.o
+./release\BaseWindow.o
+./release\qrc_resource.o
+./release\moc_mainwindow.o
+./release\moc_login.o
+./release\moc_signup.o
+./release\moc_BaseTitleBar.o
+./release\moc_BaseWindow.o
+);

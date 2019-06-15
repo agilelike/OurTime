@@ -1,0 +1,14 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\login.o
+./debug\signup.o
+./debug\BaseTitleBar.o
+./debug\BaseWindow.o
+./debug\qrc_resource.o
+./debug\moc_mainwindow.o
+./debug\moc_login.o
+./debug\moc_signup.o
+./debug\moc_BaseTitleBar.o
+./debug\moc_BaseWindow.o
+);

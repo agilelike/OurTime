@@ -28,17 +28,20 @@ SOURCES += main.cpp\
     login.cpp \
     signup.cpp\
     BaseTitleBar.cpp \
-    BaseWindow.cpp
+    BaseWindow.cpp \
+    teaminfo.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
     signup.h\
     BaseTitleBar.h \
-    BaseWindow.h
+    BaseWindow.h \
+    teaminfo.h
 
 FORMS    += mainwindow.ui \
     login.ui \
     signup.ui\
+    teaminfo.ui
 
 RESOURCES += \
     resource.qrc
