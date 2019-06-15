@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include"teaminfor.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,8 +17,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
-
-    teaminfor *w_teaminfor;
 };
 
 #endif // MAINWINDOW_H
