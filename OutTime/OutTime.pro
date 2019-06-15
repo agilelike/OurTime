@@ -26,15 +26,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     journal.cpp \
-    personaldetails.cpp
+    personaldetails.cpp\
+    BaseTitleBar.cpp \
+    BaseWindow.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
-    personaldetails.h
+    personaldetails.h\
+    BaseTitleBar.h \
+    BaseWindow.h
 
 FORMS    += mainwindow.ui \
     journal.ui \
     personaldetails.ui
 
 RESOURCES += \
-    image.qrc
+    image.qrc\
+    resource.qrc

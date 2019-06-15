@@ -2,9 +2,10 @@
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
+    BaseWindow(parent),
     ui(new Ui::MainWindow)
 {
+    initTitleBar();
     ui->setupUi(this);
 }
 
@@ -47,4 +48,11 @@ void MainWindow::on_commandLinkButton_4_clicked()
     currentInterfaceHide();
     flag = 4;
     w_personalDetails->show();
+
+void MainWindow::initTitleBar()
+{
+    m_titleBar->setBackgroundColor(40,70,85);
+    m_titleBar->setTitleContent(QStringLiteral("OurTime!"));
+    m_titleBar->setButtonType(MIN_BUTTON);
+    m_titleBar->setTitleWidth(this->width());
 }

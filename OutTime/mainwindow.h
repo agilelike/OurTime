@@ -1,15 +1,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <QWidget>
 #include <QMainWindow>
 #include <journal.h>
 #include <personaldetails.h>
 
+#include <BaseWindow.h>
 namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
+class MainWindow : public BaseWindow
 {
     Q_OBJECT
 
@@ -24,6 +25,7 @@ private slots:
     void on_commandLinkButton_4_clicked();
 
 private:
+    void initTitleBar();
     Ui::MainWindow *ui;
 
     int flag = 1;
