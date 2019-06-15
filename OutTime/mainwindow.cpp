@@ -5,8 +5,12 @@ MainWindow::MainWindow(QWidget *parent) :
     BaseWindow(parent),
     ui(new Ui::MainWindow)
 {
+
     initTitleBar();
     ui->setupUi(this);
+    w_teaminfo = new teaminfo(this);
+    w_teaminfo->move(0,130);
+    w_teaminfo->show();
 }
 
 MainWindow::~MainWindow()

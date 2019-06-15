@@ -5,10 +5,12 @@ INPUT(
 ./debug\signup.o
 ./debug\BaseTitleBar.o
 ./debug\BaseWindow.o
+./debug\teaminfo.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
 ./debug\moc_login.o
 ./debug\moc_signup.o
 ./debug\moc_BaseTitleBar.o
 ./debug\moc_BaseWindow.o
+./debug\moc_teaminfo.o
 );

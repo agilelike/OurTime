@@ -11,6 +11,6 @@ int main(int argc, char *argv[])
     signup Sign;
     QObject::connect(&L,SIGNAL(showsignup()),&Sign,SLOT(receivelogin()));
     w.show();
-    L.show();
+    //L.show();
     return a.exec();
 }

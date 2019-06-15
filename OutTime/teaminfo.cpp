@@ -5,6 +5,9 @@ teaminfo::teaminfo(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::teaminfo)
 {
+    setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
+    hide();
+
     ui->setupUi(this);
 }
 

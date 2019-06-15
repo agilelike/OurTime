@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QMainWindow>
 #include <BaseWindow.h>
+#include"teaminfo.h"
 namespace Ui {
 class MainWindow;
 }
@@ -18,6 +19,7 @@ public:
 private:
     void initTitleBar();
     Ui::MainWindow *ui;
+    teaminfo *w_teaminfo;
 };
 
 #endif // MAINWINDOW_H
