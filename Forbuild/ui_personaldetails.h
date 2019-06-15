@@ -17,6 +17,7 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
@@ -46,6 +47,11 @@ public:
     QLabel *label_10;
     QLabel *label_11;
     QLabel *label_12;
+    QPushButton *pushButton_3;
+    QLabel *label_13;
+    QLineEdit *lineEdit;
+    QLabel *label_14;
+    QLabel *label_15;
 
     void setupUi(QDialog *personalDetails)
     {
@@ -136,6 +142,26 @@ public:
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(470, 430, 72, 31));
         label_12->setStyleSheet(QStringLiteral("font: 16pt \"Verdana\";"));
+        pushButton_3 = new QPushButton(personalDetails);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(800, 330, 191, 61));
+        pushButton_3->setStyleSheet(QString::fromUtf8("font: 75 24pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
+        label_13 = new QLabel(personalDetails);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setGeometry(QRect(690, 260, 91, 31));
+        label_13->setStyleSheet(QString::fromUtf8("font: 16pt \"\346\245\267\344\275\223\";"));
+        lineEdit = new QLineEdit(personalDetails);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(800, 260, 311, 31));
+        lineEdit->setStyleSheet(QStringLiteral("font: 14pt \"Verdana\";"));
+        label_14 = new QLabel(personalDetails);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setGeometry(QRect(760, 120, 291, 41));
+        label_14->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\256\213\344\275\223\";"));
+        label_15 = new QLabel(personalDetails);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setGeometry(QRect(780, 170, 261, 31));
+        label_15->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\256\213\344\275\223\";"));
 
         retranslateUi(personalDetails);
 
@@ -169,6 +195,10 @@ public:
         label_10->setText(QApplication::translate("personalDetails", "\346\200\273\350\256\241\346\227\245\345\277\227\357\274\232", Q_NULLPTR));
         label_11->setText(QApplication::translate("personalDetails", "100", Q_NULLPTR));
         label_12->setText(QApplication::translate("personalDetails", "10", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("personalDetails", "\347\224\263\350\257\267\345\212\240\345\205\245", Q_NULLPTR));
+        label_13->setText(QApplication::translate("personalDetails", "\345\233\242\351\230\237\345\217\267\357\274\232", Q_NULLPTR));
+        label_14->setText(QApplication::translate("personalDetails", "\346\202\250\350\277\230\346\234\252\345\212\240\345\205\245\344\273\273\344\275\225\345\233\242\351\230\237\357\274\201", Q_NULLPTR));
+        label_15->setText(QApplication::translate("personalDetails", "\345\277\253\346\211\276\344\270\252\345\233\242\351\230\237\345\212\240\345\205\245\345\220\247\357\274\201", Q_NULLPTR));
     } // retranslateUi
 
 };

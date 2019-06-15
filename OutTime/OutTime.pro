@@ -28,17 +28,20 @@ SOURCES += main.cpp\
     journal.cpp \
     personaldetails.cpp\
     BaseTitleBar.cpp \
-    BaseWindow.cpp
+    BaseWindow.cpp \
+    information.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
     personaldetails.h\
     BaseTitleBar.h \
-    BaseWindow.h
+    BaseWindow.h \
+    information.h
 
 FORMS    += mainwindow.ui \
     journal.ui \
-    personaldetails.ui
+    personaldetails.ui \
+    information.ui
 
 RESOURCES += \
     image.qrc\

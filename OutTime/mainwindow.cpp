@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <qDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     BaseWindow(parent),
@@ -7,6 +8,14 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     initTitleBar();
     ui->setupUi(this);
+    w_personalDetails = new personalDetails(this);
+    w_personalDetails->move(0,120);
+    w_journal = new journal(this);
+    w_journal->move(0,120);
+    w_information = new information(this);
+    w_information->move(400,160);
+    QObject::connect(w_personalDetails,SIGNAL(showInformation(bool)),this,SLOT(receivePersonalDetails(bool)));
+    QObject::connect(w_information,SIGNAL(showPersonalDetails(bool)),this,SLOT(receiveInformation(bool)));
 }
 
 MainWindow::~MainWindow()
@@ -34,8 +43,6 @@ void MainWindow::currentInterfaceHide()
 
 void MainWindow::on_commandLinkButton_3_clicked()
 {
-    w_journal = new journal(this);
-    w_journal->move(0,120);
     currentInterfaceHide();
     flag = 3;
     w_journal->show();
@@ -43,11 +50,10 @@ void MainWindow::on_commandLinkButton_3_clicked()
 
 void MainWindow::on_commandLinkButton_4_clicked()
 {
-    w_personalDetails = new personalDetails(this);
-    w_personalDetails->move(0,120);
     currentInterfaceHide();
     flag = 4;
     w_personalDetails->show();
+}
 
 void MainWindow::initTitleBar()
 {
@@ -55,4 +61,22 @@ void MainWindow::initTitleBar()
     m_titleBar->setTitleContent(QStringLiteral("OurTime!"));
     m_titleBar->setButtonType(MIN_BUTTON);
     m_titleBar->setTitleWidth(this->width());
+}
+
+void MainWindow::receiveInformation(bool team)
+{
+    w_personalDetails->team = team;
+    w_personalDetails->haveTeam(team);
+    currentInterfaceHide();
+    w_personalDetails->show();
+    qDebug()<<w_personalDetails->team;
+}
+
+void MainWindow::receivePersonalDetails(bool team)
+{
+    w_information->team = team;
+    w_information->receivePersonalDetails(team);
+    currentInterfaceHide();
+    w_information->show();
+    qDebug()<<w_information->team;
 }

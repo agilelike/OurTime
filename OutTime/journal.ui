@@ -58,6 +58,9 @@
      <height>191</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;楷体&quot;;</string>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
@@ -65,8 +68,11 @@
      <x>870</x>
      <y>380</y>
      <width>93</width>
-     <height>28</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 18pt &quot;隶书&quot;;</string>
    </property>
    <property name="text">
     <string>确认</string>

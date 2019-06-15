@@ -63,9 +63,11 @@ public:
         textEdit = new QTextEdit(journal);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(680, 130, 491, 191));
+        textEdit->setStyleSheet(QString::fromUtf8("font: 14pt \"\346\245\267\344\275\223\";"));
         pushButton = new QPushButton(journal);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(870, 380, 93, 28));
+        pushButton->setGeometry(QRect(870, 380, 93, 31));
+        pushButton->setStyleSheet(QString::fromUtf8("font: 18pt \"\351\232\266\344\271\246\";"));
         toolButton = new QToolButton(journal);
         toolButton->setObjectName(QStringLiteral("toolButton"));
         toolButton->setGeometry(QRect(196, 40, 21, 21));
