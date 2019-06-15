@@ -100,8 +100,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(100, 100, 100);</string>
    </property>
    <property name="text">
     <string>6:00~6:30       wake up</string>
@@ -118,8 +122,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>13:00~14:00   noon break</string>
@@ -136,8 +144,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>14:00~15:30   CE6</string>
@@ -154,8 +166,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(100, 100, 100);</string>
    </property>
    <property name="text">
     <string>6:30~7:00       wash and rinse</string>
@@ -172,8 +188,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>9:30~11:00     code interface</string>
@@ -190,8 +210,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>12:30~13:00   ONE PUNCH</string>
@@ -208,8 +232,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>11:00~12:00   CET6      </string>
@@ -226,8 +254,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(100, 100, 100);</string>
    </property>
    <property name="text">
     <string>7:00~8:00       have a breakfast</string>
@@ -244,8 +276,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>12:00~12:30   have a lunch</string>
@@ -262,8 +298,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 0);</string>
    </property>
    <property name="text">
     <string>8:00~9:30       computer network</string>
@@ -280,8 +320,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>18:00~18:30  have a dinner</string>
@@ -298,8 +342,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>21:30~22:30  computer network</string>
@@ -316,8 +364,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>19:00~20:00  rest&amp;have a walk</string>
@@ -334,8 +386,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>23:00~23:30  wash&amp;rinse</string>
@@ -352,8 +408,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>22:30~23:00  reading</string>
@@ -370,8 +430,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>18;30~19:00  ONE PUNCH</string>
@@ -388,8 +452,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>15:30~17:00   computer network</string>
@@ -406,8 +474,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>20:00~21:30  code interface</string>
@@ -424,8 +496,12 @@
    </property>
    <property name="font">
     <font>
+     <family>Segoe Print</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(85, 255, 127);</string>
    </property>
    <property name="text">
     <string>17:00~18:00   code interface</string>
