@@ -2,7 +2,8 @@
 #define DESKTOP_H
 #include<windows.h>
 #include <QWidget>
-
+#include <QSystemTrayIcon>
+#include <QMenu>
 namespace Ui {
 class Desktop;
 }
@@ -17,6 +18,7 @@ public:
     ~Desktop();
     HWND findDesktopIconWnd();
 
+
 private slots:
     void on_Button1_clicked();
 
@@ -24,6 +26,13 @@ private slots:
 
 private:
     Ui::Desktop *ui;
+    QSystemTrayIcon *trayIcon;
+    QMenu *trayIconMenu;
+    //窗口管理
+    QAction *minAction;
+    QAction *restoreAction;
+    QAction *quitAction;
+
 };
 
 #endif // DESKTOP_H

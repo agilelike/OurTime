@@ -32,3 +32,6 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     desktop.ui
+
+RESOURCES += \
+    image.qrc

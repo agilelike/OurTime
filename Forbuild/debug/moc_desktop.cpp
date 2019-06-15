@@ -73,6 +73,7 @@ void Desktop::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_Button1_clicked(); break;
+        case 1: _t->on_Button2_clicked(); break;
         default: ;
         }
     }
