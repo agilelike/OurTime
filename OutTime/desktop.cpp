@@ -111,11 +111,25 @@ void Desktop::paintEvent(QPaintEvent *e)
     painter.setBrush(linearGrad);
     painter.drawRoundedRect(rect(),20,20);
 
+//    //设置内容区
+//    painter.setPen(QColor(0,0,0)); //边界为黑色线
+//    painter.setBrush(QColor(255,255,255,125));  //中间为白色透明
+
+//    painter.drawRoundedRect(15,10,420,50,10,10);  //圆角矩形
+//    painter.drawRoundedRect(15,70,420,480,10,10);
+
     //设置内容区
     painter.setPen(QColor(0,0,0)); //边界为黑色线
     painter.setBrush(QColor(255,255,255,125));  //中间为白色透明
-
     painter.drawRoundedRect(15,10,420,50,10,10);  //圆角矩形
+
+    QLinearGradient linearGrad2(15,70,420,480);
+    linearGrad2.setColorAt(0 ,QColor(255,255,255,150));
+    linearGrad2.setColorAt(0.25 ,QColor(255,255,255,50));
+    linearGrad2.setColorAt(0.5 ,QColor(255,255,255,250));
+    linearGrad2.setColorAt(0.75 ,QColor(255,255,255,50));
+    linearGrad2.setColorAt(1 ,QColor(255,255,255,150));
+    painter.setBrush(linearGrad2);
     painter.drawRoundedRect(15,70,420,480,10,10);
 
     QWidget::paintEvent(e);
