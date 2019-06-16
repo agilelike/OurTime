@@ -41,7 +41,8 @@ HEADERS  += mainwindow.h \
     personaldetails.h\
     BaseTitleBar.h \
     BaseWindow.h \
-    information.h
+    information.h \
+    teaminfo.h
 
 FORMS    += mainwindow.ui \
     journal.ui \
@@ -53,6 +54,5 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     image.qrc\
-    resource.qrc\
-    image/image.qrc
+    resource.qrc
 

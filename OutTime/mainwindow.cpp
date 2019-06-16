@@ -48,14 +48,13 @@ void MainWindow::on_commandLinkButton_clicked()
 {
     currentInterfaceHide();
     flag = 1;
-    w_journal->show();
+    w_teaminfo->show();
 }
 
 void MainWindow::on_commandLinkButton_2_clicked()
 {
     currentInterfaceHide();
     flag = 2;
-    w_teaminfo->show();
 }
 
 void MainWindow::on_commandLinkButton_3_clicked()

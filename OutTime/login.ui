@@ -62,14 +62,14 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>80</x>
      <y>130</y>
-     <width>72</width>
+     <width>51</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/login/account.png);</string>
+    <string notr="true">border-image: url(:/Image/account.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -78,14 +78,14 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>80</x>
      <y>200</y>
      <width>51</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/login/password.png);</string>
+    <string notr="true">border-image: url(:/Image/password.png);</string>
    </property>
    <property name="text">
     <string/>

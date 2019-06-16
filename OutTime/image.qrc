@@ -4,4 +4,8 @@
         <file>Image/2.png</file>
         <file>Image/58ece79b36818.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>Image/account.png</file>
+        <file>Image/password.png</file>
+    </qresource>
 </RCC>

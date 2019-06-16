@@ -19,4 +19,5 @@ INPUT(
 ./debug\moc_BaseTitleBar.o
 ./debug\moc_BaseWindow.o
 ./debug\moc_information.o
+./debug\moc_teaminfo.o
 );
