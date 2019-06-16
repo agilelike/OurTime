@@ -29,10 +29,15 @@ SOURCES += main.cpp\
     personaldetails.cpp\
     BaseTitleBar.cpp \
     BaseWindow.cpp \
-    information.cpp
+    information.cpp \
+    login.cpp \
+    signup.cpp\
+    teaminfo.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
+    login.h \
+    signup.h\
     personaldetails.h\
     BaseTitleBar.h \
     BaseWindow.h \
@@ -41,8 +46,13 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     journal.ui \
     personaldetails.ui \
-    information.ui
+    information.ui \
+    login.ui \
+    signup.ui\
+    teaminfo.ui
 
 RESOURCES += \
     image.qrc\
-    resource.qrc
+    resource.qrc\
+    image/image.qrc
+

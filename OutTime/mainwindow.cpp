@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     BaseWindow(parent),
     ui(new Ui::MainWindow)
 {
+
     initTitleBar();
     ui->setupUi(this);
     w_personalDetails = new personalDetails(this);
@@ -16,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent) :
     w_information->move(400,160);
     QObject::connect(w_personalDetails,SIGNAL(showInformation(bool)),this,SLOT(receivePersonalDetails(bool)));
     QObject::connect(w_information,SIGNAL(showPersonalDetails(bool)),this,SLOT(receiveInformation(bool)));
+    w_teaminfo = new teaminfo(this);
+    w_teaminfo->move(0,130);
 }
 
 MainWindow::~MainWindow()
@@ -27,7 +30,7 @@ void MainWindow::currentInterfaceHide()
 {
     switch (flag) {
     case 1:
-        break;
+        w_teaminfo->hide();
     case 2:
         break;
     case 3:
@@ -39,6 +42,20 @@ void MainWindow::currentInterfaceHide()
     default:
         break;
     }
+}
+
+void MainWindow::on_commandLinkButton_clicked()
+{
+    currentInterfaceHide();
+    flag = 1;
+    w_journal->show();
+}
+
+void MainWindow::on_commandLinkButton_2_clicked()
+{
+    currentInterfaceHide();
+    flag = 2;
+    w_teaminfo->show();
 }
 
 void MainWindow::on_commandLinkButton_3_clicked()

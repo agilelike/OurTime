@@ -6,10 +6,15 @@ INPUT(
 ./debug\BaseTitleBar.o
 ./debug\BaseWindow.o
 ./debug\information.o
+./debug\login.o
+./debug\signup.o
+./debug\teaminfo.o
 ./debug\qrc_image.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
 ./debug\moc_journal.o
+./debug\moc_login.o
+./debug\moc_signup.o
 ./debug\moc_personaldetails.o
 ./debug\moc_BaseTitleBar.o
 ./debug\moc_BaseWindow.o
