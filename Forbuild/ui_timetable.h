@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCommandLinkButton>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
@@ -27,6 +28,8 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
+    QCommandLinkButton *commandLinkButton;
+    QCommandLinkButton *commandLinkButton_2;
 
     void setupUi(QWidget *TimeTable)
     {
@@ -35,17 +38,23 @@ public:
         TimeTable->resize(1200, 480);
         label = new QLabel(TimeTable);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(40, 20, 551, 421));
-        label->setStyleSheet(QString::fromUtf8("border-image: url(:/image/\346\227\245\347\250\213\350\241\250\357\274\210\345\201\207\357\274\211.png);"));
+        label->setGeometry(QRect(290, 20, 551, 421));
+        label->setStyleSheet(QStringLiteral("border-image: url(:/image/personaltable.png);"));
         pushButton = new QPushButton(TimeTable);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(620, 310, 93, 28));
+        pushButton->setGeometry(QRect(910, 290, 93, 28));
         pushButton_2 = new QPushButton(TimeTable);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(620, 360, 93, 28));
+        pushButton_2->setGeometry(QRect(910, 350, 93, 28));
         pushButton_3 = new QPushButton(TimeTable);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(620, 410, 93, 28));
+        pushButton_3->setGeometry(QRect(910, 410, 93, 28));
+        commandLinkButton = new QCommandLinkButton(TimeTable);
+        commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
+        commandLinkButton->setGeometry(QRect(50, 40, 187, 41));
+        commandLinkButton_2 = new QCommandLinkButton(TimeTable);
+        commandLinkButton_2->setObjectName(QStringLiteral("commandLinkButton_2"));
+        commandLinkButton_2->setGeometry(QRect(50, 110, 187, 41));
 
         retranslateUi(TimeTable);
 
@@ -59,6 +68,8 @@ public:
         pushButton->setText(QApplication::translate("TimeTable", "\346\267\273\345\212\240\346\227\245\347\250\213", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("TimeTable", "\347\274\226\350\276\221\346\227\245\347\250\213", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("TimeTable", "\345\210\240\351\231\244\346\227\245\347\250\213", Q_NULLPTR));
+        commandLinkButton->setText(QApplication::translate("TimeTable", "\344\270\252\344\272\272\346\227\245\347\250\213\350\241\250", Q_NULLPTR));
+        commandLinkButton_2->setText(QApplication::translate("TimeTable", "\345\233\242\351\230\237\346\227\245\347\250\213\350\241\250", Q_NULLPTR));
     } // retranslateUi
 
 };

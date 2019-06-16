@@ -27,15 +27,18 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     BaseTitleBar.cpp \
     BaseWindow.cpp \
-    timetable.cpp
+    timetable.cpp \
+    edittable.cpp
 
 HEADERS  += mainwindow.h \
     BaseTitleBar.h \
     BaseWindow.h \
-    timetable.h
+    timetable.h \
+    edittable.h
 
 FORMS    += mainwindow.ui \
-    timetable.ui
+    timetable.ui \
+    edittable.ui
 
 RESOURCES += \
     resource.qrc

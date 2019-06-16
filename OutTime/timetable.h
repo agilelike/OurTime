@@ -2,6 +2,7 @@
 #define TIMETABLE_H
 
 #include <QWidget>
+#include <edittable.h>
 namespace Ui {
 class TimeTable;
 }
@@ -16,6 +17,7 @@ public:
 
 private:
     Ui::TimeTable *ui;
+    editTable *et;
 };
 
 #endif // TIMETABLE_H

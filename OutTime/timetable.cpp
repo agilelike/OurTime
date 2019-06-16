@@ -9,6 +9,8 @@ TimeTable::TimeTable(QWidget *parent) :
     ui->setupUi(this);
     setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
     hide();
+    et = new editTable();
+    connect(ui->pushButton,SIGNAL(clicked()),et,SLOT(makeEdit()));
 }
 
 TimeTable::~TimeTable()
