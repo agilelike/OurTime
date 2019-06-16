@@ -5,9 +5,9 @@
 #include <journal.h>
 #include <personaldetails.h>
 #include <information.h>
-
 #include <BaseWindow.h>
 #include"teaminfo.h"
+#include <timetable.h>
 namespace Ui {
 class MainWindow;
 }
@@ -38,6 +38,7 @@ private:
     journal* w_journal;
     personalDetails* w_personalDetails;
     information* w_information;
+    TimeTable *t;
 };
 
 #endif // MAINWINDOW_H

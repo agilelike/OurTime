@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(w_information,SIGNAL(showPersonalDetails(bool)),this,SLOT(receiveInformation(bool)));
     w_teaminfo = new teaminfo(this);
     w_teaminfo->move(0,130);
+    t=new TimeTable(this);
+    t->move(0,120);
 }
 
 MainWindow::~MainWindow()
@@ -31,7 +33,9 @@ void MainWindow::currentInterfaceHide()
     switch (flag) {
     case 1:
         w_teaminfo->hide();
+        break;
     case 2:
+        t->hide();
         break;
     case 3:
         w_journal->hide();
@@ -55,6 +59,7 @@ void MainWindow::on_commandLinkButton_2_clicked()
 {
     currentInterfaceHide();
     flag = 2;
+    t->show();
 }
 
 void MainWindow::on_commandLinkButton_3_clicked()
