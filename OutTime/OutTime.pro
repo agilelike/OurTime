@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     signup.cpp \
     teaminfo.cpp \
     timetable.cpp \
-    edittable.cpp
+    edittable.cpp \
+    desktop.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
@@ -46,7 +47,9 @@ HEADERS  += mainwindow.h \
     information.h \
     teaminfo.h \
     timetable.h \
-    edittable.h
+    edittable.h \
+    desktop.h
+
 FORMS    += mainwindow.ui \
     journal.ui \
     personaldetails.ui \
@@ -55,7 +58,8 @@ FORMS    += mainwindow.ui \
     signup.ui \
     teaminfo.ui \
     timetable.ui \
-    edittable.ui
+    edittable.ui \
+    desktop.ui
 
 RESOURCES += \
     image.qrc\

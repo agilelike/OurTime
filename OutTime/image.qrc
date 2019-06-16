@@ -7,5 +7,6 @@
     <qresource prefix="/">
         <file>Image/account.png</file>
         <file>Image/password.png</file>
-    </qresource>
+    <qresource prefix="/new/image">
+        <file>time.png</file>
 </RCC>
