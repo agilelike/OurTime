@@ -56,7 +56,11 @@ Desktop::Desktop(QWidget *parent) :
                               background-color: rgb(255, 255, 255);}");
 
     //最小化到托盘
-    QIcon icon = QIcon(":/new/image/time.png");
+    //QString pixmap_url = ":/Image/time.png";
+    //QImage image(pixmap_url);//定义QImage对象，读取图片
+    //image.save(pixmap_url,"PNG");
+
+    QIcon icon = QIcon(":/Image/time.png");
     trayIcon = new QSystemTrayIcon(this);
     trayIcon->setIcon(icon);
     trayIcon->setToolTip("ourtime");

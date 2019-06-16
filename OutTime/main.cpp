@@ -8,9 +8,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     //MainWindow w;
-    //login L;
-    //signup Sign;
-    //QObject::connect(&L,SIGNAL(showsignup()),&Sign,SLOT(receivelogin()));
+    login L;
+    signup Sign;
+    QObject::connect(&L,SIGNAL(showsignup()),&Sign,SLOT(receivelogin()));
     Desktop w;
 
     HWND desktopHwnd = w.findDesktopIconWnd();

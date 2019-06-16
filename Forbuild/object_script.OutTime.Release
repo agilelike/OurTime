@@ -11,6 +11,7 @@ INPUT(
 ./release\teaminfo.o
 ./release\timetable.o
 ./release\edittable.o
+./release\desktop.o
 ./release\qrc_image.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o
@@ -24,4 +25,5 @@ INPUT(
 ./release\moc_teaminfo.o
 ./release\moc_timetable.o
 ./release\moc_edittable.o
+./release\moc_desktop.o
 );
