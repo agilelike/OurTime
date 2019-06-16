@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <qDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     BaseWindow(parent),
@@ -21,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent) :
     w_teaminfo->move(0,130);
     t=new TimeTable(this);
     t->move(0,120);
+    flag=1;
+    w_teaminfo->show();
 }
 
 MainWindow::~MainWindow()
