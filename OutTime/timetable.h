@@ -14,6 +14,9 @@ class TimeTable : public QWidget
 public:
     explicit TimeTable(QWidget *parent = 0);
     ~TimeTable();
+private slots:
+    void on_commandLinkButton_clicked();
+    void on_commandLinkButton_2_clicked();
 
 private:
     Ui::TimeTable *ui;

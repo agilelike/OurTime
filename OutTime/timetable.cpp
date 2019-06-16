@@ -18,3 +18,12 @@ TimeTable::~TimeTable()
     delete ui;
 }
 
+void TimeTable::on_commandLinkButton_clicked()
+{
+    ui->label->setStyleSheet("border-image: url(:/image/personaltable.png);");
+}
+
+void TimeTable::on_commandLinkButton_2_clicked()
+{
+    ui->label->setStyleSheet("border-image: url(:/image/teamtable.png);");
+}
