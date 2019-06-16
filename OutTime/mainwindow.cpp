@@ -69,7 +69,6 @@ void MainWindow::receiveInformation(bool team)
     w_personalDetails->haveTeam(team);
     currentInterfaceHide();
     w_personalDetails->show();
-    qDebug()<<w_personalDetails->team;
 }
 
 void MainWindow::receivePersonalDetails(bool team)
@@ -78,5 +77,4 @@ void MainWindow::receivePersonalDetails(bool team)
     w_information->receivePersonalDetails(team);
     currentInterfaceHide();
     w_information->show();
-    qDebug()<<w_information->team;
 }
