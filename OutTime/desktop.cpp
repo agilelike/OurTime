@@ -56,9 +56,6 @@ Desktop::Desktop(QWidget *parent) :
                               background-color: rgb(255, 255, 255);}");
 
     //最小化到托盘
-    //QString pixmap_url = ":/Image/time.png";
-    //QImage image(pixmap_url);//定义QImage对象，读取图片
-    //image.save(pixmap_url,"PNG");
 
     QIcon icon = QIcon(":/Image/time.png");
     trayIcon = new QSystemTrayIcon(this);
@@ -118,7 +115,6 @@ void Desktop::paintEvent(QPaintEvent *e)
 //    //设置内容区
 //    painter.setPen(QColor(0,0,0)); //边界为黑色线
 //    painter.setBrush(QColor(255,255,255,125));  //中间为白色透明
-
 //    painter.drawRoundedRect(15,10,420,50,10,10);  //圆角矩形
 //    painter.drawRoundedRect(15,70,420,480,10,10);
 
