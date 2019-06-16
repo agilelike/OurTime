@@ -5,7 +5,6 @@ TimeTable::TimeTable(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::TimeTable)
 {
-
     ui->setupUi(this);
     setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
     hide();
