@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "BaseWindow.h"
+
 namespace Ui {
 class login;
 }
@@ -17,6 +18,7 @@ public:
 
 private slots:
     void on_pushButton_2_clicked();
+
 signals:
     void showsignup();
 private:

@@ -16,6 +16,9 @@ public:
     ~signup();
 private slots:
     void receivelogin();
+
+    void on_pushButton_clicked();
+
 private:
     void initTitleBar();
     Ui::signup *ui;
