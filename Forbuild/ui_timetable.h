@@ -131,7 +131,7 @@ public:
         label_14->setStyleSheet(QString::fromUtf8("font: 9pt \"\347\255\211\347\272\277\";"));
         label_15 = new QLabel(TimeTable);
         label_15->setObjectName(QStringLiteral("label_15"));
-        label_15->setGeometry(QRect(950, 90, 101, 16));
+        label_15->setGeometry(QRect(910, 90, 101, 16));
         label_15->setStyleSheet(QString::fromUtf8("font: 9pt \"\347\255\211\347\272\277\";"));
         label_16 = new QLabel(TimeTable);
         label_16->setObjectName(QStringLiteral("label_16"));
@@ -188,7 +188,7 @@ public:
         label_12->setText(QApplication::translate("TimeTable", "TextLabel", Q_NULLPTR));
         label_13->setText(QApplication::translate("TimeTable", "\346\227\245\347\250\213\345\220\215", Q_NULLPTR));
         label_14->setText(QApplication::translate("TimeTable", "TextLabel", Q_NULLPTR));
-        label_15->setText(QApplication::translate("TimeTable", "\346\227\245\347\250\213\350\257\246\347\273\206\344\277\241\346\201\257", Q_NULLPTR));
+        label_15->setText(QApplication::translate("TimeTable", "\346\227\245\347\250\213\350\257\246\347\273\206\344\277\241\346\201\257\357\274\232", Q_NULLPTR));
         label_16->setText(QApplication::translate("TimeTable", "\346\230\257\345\220\246\345\217\257\346\212\242\345\215\240", Q_NULLPTR));
         label_17->setText(QApplication::translate("TimeTable", "TextLabel", Q_NULLPTR));
         label_18->setText(QApplication::translate("TimeTable", "\345\233\242\351\230\237\346\227\245\347\250\213", Q_NULLPTR));

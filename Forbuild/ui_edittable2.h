@@ -13,9 +13,9 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDateTimeEdit>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
@@ -26,11 +26,11 @@ class Ui_edittable2
 {
 public:
     QLabel *label;
-    QLineEdit *lineEdit;
     QLabel *label_2;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QTextEdit *textEdit;
+    QDateTimeEdit *dateTimeEdit;
 
     void setupUi(QWidget *edittable2)
     {
@@ -40,9 +40,6 @@ public:
         label = new QLabel(edittable2);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(70, 60, 72, 21));
-        lineEdit = new QLineEdit(edittable2);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(160, 60, 160, 21));
         label_2 = new QLabel(edittable2);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(70, 90, 72, 21));
@@ -55,6 +52,9 @@ public:
         textEdit = new QTextEdit(edittable2);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(160, 90, 231, 131));
+        dateTimeEdit = new QDateTimeEdit(edittable2);
+        dateTimeEdit->setObjectName(QStringLiteral("dateTimeEdit"));
+        dateTimeEdit->setGeometry(QRect(160, 60, 194, 22));
 
         retranslateUi(edittable2);
 
