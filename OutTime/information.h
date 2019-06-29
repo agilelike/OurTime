@@ -13,15 +13,16 @@ class information : public QDialog
 
 public:
     explicit information(QWidget *parent = 0);
-    void receivePersonalDetails(bool team);
-    bool team;
+    void receivePersonalDetails(int state,bool create);
+    int state = 0;
+    bool create;
     ~information();
 
 private slots:
     void on_pushButton_clicked();
 
 signals:
-    void showPersonalDetails(bool team);
+    void showPersonalDetails(int state);
 
 private:
     Ui::information *ui;

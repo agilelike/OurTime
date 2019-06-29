@@ -8,6 +8,7 @@
 #include <BaseWindow.h>
 #include"teaminfo.h"
 #include <timetable.h>
+#include <createteam.h>
 namespace Ui {
 class MainWindow;
 }
@@ -27,8 +28,9 @@ private slots:
     void on_commandLinkButton_2_clicked();
     void on_commandLinkButton_3_clicked();
     void on_commandLinkButton_4_clicked();
-    void receiveInformation(bool team);
-    void receivePersonalDetails(bool team);
+    void receiveShowPersonalDetails(int state);
+    void receiveShowInformation(int state,bool create);
+    void receiveShowCreateTeam(int state);
 
 private:
     void initTitleBar();
@@ -39,6 +41,7 @@ private:
     personalDetails* w_personalDetails;
     information* w_information;
     TimeTable *t;
+    createTeam *w_createTeam;
 };
 
 #endif // MAINWINDOW_H

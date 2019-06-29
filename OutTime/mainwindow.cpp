@@ -14,8 +14,13 @@ MainWindow::MainWindow(QWidget *parent) :
     w_journal->move(0,120);
     w_information = new information(this);
     w_information->move(400,160);
-    QObject::connect(w_personalDetails,SIGNAL(showInformation(bool)),this,SLOT(receivePersonalDetails(bool)));
-    QObject::connect(w_information,SIGNAL(showPersonalDetails(bool)),this,SLOT(receiveInformation(bool)));
+    w_createTeam = new createTeam(this);
+    w_createTeam->move(350,280);
+    w_createTeam->hide();
+    QObject::connect(w_personalDetails,SIGNAL(showInformation(int,bool)),this,SLOT(receiveShowInformation(int,bool)));
+    QObject::connect(w_information,SIGNAL(showPersonalDetails(int)),this,SLOT(receiveShowPersonalDetails(int)));
+    QObject::connect(w_personalDetails,SIGNAL(showCreateTeam(int)),this,SLOT(receiveShowCreateTeam(int)));
+    QObject::connect(w_createTeam,SIGNAL(showInformation(int,bool)),this,SLOT(receiveShowInformation(int,bool)));
     w_teaminfo = new teaminfo(this);
     w_teaminfo->move(0,130);
     t=new TimeTable(this);
@@ -85,18 +90,24 @@ void MainWindow::initTitleBar()
     m_titleBar->setTitleWidth(this->width());
 }
 
-void MainWindow::receiveInformation(bool team)
+void MainWindow::receiveShowPersonalDetails(int state)
 {
-    w_personalDetails->team = team;
-    w_personalDetails->haveTeam(team);
+    w_personalDetails->state = state;
+    w_personalDetails->haveTeam(state);
     currentInterfaceHide();
     w_personalDetails->show();
 }
 
-void MainWindow::receivePersonalDetails(bool team)
+void MainWindow::receiveShowInformation(int state,bool create)
 {
-    w_information->team = team;
-    w_information->receivePersonalDetails(team);
+    w_information->state = state;
+    w_information->receivePersonalDetails(state,create);
     currentInterfaceHide();
     w_information->show();
+}
+
+void MainWindow::receiveShowCreateTeam(int state){
+    currentInterfaceHide();
+    w_createTeam->state = state;
+    w_createTeam->show();
 }

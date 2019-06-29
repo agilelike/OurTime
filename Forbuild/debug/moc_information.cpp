@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_information_t {
     QByteArrayData data[5];
-    char stringdata0[60];
+    char stringdata0[61];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,11 +34,11 @@ static const qt_meta_stringdata_information_t qt_meta_stringdata_information = {
 QT_MOC_LITERAL(0, 0, 11), // "information"
 QT_MOC_LITERAL(1, 12, 19), // "showPersonalDetails"
 QT_MOC_LITERAL(2, 32, 0), // ""
-QT_MOC_LITERAL(3, 33, 4), // "team"
-QT_MOC_LITERAL(4, 38, 21) // "on_pushButton_clicked"
+QT_MOC_LITERAL(3, 33, 5), // "state"
+QT_MOC_LITERAL(4, 39, 21) // "on_pushButton_clicked"
 
     },
-    "information\0showPersonalDetails\0\0team\0"
+    "information\0showPersonalDetails\0\0state\0"
     "on_pushButton_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -63,7 +63,7 @@ static const uint qt_meta_data_information[] = {
        4,    0,   27,    2, 0x08 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::Bool,    3,
+    QMetaType::Void, QMetaType::Int,    3,
 
  // slots: parameters
     QMetaType::Void,
@@ -77,7 +77,7 @@ void information::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         information *_t = static_cast<information *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->showPersonalDetails((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 0: _t->showPersonalDetails((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 1: _t->on_pushButton_clicked(); break;
         default: ;
         }
@@ -85,7 +85,7 @@ void information::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (information::*_t)(bool );
+            typedef void (information::*_t)(int );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&information::showPersonalDetails)) {
                 *result = 0;
                 return;
@@ -131,7 +131,7 @@ int information::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void information::showPersonalDetails(bool _t1)
+void information::showPersonalDetails(int _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

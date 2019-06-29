@@ -13,8 +13,8 @@ class personalDetails : public QDialog
 
 public:
     explicit personalDetails(QWidget *parent = 0);
-    bool team = false;
-    void haveTeam(bool team);
+    int state = 0;
+    void haveTeam(int state);
     ~personalDetails();
 
 private slots:
@@ -22,8 +22,17 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
+    void on_pushButton_5_clicked();
+
 signals:
-    void showInformation(bool team);
+    void showInformation(int state,bool create);
+    void showCreateTeam(int state);
 
 private:
     Ui::personalDetails *ui;  

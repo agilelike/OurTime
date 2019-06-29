@@ -38,9 +38,9 @@ void signup::on_pushButton_clicked()
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
     db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
-    db.setDatabaseName("abcd");       //要连接的数据库名
-    db.setUserName("root");
-    db.setPassword("CBBc116b.");
+    db.setDatabaseName("Ourtime");       //要连接的数据库名
+    db.setUserName("team");
+    db.setPassword("123456");
     db.setPort(3306);
     db.open();
 

@@ -52,6 +52,14 @@ public:
     QLineEdit *lineEdit;
     QLabel *label_14;
     QLabel *label_15;
+    QPushButton *pushButton_4;
+    QLabel *label_16;
+    QLabel *label_17;
+    QPushButton *pushButton_5;
+    QLabel *label_18;
+    QTableWidget *tableWidget_2;
+    QPushButton *pushButton_6;
+    QPushButton *pushButton_7;
 
     void setupUi(QDialog *personalDetails)
     {
@@ -77,7 +85,7 @@ public:
 "font: 14pt \"\345\256\213\344\275\223\";"));
         line = new QFrame(personalDetails);
         line->setObjectName(QStringLiteral("line"));
-        line->setGeometry(QRect(580, 0, 16, 481));
+        line->setGeometry(QRect(575, 0, 20, 480));
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
         label_2 = new QLabel(personalDetails);
@@ -108,7 +116,7 @@ public:
         pushButton->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         pushButton_2 = new QPushButton(personalDetails);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(1090, 417, 93, 31));
+        pushButton_2->setGeometry(QRect(1090, 420, 93, 31));
         pushButton_2->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         label_5 = new QLabel(personalDetails);
         label_5->setObjectName(QStringLiteral("label_5"));
@@ -160,8 +168,40 @@ public:
         label_14->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\256\213\344\275\223\";"));
         label_15 = new QLabel(personalDetails);
         label_15->setObjectName(QStringLiteral("label_15"));
-        label_15->setGeometry(QRect(780, 170, 261, 31));
+        label_15->setGeometry(QRect(770, 170, 221, 31));
         label_15->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\256\213\344\275\223\";"));
+        pushButton_4 = new QPushButton(personalDetails);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(1070, 40, 111, 41));
+        pushButton_4->setStyleSheet(QString::fromUtf8("font: 75 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
+        label_16 = new QLabel(personalDetails);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setGeometry(QRect(740, 200, 281, 31));
+        label_16->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\256\213\344\275\223\";"));
+        label_17 = new QLabel(personalDetails);
+        label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setGeometry(QRect(720, 230, 301, 31));
+        label_17->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
+        pushButton_5 = new QPushButton(personalDetails);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(930, 420, 93, 31));
+        pushButton_5->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
+        label_18 = new QLabel(personalDetails);
+        label_18->setObjectName(QStringLiteral("label_18"));
+        label_18->setGeometry(QRect(710, 120, 71, 41));
+        label_18->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\256\213\344\275\223\";"));
+        tableWidget_2 = new QTableWidget(personalDetails);
+        tableWidget_2->setObjectName(QStringLiteral("tableWidget_2"));
+        tableWidget_2->setGeometry(QRect(620, 170, 250, 200));
+        tableWidget_2->setStyleSheet(QString::fromUtf8("font: 14pt \"\346\245\267\344\275\223\";"));
+        pushButton_6 = new QPushButton(personalDetails);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(620, 420, 93, 31));
+        pushButton_6->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
+        pushButton_7 = new QPushButton(personalDetails);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        pushButton_7->setGeometry(QRect(780, 420, 93, 31));
+        pushButton_7->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
 
         retranslateUi(personalDetails);
 
@@ -198,7 +238,14 @@ public:
         pushButton_3->setText(QApplication::translate("personalDetails", "\347\224\263\350\257\267\345\212\240\345\205\245", Q_NULLPTR));
         label_13->setText(QApplication::translate("personalDetails", "\345\233\242\351\230\237\345\217\267\357\274\232", Q_NULLPTR));
         label_14->setText(QApplication::translate("personalDetails", "\346\202\250\350\277\230\346\234\252\345\212\240\345\205\245\344\273\273\344\275\225\345\233\242\351\230\237\357\274\201", Q_NULLPTR));
-        label_15->setText(QApplication::translate("personalDetails", "\345\277\253\346\211\276\344\270\252\345\233\242\351\230\237\345\212\240\345\205\245\345\220\247\357\274\201", Q_NULLPTR));
+        label_15->setText(QApplication::translate("personalDetails", "\345\277\253\345\212\240\345\205\245/\345\210\233\345\273\272\345\233\242\351\230\237\345\220\247\357\274\201", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("personalDetails", "\345\210\233\345\273\272\345\233\242\351\230\237", Q_NULLPTR));
+        label_16->setText(QApplication::translate("personalDetails", "\347\224\263\350\257\267\345\267\262\345\217\221\345\207\272\357\274\214\350\257\267\350\200\220\345\277\203\347\255\211\345\276\205\357\274\201", Q_NULLPTR));
+        label_17->setText(QApplication::translate("personalDetails", "\357\274\2102\345\244\251\345\206\205\346\262\241\346\234\211\346\216\245\345\217\227\357\274\214\345\217\257\351\207\215\346\226\260\347\224\263\350\257\267\357\274\211", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("personalDetails", "\350\247\243\346\225\243\345\233\242\351\230\237", Q_NULLPTR));
+        label_18->setText(QApplication::translate("personalDetails", "\347\224\263\350\257\267\344\272\272", Q_NULLPTR));
+        pushButton_6->setText(QApplication::translate("personalDetails", "\345\220\214\346\204\217", Q_NULLPTR));
+        pushButton_7->setText(QApplication::translate("personalDetails", "\346\213\222\347\273\235", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -12,6 +12,7 @@ INPUT(
 ./debug\timetable.o
 ./debug\edittable.o
 ./debug\desktop.o
+./debug\createteam.o
 ./debug\qrc_image.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
@@ -26,4 +27,5 @@ INPUT(
 ./debug\moc_timetable.o
 ./debug\moc_edittable.o
 ./debug\moc_desktop.o
+./debug\moc_createteam.o
 );
