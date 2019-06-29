@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <edittable.h>
+#include <edittable2.h>
 namespace Ui {
 class TimeTable;
 }
@@ -21,6 +22,7 @@ private slots:
 private:
     Ui::TimeTable *ui;
     editTable *et;
+    edittable2 *et2;
 };
 
 #endif // TIMETABLE_H
