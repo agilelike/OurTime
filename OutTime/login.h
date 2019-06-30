@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include "BaseWindow.h"
+#include <QStringList>
+#include <QSqlQuery>
 
 namespace Ui {
 class login;
@@ -18,9 +20,14 @@ public:
 
 private slots:
     void on_pushButton_2_clicked();
+    void receiveShowLogin();
+
+    void on_pushButton_clicked();
 
 signals:
     void showsignup();
+    void showMainwindow();
+
 private:
     void initTitleBar();
     Ui::login *ui;

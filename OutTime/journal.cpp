@@ -1,6 +1,5 @@
 #include "journal.h"
 #include "ui_journal.h"
-#include <QDebug>
 
 journal::journal(QWidget *parent) :
     QDialog(parent),

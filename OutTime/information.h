@@ -13,9 +13,9 @@ class information : public QDialog
 
 public:
     explicit information(QWidget *parent = 0);
-    void receivePersonalDetails(int state,bool create);
+    void receivePersonalDetails(int state,int create);
     int state = 0;
-    bool create;
+    int create;
     ~information();
 
 private slots:
@@ -23,6 +23,8 @@ private slots:
 
 signals:
     void showPersonalDetails(int state);
+    void showLogin();
+    void hideMain();
 
 private:
     Ui::information *ui;

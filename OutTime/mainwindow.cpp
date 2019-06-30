@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include<user.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     BaseWindow(parent),
@@ -17,10 +18,11 @@ MainWindow::MainWindow(QWidget *parent) :
     w_createTeam = new createTeam(this);
     w_createTeam->move(350,280);
     w_createTeam->hide();
-    QObject::connect(w_personalDetails,SIGNAL(showInformation(int,bool)),this,SLOT(receiveShowInformation(int,bool)));
+    QObject::connect(w_personalDetails,SIGNAL(showInformation(int,int)),this,SLOT(receiveShowInformation(int,int)));
     QObject::connect(w_information,SIGNAL(showPersonalDetails(int)),this,SLOT(receiveShowPersonalDetails(int)));
     QObject::connect(w_personalDetails,SIGNAL(showCreateTeam(int)),this,SLOT(receiveShowCreateTeam(int)));
-    QObject::connect(w_createTeam,SIGNAL(showInformation(int,bool)),this,SLOT(receiveShowInformation(int,bool)));
+    QObject::connect(w_createTeam,SIGNAL(showInformation(int,int)),this,SLOT(receiveShowInformation(int,int)));
+    QObject::connect(w_information,SIGNAL(hideMain()),this,SLOT(receiveHideMain()));
     w_teaminfo = new teaminfo(this);
     w_teaminfo->move(0,130);
     t=new TimeTable(this);
@@ -98,7 +100,7 @@ void MainWindow::receiveShowPersonalDetails(int state)
     w_personalDetails->show();
 }
 
-void MainWindow::receiveShowInformation(int state,bool create)
+void MainWindow::receiveShowInformation(int state,int create)
 {
     w_information->state = state;
     w_information->receivePersonalDetails(state,create);
@@ -110,4 +112,17 @@ void MainWindow::receiveShowCreateTeam(int state){
     currentInterfaceHide();
     w_createTeam->state = state;
     w_createTeam->show();
+}
+
+void MainWindow::receiveShowMainwindow(){
+    this->show();
+    user = new User();
+}
+
+information* MainWindow::getInformation(){
+    return w_information;
+}
+
+void MainWindow::receiveHideMain(){
+    this->hide();
 }

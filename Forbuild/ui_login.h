@@ -31,6 +31,7 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
+    QLabel *label_4;
 
     void setupUi(QWidget *login)
     {
@@ -65,6 +66,10 @@ public:
         font.setFamily(QStringLiteral("Algerian"));
         font.setPointSize(20);
         label_3->setFont(font);
+        label_4 = new QLabel(login);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(100, 250, 271, 16));
+        label_4->setStyleSheet(QString::fromUtf8("font: 14pt \"\351\232\266\344\271\246\";"));
 
         retranslateUi(login);
 
@@ -79,6 +84,7 @@ public:
         label->setText(QString());
         label_2->setText(QString());
         label_3->setText(QApplication::translate("login", "Ourtime", Q_NULLPTR));
+        label_4->setText(QApplication::translate("login", "(\347\224\250\346\210\267\345\220\215\346\210\226\345\257\206\347\240\201\351\224\231\350\257\257\357\274\214\350\257\267\351\207\215\350\257\225!)", Q_NULLPTR));
     } // retranslateUi
 
 };

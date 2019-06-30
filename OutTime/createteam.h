@@ -20,7 +20,7 @@ private slots:
     void on_pushButton_3_clicked();
 
 signals:
-    void showInformation(int state,bool create);
+    void showInformation(int state,int create);
 
 private:
     Ui::createTeam *ui;

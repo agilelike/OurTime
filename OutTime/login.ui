@@ -113,6 +113,22 @@
     <string>Ourtime</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>250</y>
+     <width>271</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;隶书&quot;;</string>
+   </property>
+   <property name="text">
+    <string>(用户名或密码错误，请重试!)</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

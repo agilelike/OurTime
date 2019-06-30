@@ -30,8 +30,10 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_pushButton_clicked();
+
 signals:
-    void showInformation(int state,bool create);
+    void showInformation(int state,int create);
     void showCreateTeam(int state);
 
 private:

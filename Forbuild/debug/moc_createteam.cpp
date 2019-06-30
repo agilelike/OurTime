@@ -64,7 +64,7 @@ static const uint qt_meta_data_createTeam[] = {
        5,    0,   29,    2, 0x08 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::Int, QMetaType::Bool,    3,    4,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    3,    4,
 
  // slots: parameters
     QMetaType::Void,
@@ -78,7 +78,7 @@ void createTeam::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         createTeam *_t = static_cast<createTeam *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->showInformation((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 0: _t->showInformation((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 1: _t->on_pushButton_3_clicked(); break;
         default: ;
         }
@@ -86,7 +86,7 @@ void createTeam::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (createTeam::*_t)(int , bool );
+            typedef void (createTeam::*_t)(int , int );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&createTeam::showInformation)) {
                 *result = 0;
                 return;
@@ -132,7 +132,7 @@ int createTeam::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void createTeam::showInformation(int _t1, bool _t2)
+void createTeam::showInformation(int _t1, int _t2)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

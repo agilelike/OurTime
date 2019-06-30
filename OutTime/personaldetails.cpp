@@ -194,5 +194,10 @@ void personalDetails::on_pushButton_7_clicked()
 
 void personalDetails::on_pushButton_5_clicked()
 {
-    emit showInformation(state,false);
+    emit showInformation(state,0);
+}
+
+void personalDetails::on_pushButton_clicked()
+{
+    emit showInformation(state,2);
 }

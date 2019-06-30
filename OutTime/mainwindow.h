@@ -20,7 +20,7 @@ class MainWindow : public BaseWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     void currentInterfaceHide();
-
+    information* getInformation();
     ~MainWindow();
 
 private slots:
@@ -29,8 +29,11 @@ private slots:
     void on_commandLinkButton_3_clicked();
     void on_commandLinkButton_4_clicked();
     void receiveShowPersonalDetails(int state);
-    void receiveShowInformation(int state,bool create);
+    void receiveShowInformation(int state,int create);
     void receiveShowCreateTeam(int state);
+    void receiveShowMainwindow();
+    void receiveHideMain();
+
 
 private:
     void initTitleBar();
