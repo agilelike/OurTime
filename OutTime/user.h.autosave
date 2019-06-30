@@ -2,6 +2,7 @@
 #define USER_H
 #include <QString>
 #include <team.h>
+#include <message.h>
 class User
 {//user作为主函数中的全局变量，只有一个
 private:
@@ -21,10 +22,14 @@ public:
     bool setTeamid(int);
     bool setTeamState(int);
 
-    void updateTeam();//重新获取对应team信息
+    
     bool createTeam();
     bool applyToTeam(int teamid);
     bool dismissTeam();
+    
+    
+    bool sendMessage(int toID,QString context);
+    void updateMessage(Message *);
 };
 
 #endif // USER_H
