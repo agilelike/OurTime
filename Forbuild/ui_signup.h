@@ -33,6 +33,7 @@ public:
     QLabel *label_4;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QLabel *label_5;
 
     void setupUi(QWidget *signup)
     {
@@ -73,6 +74,10 @@ public:
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(250, 260, 90, 30));
         pushButton_2->setStyleSheet(QStringLiteral(""));
+        label_5 = new QLabel(signup);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(120, 230, 191, 21));
+        label_5->setStyleSheet(QString::fromUtf8("font: 12pt \"\351\232\266\344\271\246\";"));
 
         retranslateUi(signup);
 
@@ -88,6 +93,7 @@ public:
         label_4->setText(QApplication::translate("signup", "\345\210\233\345\273\272\344\275\240\350\207\252\345\267\261\347\232\204\344\270\252\344\272\272\347\224\250\346\210\267\357\274\232", Q_NULLPTR));
         pushButton->setText(QApplication::translate("signup", "\346\263\250\345\206\214", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("signup", "\350\277\224\345\233\236", Q_NULLPTR));
+        label_5->setText(QApplication::translate("signup", "(\345\257\206\347\240\201\351\224\231\350\257\257\357\274\214\350\257\267\345\206\215\346\254\241\347\241\256\350\256\244!)", Q_NULLPTR));
     } // retranslateUi
 
 };
