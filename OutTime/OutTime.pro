@@ -5,6 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += sql
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -36,7 +38,8 @@ SOURCES += main.cpp\
     timetable.cpp \
     edittable.cpp \
     desktop.cpp \
-    tomatoclock.cpp
+    tomatoclock.cpp \
+    dbOperation.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
@@ -50,7 +53,8 @@ HEADERS  += mainwindow.h \
     timetable.h \
     edittable.h \
     desktop.h \
-    tomatoclock.h
+    tomatoclock.h \
+    dbOperation.h
 
 FORMS    += mainwindow.ui \
     journal.ui \

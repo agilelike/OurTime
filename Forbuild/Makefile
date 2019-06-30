@@ -224,6 +224,7 @@ Makefile: ../OutTime/OutTime.pro ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/win3
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/lib/qtmaind.prl \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/lib/Qt5Widgets.prl \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/lib/Qt5Gui.prl \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/lib/Qt5Sql.prl \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ..\OutTime\OutTime.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -391,6 +392,7 @@ Makefile: ../OutTime/OutTime.pro ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/win3
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/lib/qtmaind.prl:
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/lib/Qt5Widgets.prl:
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/lib/Qt5Gui.prl:
+../../../Qt/Qt5.8.0/5.8/mingw53_32/lib/Qt5Sql.prl:
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\OutTime\OutTime.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
