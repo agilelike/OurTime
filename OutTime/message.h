@@ -14,7 +14,6 @@ class Message
 
 public:
     Message();
-    int sendMessage();
 };
 
 #endif // MESSAGE_H
