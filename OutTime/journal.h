@@ -2,7 +2,8 @@
 #define JOURNAL_H
 
 #include <QDialog>
-
+#include <QString>
+#include <QDate>
 namespace Ui {
 class journal;
 }
@@ -10,7 +11,10 @@ class journal;
 class journal : public QDialog
 {
     Q_OBJECT
-
+private:
+    QDate date;
+    QString context;
+    int clock;//当日番茄钟个数
 public:
     explicit journal(QWidget *parent = 0);
     ~journal();

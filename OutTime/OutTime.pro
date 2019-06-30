@@ -37,7 +37,11 @@ SOURCES += main.cpp\
     timetable.cpp \
     edittable.cpp \
     desktop.cpp \
-    createteam.cpp
+    createteam.cpp\
+    user.cpp \
+    pschedule.cpp \
+    team.cpp \
+    message.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
@@ -51,7 +55,11 @@ HEADERS  += mainwindow.h \
     timetable.h \
     edittable.h \
     desktop.h \
-    createteam.h
+    createteam.h\
+    user.h \
+    pschedule.h \
+    team.h \
+    message.h
 
 FORMS    += mainwindow.ui \
     journal.ui \
