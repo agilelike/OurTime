@@ -26,7 +26,7 @@
     <enum>Qt::Vertical</enum>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QTableWidget" name="ScheduleView">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -49,7 +49,7 @@
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="journal_2">
    <property name="geometry">
     <rect>
      <x>680</x>
@@ -62,7 +62,7 @@
     <string notr="true">font: 14pt &quot;楷体&quot;;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="submission">
    <property name="geometry">
     <rect>
      <x>870</x>
@@ -75,10 +75,10 @@
     <string notr="true">font: 18pt &quot;隶书&quot;;</string>
    </property>
    <property name="text">
-    <string>确认</string>
+    <string>提交</string>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButton">
+  <widget class="QToolButton" name="reduceYear">
    <property name="geometry">
     <rect>
      <x>196</x>
@@ -94,7 +94,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButton_2">
+  <widget class="QToolButton" name="increaseYear">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -110,7 +110,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="year">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -126,7 +126,7 @@
     <string>2019</string>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButton_3">
+  <widget class="QToolButton" name="increaseMonth">
    <property name="geometry">
     <rect>
      <x>640</x>
@@ -142,7 +142,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButton_4">
+  <widget class="QToolButton" name="reduceMonth">
    <property name="geometry">
     <rect>
      <x>570</x>
@@ -158,7 +158,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="month">
    <property name="geometry">
     <rect>
      <x>600</x>
@@ -174,7 +174,7 @@
     <string>06</string>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButton_5">
+  <widget class="QToolButton" name="increaseDay">
    <property name="geometry">
     <rect>
      <x>960</x>
@@ -190,7 +190,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButton_6">
+  <widget class="QToolButton" name="reduceDay">
    <property name="geometry">
     <rect>
      <x>890</x>
@@ -206,7 +206,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="day">
    <property name="geometry">
     <rect>
      <x>920</x>

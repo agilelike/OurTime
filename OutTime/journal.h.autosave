@@ -28,15 +28,10 @@ public:
 private slots:
 
     void on_reduceYear_clicked();
-
     void on_increaseYear_clicked();
-
     void on_reduceMonth_clicked();
-
     void on_increaseMonth_clicked();
-
     void on_reduceDay_clicked();
-
     void on_increaseDay_clicked();
 
 private:
