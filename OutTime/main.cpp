@@ -3,9 +3,12 @@
 #include <QApplication>
 #include"login.h"
 #include"signup.h"
+#include<user.h>
+
 
 int main(int argc, char *argv[])
 {
+    user=new User();
     QApplication a(argc, argv);
     //MainWindow w;
     login L;

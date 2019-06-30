@@ -31,5 +31,5 @@ public:
     bool sendMessage(int toID,QString context);
     void updateMessage(Message *);
 };
-
+extern User *user;
 #endif // USER_H

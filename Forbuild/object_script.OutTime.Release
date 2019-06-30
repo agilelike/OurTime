@@ -12,6 +12,10 @@ INPUT(
 ./release\timetable.o
 ./release\edittable.o
 ./release\desktop.o
+./release\user.o
+./release\pschedule.o
+./release\team.o
+./release\message.o
 ./release\qrc_image.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o

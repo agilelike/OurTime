@@ -1,6 +1,6 @@
 #include "pschedule.h"
 
-pSchedule::pSchedule()
+pSchedule::pSchedule(bool person)
 {
 
 }

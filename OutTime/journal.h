@@ -13,7 +13,7 @@ class journal : public QDialog
     Q_OBJECT
 private:
     QDate date;
-    QString journal;
+    QString context;
     int clock;//当日番茄钟个数
 public:
     explicit journal(QWidget *parent = 0);

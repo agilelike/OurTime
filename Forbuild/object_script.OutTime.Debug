@@ -12,6 +12,10 @@ INPUT(
 ./debug\timetable.o
 ./debug\edittable.o
 ./debug\desktop.o
+./debug\user.o
+./debug\pschedule.o
+./debug\team.o
+./debug\message.o
 ./debug\qrc_image.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
