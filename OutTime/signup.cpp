@@ -1,4 +1,4 @@
-﻿#include "signup.h"
+#include "signup.h"
 #include "ui_signup.h"
 
 signup::signup(QWidget *parent) :

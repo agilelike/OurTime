@@ -2,16 +2,6 @@
 #define JOURNAL_H
 
 #include <QDialog>
-#include <QString>
-
-//struct pSchedule{
-//    int scheduleID;
-//    QString scheduleName;
-//    QString date;
-//    QString startTime;
-//    QString endTime;
-//    int userID;
-//}pSche;
 
 namespace Ui {
 class journal;
@@ -26,22 +16,20 @@ public:
     ~journal();
 
 private slots:
+    void on_toolButton_clicked();
 
-    void on_reduceYear_clicked();
+    void on_toolButton_2_clicked();
 
-    void on_increaseYear_clicked();
+    void on_toolButton_4_clicked();
 
-    void on_reduceMonth_clicked();
+    void on_toolButton_3_clicked();
 
-    void on_increaseMonth_clicked();
+    void on_toolButton_6_clicked();
 
-    void on_reduceDay_clicked();
-
-    void on_increaseDay_clicked();
+    void on_toolButton_5_clicked();
 
 private:
     Ui::journal *ui;
-    void getpSchedule();
 };
 
 #endif // JOURNAL_H

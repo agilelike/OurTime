@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_journal_t {
     QByteArrayData data[8];
-    char stringdata0[147];
+    char stringdata0[151];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,19 +32,19 @@ struct qt_meta_stringdata_journal_t {
 static const qt_meta_stringdata_journal_t qt_meta_stringdata_journal = {
     {
 QT_MOC_LITERAL(0, 0, 7), // "journal"
-QT_MOC_LITERAL(1, 8, 21), // "on_reduceYear_clicked"
+QT_MOC_LITERAL(1, 8, 21), // "on_toolButton_clicked"
 QT_MOC_LITERAL(2, 30, 0), // ""
-QT_MOC_LITERAL(3, 31, 23), // "on_increaseYear_clicked"
-QT_MOC_LITERAL(4, 55, 22), // "on_reduceMonth_clicked"
-QT_MOC_LITERAL(5, 78, 24), // "on_increaseMonth_clicked"
-QT_MOC_LITERAL(6, 103, 20), // "on_reduceDay_clicked"
-QT_MOC_LITERAL(7, 124, 22) // "on_increaseDay_clicked"
+QT_MOC_LITERAL(3, 31, 23), // "on_toolButton_2_clicked"
+QT_MOC_LITERAL(4, 55, 23), // "on_toolButton_4_clicked"
+QT_MOC_LITERAL(5, 79, 23), // "on_toolButton_3_clicked"
+QT_MOC_LITERAL(6, 103, 23), // "on_toolButton_6_clicked"
+QT_MOC_LITERAL(7, 127, 23) // "on_toolButton_5_clicked"
 
     },
-    "journal\0on_reduceYear_clicked\0\0"
-    "on_increaseYear_clicked\0on_reduceMonth_clicked\0"
-    "on_increaseMonth_clicked\0on_reduceDay_clicked\0"
-    "on_increaseDay_clicked"
+    "journal\0on_toolButton_clicked\0\0"
+    "on_toolButton_2_clicked\0on_toolButton_4_clicked\0"
+    "on_toolButton_3_clicked\0on_toolButton_6_clicked\0"
+    "on_toolButton_5_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -86,12 +86,12 @@ void journal::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         journal *_t = static_cast<journal *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_reduceYear_clicked(); break;
-        case 1: _t->on_increaseYear_clicked(); break;
-        case 2: _t->on_reduceMonth_clicked(); break;
-        case 3: _t->on_increaseMonth_clicked(); break;
-        case 4: _t->on_reduceDay_clicked(); break;
-        case 5: _t->on_increaseDay_clicked(); break;
+        case 0: _t->on_toolButton_clicked(); break;
+        case 1: _t->on_toolButton_2_clicked(); break;
+        case 2: _t->on_toolButton_4_clicked(); break;
+        case 3: _t->on_toolButton_3_clicked(); break;
+        case 4: _t->on_toolButton_6_clicked(); break;
+        case 5: _t->on_toolButton_5_clicked(); break;
         default: ;
         }
     }
