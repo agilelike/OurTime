@@ -1,4 +1,4 @@
-#include "personaldetails.h"
+﻿#include "personaldetails.h"
 #include "ui_personaldetails.h"
 #include <QDebug>
 
