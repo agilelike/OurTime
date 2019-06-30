@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "desktop.h"
 #include <QApplication>
 #include"login.h"
@@ -17,5 +17,6 @@ int main(int argc, char *argv[])
     if(desktopHwnd) SetParent((HWND)w.winId(), desktopHwnd);
     w.show();
     //L.show();
+
     return a.exec();
 }

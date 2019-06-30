@@ -507,6 +507,19 @@
     <string>17:00~18:00   code interface</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="start_tomato">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>10</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>番茄</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

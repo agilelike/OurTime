@@ -46,6 +46,7 @@ public:
     QLabel *label_9;
     QLabel *label_13;
     QLabel *label_10;
+    QPushButton *start_tomato;
 
     void setupUi(QWidget *Desktop)
     {
@@ -166,6 +167,9 @@ public:
         label_10->setGeometry(QRect(20, 340, 410, 20));
         label_10->setFont(font);
         label_10->setStyleSheet(QStringLiteral("color: rgb(85, 255, 127);"));
+        start_tomato = new QPushButton(Desktop);
+        start_tomato->setObjectName(QStringLiteral("start_tomato"));
+        start_tomato->setGeometry(QRect(380, 10, 31, 31));
 
         retranslateUi(Desktop);
 
@@ -198,6 +202,7 @@ public:
         label_9->setText(QApplication::translate("Desktop", "15:30~17:00   computer network", Q_NULLPTR));
         label_13->setText(QApplication::translate("Desktop", "20:00~21:30  code interface", Q_NULLPTR));
         label_10->setText(QApplication::translate("Desktop", "17:00~18:00   code interface", Q_NULLPTR));
+        start_tomato->setText(QApplication::translate("Desktop", "\347\225\252\350\214\204", Q_NULLPTR));
     } // retranslateUi
 
 };
