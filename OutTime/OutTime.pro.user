@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 4.2.1, 2019-07-01T16:40:49. -->
+=======
+<!-- Written by QtCreator 4.2.1, 2019-07-01T01:30:56. -->
+>>>>>>> parent of 65cfa15... 4.0
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{282aa00a-0799-471e-93eb-469366846f00}</value>
+  <value type="QByteArray">{9ad2d04b-ad99-4b2d-abcb-03e8a4e760d0}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
