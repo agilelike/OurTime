@@ -2,6 +2,7 @@
 #define TEAMINFO_H
 
 #include <QWidget>
+#include"message.h"
 
 namespace Ui {
 class teaminfo;
@@ -14,7 +15,12 @@ class teaminfo : public QWidget
 public:
     explicit teaminfo(QWidget *parent = 0);
     ~teaminfo();
-
+    int findID(QString username);
+    QString findname(int userID);
+    void judge();
+    void update();
+    void showmessage();
+    Message readMessage();
 private slots:
     void on_pushButton_clicked();
 
