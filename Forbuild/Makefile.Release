@@ -313,6 +313,9 @@ release/moc_mainwindow.cpp: ../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QString \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../OutTime/personaldetails.h \
 		../OutTime/information.h \
 		../OutTime/BaseWindow.h \
@@ -438,6 +441,9 @@ release/moc_journal.cpp: ../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QD
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtouchdevice.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QString \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../OutTime/journal.h \
 		release/moc_predefs.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/bin/moc.exe
@@ -1881,6 +1887,9 @@ release/main.o: ../OutTime/main.cpp ../OutTime/mainwindow.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QString \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../OutTime/personaldetails.h \
 		../OutTime/information.h \
 		../OutTime/BaseWindow.h \
@@ -2027,6 +2036,9 @@ release/mainwindow.o: ../OutTime/mainwindow.cpp ../OutTime/mainwindow.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QString \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../OutTime/personaldetails.h \
 		../OutTime/information.h \
 		../OutTime/BaseWindow.h \
@@ -2183,6 +2195,9 @@ release/journal.o: ../OutTime/journal.cpp ../OutTime/journal.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtouchdevice.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QString \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		ui_journal.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QVariant \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QAction \
@@ -2234,15 +2249,14 @@ release/journal.o: ../OutTime/journal.cpp ../OutTime/journal.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QToolButton \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qtoolbutton.h \
-		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlDatabase \
-		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
-		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlError \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqlerror.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QtDebug \
-		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QDebug
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QDebug \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QDateTime \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qdatetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\journal.o ..\OutTime\journal.cpp
 
 release/personaldetails.o: ../OutTime/personaldetails.cpp ../OutTime/personaldetails.h \
@@ -3740,6 +3754,9 @@ release/desktop.o: ../OutTime/desktop.cpp ../OutTime/desktop.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qmainwindow.h \
 		../OutTime/journal.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/QList \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../OutTime/personaldetails.h \
 		../OutTime/information.h \
 		../OutTime/BaseWindow.h \
