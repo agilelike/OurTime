@@ -50,7 +50,8 @@ HEADERS  += mainwindow.h \
     timetable.h \
     edittable.h \
     desktop.h \
-    edittable2.h
+    edittable2.h \
+    pschedule.h
 
 FORMS    += mainwindow.ui \
     journal.ui \

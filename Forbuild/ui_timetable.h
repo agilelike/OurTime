@@ -18,7 +18,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -70,8 +69,6 @@ public:
     QLabel *label_25;
     QLabel *label_26;
     QLabel *label_27;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
 
     void setupUi(QWidget *TimeTable)
     {
@@ -260,12 +257,6 @@ public:
         label_27->setObjectName(QStringLiteral("label_27"));
         label_27->setGeometry(QRect(780, 40, 41, 16));
         label_27->setAlignment(Qt::AlignCenter);
-        verticalLayoutWidget = new QWidget(TimeTable);
-        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(280, 70, 81, 391));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
 
         retranslateUi(TimeTable);
 
