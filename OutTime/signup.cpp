@@ -38,7 +38,7 @@ void signup::on_pushButton_clicked()
     str1 = ui->lineEdit->text();
     str2 = ui->lineEdit_2->text();
     str3 = ui->lineEdit_3->text();
-    if(!str2.isNull() && !str3.isNull() && str2 == str3){
+    if(str2.isNull() && str3.isNull() && str2 == str3){
         ui->label_5->hide();
         QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 

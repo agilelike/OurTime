@@ -64,8 +64,8 @@
     <rect>
      <x>80</x>
      <y>130</y>
-     <width>31</width>
-     <height>31</height>
+     <width>51</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -80,8 +80,8 @@
     <rect>
      <x>80</x>
      <y>200</y>
-     <width>31</width>
-     <height>31</height>
+     <width>51</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
