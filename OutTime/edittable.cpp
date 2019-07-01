@@ -22,5 +22,26 @@ void editTable::initTitleBar()
 }
 void editTable::makeEdit()
 {
+    ui->dateEdit->setDate(QDate(2019,1,1));
+    ui->lineEdit_2->clear();
+    ui->timeEdit->setTime(QTime(8,0));
+    ui->timeEdit_2->setTime(QTime(8,0));
+    ui->checkBox->setChecked(false);
     this->show();
+}
+
+void editTable::on_pushButton_clicked()
+{
+    QDate date = ui->dateEdit->date();
+    QString content = ui->lineEdit_2->text();
+    QTime bt = ui->timeEdit->time();
+    QTime et = ui->timeEdit_2->time();
+    bool checked = ui->checkBox->isChecked();
+    emit passcontent(date,content,bt,et,checked);
+    this->hide();
+}
+
+void editTable::on_pushButton_2_clicked()
+{
+    this->hide();
 }

@@ -19,10 +19,21 @@ private slots:
     void on_commandLinkButton_clicked();
     void on_commandLinkButton_2_clicked();
 
+    void on_pushButton_2_clicked();
+    void getcontent1(QDate date,QString content,QTime bt,QTime et,bool checked);
+
 private:
     Ui::TimeTable *ui;
     editTable *et;
     edittable2 *et2;
+    QList<QPushButton *>btn1;
+    QList<QPushButton *>btn2;
+    QList<QPushButton *>btn3;
+    QList<QPushButton *>btn4;
+    QList<QPushButton *>btn5;
+    QList<QPushButton *>btn6;
+    QList<QPushButton *>btn7;
+
 };
 
 #endif // TIMETABLE_H

@@ -14,9 +14,11 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCommandLinkButton>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -24,7 +26,6 @@ QT_BEGIN_NAMESPACE
 class Ui_TimeTable
 {
 public:
-    QLabel *label;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
@@ -51,16 +52,32 @@ public:
     QLabel *label_20;
     QLabel *label_21;
     QPushButton *pushButton_4;
+    QFrame *line;
+    QFrame *line_2;
+    QFrame *line_3;
+    QFrame *line_4;
+    QFrame *line_5;
+    QFrame *line_6;
+    QFrame *line_7;
+    QFrame *line_8;
+    QFrame *line_9;
+    QFrame *line_10;
+    QFrame *line_11;
+    QLabel *label;
+    QLabel *label_22;
+    QLabel *label_23;
+    QLabel *label_24;
+    QLabel *label_25;
+    QLabel *label_26;
+    QLabel *label_27;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout;
 
     void setupUi(QWidget *TimeTable)
     {
         if (TimeTable->objectName().isEmpty())
             TimeTable->setObjectName(QStringLiteral("TimeTable"));
         TimeTable->resize(1200, 480);
-        label = new QLabel(TimeTable);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(290, 20, 551, 421));
-        label->setStyleSheet(QStringLiteral("border-image: url(:/image/personaltable.png);"));
         pushButton = new QPushButton(TimeTable);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(130, 310, 93, 28));
@@ -79,7 +96,7 @@ public:
         label_2 = new QLabel(TimeTable);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(880, 380, 20, 40));
-        label_2->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 255);"));
+        label_2->setStyleSheet(QStringLiteral("background-color: rgb(0, 85, 255);"));
         label_3 = new QLabel(TimeTable);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(940, 420, 45, 20));
@@ -160,6 +177,95 @@ public:
         pushButton_4 = new QPushButton(TimeTable);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(130, 260, 93, 28));
+        line = new QFrame(TimeTable);
+        line->setObjectName(QStringLiteral("line"));
+        line->setGeometry(QRect(280, 20, 3, 440));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
+        line_2 = new QFrame(TimeTable);
+        line_2->setObjectName(QStringLiteral("line_2"));
+        line_2->setGeometry(QRect(360, 20, 3, 440));
+        line_2->setFrameShape(QFrame::VLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+        line_3 = new QFrame(TimeTable);
+        line_3->setObjectName(QStringLiteral("line_3"));
+        line_3->setGeometry(QRect(440, 20, 3, 440));
+        line_3->setFrameShape(QFrame::VLine);
+        line_3->setFrameShadow(QFrame::Sunken);
+        line_4 = new QFrame(TimeTable);
+        line_4->setObjectName(QStringLiteral("line_4"));
+        line_4->setGeometry(QRect(520, 20, 3, 440));
+        line_4->setFrameShape(QFrame::VLine);
+        line_4->setFrameShadow(QFrame::Sunken);
+        line_5 = new QFrame(TimeTable);
+        line_5->setObjectName(QStringLiteral("line_5"));
+        line_5->setGeometry(QRect(600, 20, 3, 440));
+        line_5->setFrameShape(QFrame::VLine);
+        line_5->setFrameShadow(QFrame::Sunken);
+        line_6 = new QFrame(TimeTable);
+        line_6->setObjectName(QStringLiteral("line_6"));
+        line_6->setGeometry(QRect(680, 20, 3, 440));
+        line_6->setFrameShape(QFrame::VLine);
+        line_6->setFrameShadow(QFrame::Sunken);
+        line_7 = new QFrame(TimeTable);
+        line_7->setObjectName(QStringLiteral("line_7"));
+        line_7->setGeometry(QRect(760, 20, 3, 440));
+        line_7->setFrameShape(QFrame::VLine);
+        line_7->setFrameShadow(QFrame::Sunken);
+        line_8 = new QFrame(TimeTable);
+        line_8->setObjectName(QStringLiteral("line_8"));
+        line_8->setGeometry(QRect(840, 20, 3, 440));
+        line_8->setFrameShape(QFrame::VLine);
+        line_8->setFrameShadow(QFrame::Sunken);
+        line_9 = new QFrame(TimeTable);
+        line_9->setObjectName(QStringLiteral("line_9"));
+        line_9->setGeometry(QRect(280, 20, 561, 3));
+        line_9->setFrameShape(QFrame::HLine);
+        line_9->setFrameShadow(QFrame::Sunken);
+        line_10 = new QFrame(TimeTable);
+        line_10->setObjectName(QStringLiteral("line_10"));
+        line_10->setGeometry(QRect(280, 460, 561, 3));
+        line_10->setFrameShape(QFrame::HLine);
+        line_10->setFrameShadow(QFrame::Sunken);
+        line_11 = new QFrame(TimeTable);
+        line_11->setObjectName(QStringLiteral("line_11"));
+        line_11->setGeometry(QRect(280, 70, 561, 3));
+        line_11->setFrameShape(QFrame::HLine);
+        line_11->setFrameShadow(QFrame::Sunken);
+        label = new QLabel(TimeTable);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(300, 40, 41, 16));
+        label->setAlignment(Qt::AlignCenter);
+        label_22 = new QLabel(TimeTable);
+        label_22->setObjectName(QStringLiteral("label_22"));
+        label_22->setGeometry(QRect(380, 40, 41, 16));
+        label_22->setAlignment(Qt::AlignCenter);
+        label_23 = new QLabel(TimeTable);
+        label_23->setObjectName(QStringLiteral("label_23"));
+        label_23->setGeometry(QRect(460, 40, 41, 16));
+        label_23->setAlignment(Qt::AlignCenter);
+        label_24 = new QLabel(TimeTable);
+        label_24->setObjectName(QStringLiteral("label_24"));
+        label_24->setGeometry(QRect(540, 40, 41, 16));
+        label_24->setAlignment(Qt::AlignCenter);
+        label_25 = new QLabel(TimeTable);
+        label_25->setObjectName(QStringLiteral("label_25"));
+        label_25->setGeometry(QRect(620, 40, 41, 16));
+        label_25->setAlignment(Qt::AlignCenter);
+        label_26 = new QLabel(TimeTable);
+        label_26->setObjectName(QStringLiteral("label_26"));
+        label_26->setGeometry(QRect(700, 40, 41, 16));
+        label_26->setAlignment(Qt::AlignCenter);
+        label_27 = new QLabel(TimeTable);
+        label_27->setObjectName(QStringLiteral("label_27"));
+        label_27->setGeometry(QRect(780, 40, 41, 16));
+        label_27->setAlignment(Qt::AlignCenter);
+        verticalLayoutWidget = new QWidget(TimeTable);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(280, 70, 81, 391));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
 
         retranslateUi(TimeTable);
 
@@ -169,7 +275,6 @@ public:
     void retranslateUi(QWidget *TimeTable)
     {
         TimeTable->setWindowTitle(QApplication::translate("TimeTable", "Form", Q_NULLPTR));
-        label->setText(QString());
         pushButton->setText(QApplication::translate("TimeTable", "\346\267\273\345\212\240\346\227\245\347\250\213", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("TimeTable", "\347\274\226\350\276\221\346\227\245\347\250\213", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("TimeTable", "\345\210\240\351\231\244\346\227\245\347\250\213", Q_NULLPTR));
@@ -196,6 +301,13 @@ public:
         label_20->setText(QApplication::translate("TimeTable", "\345\233\242\351\230\237\344\273\273\345\212\241", Q_NULLPTR));
         label_21->setText(QString());
         pushButton_4->setText(QApplication::translate("TimeTable", "\346\267\273\345\212\240\344\273\273\345\212\241", Q_NULLPTR));
+        label->setText(QApplication::translate("TimeTable", "\345\221\250\344\270\200", Q_NULLPTR));
+        label_22->setText(QApplication::translate("TimeTable", "\345\221\250\344\272\214", Q_NULLPTR));
+        label_23->setText(QApplication::translate("TimeTable", "\345\221\250\344\270\211", Q_NULLPTR));
+        label_24->setText(QApplication::translate("TimeTable", "\345\221\250\345\233\233", Q_NULLPTR));
+        label_25->setText(QApplication::translate("TimeTable", "\345\221\250\344\272\224", Q_NULLPTR));
+        label_26->setText(QApplication::translate("TimeTable", "\345\221\250\345\205\255", Q_NULLPTR));
+        label_27->setText(QApplication::translate("TimeTable", "\345\221\250\346\227\245", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -10,35 +10,6 @@
 #include <QSqlQuery>
 #include <QTextCodec>
 #include <QSqlError>
-int ReturnWeekDay( unsigned int iYear, unsigned int iMonth, unsigned int iDay )
-{
-    int iWeek = 0;
-    unsigned int y = 0, c = 0, m = 0, d = 0;
-
-    if ( iMonth == 1 || iMonth == 2 )
-    {
-        c = ( iYear - 1 ) / 100;
-        y = ( iYear - 1 ) % 100;
-        m = iMonth + 12;
-        d = iDay;
-    }
-    else
-    {
-        c = iYear / 100;
-        y = iYear % 100;
-        m = iMonth;
-        d = iDay;
-    }
-
-    iWeek = y + y / 4 + c / 4 - 2 * c + 26 * ( m + 1 ) / 10 + d - 1;    //蔡勒公式
-    iWeek = iWeek >= 0 ? ( iWeek % 7 ) : ( iWeek % 7 + 7 );    //iWeek为负时取模
-    if ( iWeek == 0 )    //星期日不作为一周的第一天
-    {
-        iWeek = 7;
-    }
-
-    return iWeek;
-}
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

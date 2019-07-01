@@ -75,12 +75,16 @@ public:
         timeEdit = new QTimeEdit(editTable);
         timeEdit->setObjectName(QStringLiteral("timeEdit"));
         timeEdit->setGeometry(QRect(140, 130, 118, 22));
+        timeEdit->setMaximumTime(QTime(21, 0, 0));
+        timeEdit->setMinimumTime(QTime(8, 0, 0));
         dateEdit = new QDateEdit(editTable);
         dateEdit->setObjectName(QStringLiteral("dateEdit"));
         dateEdit->setGeometry(QRect(140, 70, 110, 22));
         timeEdit_2 = new QTimeEdit(editTable);
         timeEdit_2->setObjectName(QStringLiteral("timeEdit_2"));
         timeEdit_2->setGeometry(QRect(140, 160, 118, 22));
+        timeEdit_2->setMaximumTime(QTime(21, 0, 0));
+        timeEdit_2->setMinimumTime(QTime(8, 0, 0));
 
         retranslateUi(editTable);
 
