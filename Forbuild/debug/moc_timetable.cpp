@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_TimeTable_t {
-    QByteArrayData data[4];
-    char stringdata0[71];
+    QByteArrayData data[12];
+    char stringdata0[145];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,11 +34,21 @@ static const qt_meta_stringdata_TimeTable_t qt_meta_stringdata_TimeTable = {
 QT_MOC_LITERAL(0, 0, 9), // "TimeTable"
 QT_MOC_LITERAL(1, 10, 28), // "on_commandLinkButton_clicked"
 QT_MOC_LITERAL(2, 39, 0), // ""
-QT_MOC_LITERAL(3, 40, 30) // "on_commandLinkButton_2_clicked"
+QT_MOC_LITERAL(3, 40, 30), // "on_commandLinkButton_2_clicked"
+QT_MOC_LITERAL(4, 71, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(5, 95, 11), // "getcontent1"
+QT_MOC_LITERAL(6, 107, 4), // "date"
+QT_MOC_LITERAL(7, 112, 7), // "content"
+QT_MOC_LITERAL(8, 120, 2), // "bt"
+QT_MOC_LITERAL(9, 123, 2), // "et"
+QT_MOC_LITERAL(10, 126, 7), // "checked"
+QT_MOC_LITERAL(11, 134, 10) // "clickevent"
 
     },
     "TimeTable\0on_commandLinkButton_clicked\0"
-    "\0on_commandLinkButton_2_clicked"
+    "\0on_commandLinkButton_2_clicked\0"
+    "on_pushButton_2_clicked\0getcontent1\0"
+    "date\0content\0bt\0et\0checked\0clickevent"
 };
 #undef QT_MOC_LITERAL
 
@@ -48,7 +58,7 @@ static const uint qt_meta_data_TimeTable[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,11 +66,17 @@ static const uint qt_meta_data_TimeTable[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x08 /* Private */,
-       3,    0,   25,    2, 0x08 /* Private */,
+       1,    0,   39,    2, 0x08 /* Private */,
+       3,    0,   40,    2, 0x08 /* Private */,
+       4,    0,   41,    2, 0x08 /* Private */,
+       5,    5,   42,    2, 0x08 /* Private */,
+      11,    0,   53,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QDate, QMetaType::QString, QMetaType::QTime, QMetaType::QTime, QMetaType::Bool,    6,    7,    8,    9,   10,
     QMetaType::Void,
 
        0        // eod
@@ -74,10 +90,12 @@ void TimeTable::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         switch (_id) {
         case 0: _t->on_commandLinkButton_clicked(); break;
         case 1: _t->on_commandLinkButton_2_clicked(); break;
+        case 2: _t->on_pushButton_2_clicked(); break;
+        case 3: _t->getcontent1((*reinterpret_cast< QDate(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QTime(*)>(_a[3])),(*reinterpret_cast< QTime(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5]))); break;
+        case 4: _t->clickevent(); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject TimeTable::staticMetaObject = {
@@ -105,13 +123,13 @@ int TimeTable::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 5)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 5;
     }
     return _id;
 }

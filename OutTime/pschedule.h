@@ -3,7 +3,7 @@
 #include<QList>
 #include<QDate>
 #include<QTime>
-#include<team.h>
+#include<user.h>
 class Schedule{
     QDate t;
     int state;//0为个人，1为团队，2为团队任务

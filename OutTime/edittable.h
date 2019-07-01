@@ -3,6 +3,9 @@
 
 #include <QWidget>
 #include <BaseWindow.h>
+#include <QDate>
+#include <QTime>
+
 namespace Ui {
 class editTable;
 }
@@ -16,6 +19,13 @@ public:
     ~editTable();
 public slots:
     void makeEdit();
+signals:
+    void passcontent(QDate date,QString content,QTime bt,QTime et,bool checked);
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::editTable *ui;
     void initTitleBar();
