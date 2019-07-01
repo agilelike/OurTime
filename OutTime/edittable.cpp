@@ -30,6 +30,7 @@ void editTable::makeEdit()
     this->show();
 }
 
+//点击显示页面添加日程
 void editTable::on_pushButton_clicked()
 {
 

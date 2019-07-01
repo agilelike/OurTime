@@ -45,7 +45,7 @@ TimeTable::TimeTable(QWidget *parent) :
     QTime b;
     int begin;
 
-    //初始化时就读取数据库，进行绘制
+    //初始化时就读取数据库，进行绘制,按理说应当读取本周的一周的数据
     for(int i=0;i<7;i++){
         for(int j=0;j<=2;j++){
             date = QDate(2019,7,i+1);
@@ -68,8 +68,10 @@ TimeTable::TimeTable(QWidget *parent) :
             {
                 btn[i][j]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
             }
+
             btn[i][j]->show();
             btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
+            //添加点击
             connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
 
         }
@@ -104,6 +106,8 @@ void TimeTable::on_commandLinkButton_2_clicked()
     ui->pushButton_4->show();
 }
 
+
+//未实现
 void TimeTable::on_pushButton_2_clicked()
 {
     // QPushButton *p = new QPushButton("aaa");
@@ -120,13 +124,16 @@ void TimeTable::on_pushButton_2_clicked()
 //        btn1[i]->show();
 //    }
 }
+
+//点击按钮后可以得到i，j的值，之后可以进行在右边显示
 void TimeTable::clickevent(){
     QPushButton *source=qobject_cast<QPushButton*>(sender());
     qDebug()<<source->objectName();
     QStringList list = source->objectName().split(".");
-    int a = list[0].toInt();
-    int b = list[1].toInt();
-    qDebug()<<a<<b;
+    int i = list[0].toInt();
+    int j = list[1].toInt();
+    qDebug()<<i<<j;
+    //下面是在调用数据库的东西然后在右边显示
 }
 
 void TimeTable::getcontent1(QDate date,QString content,QTime bt,QTime et,bool checked){
@@ -168,14 +175,7 @@ void TimeTable::getcontent1(QDate date,QString content,QTime bt,QTime et,bool ch
 
 
 
-
-
-
-
-    //打印一下结果
-    //qDebug()<<len<<begin;
-
-    //添加直接绘制
+    //添加直接绘制，以前的写法，不必要
 //    if(week==1){
 //        btn1<<new QPushButton(this);
 //        btn1[btn1.length()-1]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
