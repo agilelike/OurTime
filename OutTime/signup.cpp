@@ -67,7 +67,7 @@ void signup::on_pushButton_clicked()
         ui->lineEdit_3->clear();
         db.close();
         this->hide();
-        emit showLogin();
+        emit showID(id);
     }
     else{
         ui->label_5->show();

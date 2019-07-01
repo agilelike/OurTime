@@ -17,6 +17,7 @@ INPUT(
 ./release\pschedule.o
 ./release\team.o
 ./release\message.o
+./release\showid.o
 ./release\qrc_image.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o
@@ -32,4 +33,5 @@ INPUT(
 ./release\moc_edittable.o
 ./release\moc_desktop.o
 ./release\moc_createteam.o
+./release\moc_showid.o
 );

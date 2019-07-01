@@ -56,6 +56,8 @@ personalDetails::personalDetails(QWidget *parent) :
             ui->tableWidget->item(i,j)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     }
 
+
+
     image1 = QImage(220,150,QImage::Format_RGB32);
     QColor backColor = qRgb(255,255,255);
     image1.fill(backColor);
@@ -230,7 +232,7 @@ void personalDetails::PaintImage1()
     srand(time(NULL));
 
     //获得数据中最大值和最小值、平均数
-    int n=7;
+    int n=5;
     double sum=0;
     double ave=0;
     int max=0;
@@ -247,7 +249,7 @@ void personalDetails::PaintImage1()
     }
     ave=sum/n;//平均数
 
-    double kx=(double)width/n; //x轴的系数
+    double kx=(double)width/7; //x轴的系数
     double ky=(double)height/max;//y轴系数
     QPen pen,penPoint;
     pen.setColor(Qt::black);
@@ -289,7 +291,7 @@ void personalDetails::PaintImage1()
         painter.drawText(pointx+(i+0.65)*width/7,pointy+7,QString::number((int)((i+1)*((double)n/7))));
     }
     //y轴刻度线
-    double maxStep=(double)max/10;
+    double maxStep=(double)max/7;
     for(int i=0;i<7;i++)
     {
         painter.drawLine(pointx,pointy-(i+1)*height/7,
@@ -311,7 +313,7 @@ void personalDetails::PaintImage2()
     painter.drawLine(pointx,pointy-height,pointx,pointy);
 
     srand(time(NULL));
-    int n=7;
+    int n=5;
     double sum=0;
     double ave=0;
     int max=0;
@@ -327,7 +329,7 @@ void personalDetails::PaintImage2()
     }
     ave=sum/n;
 
-    double kx=(double)width/n;
+    double kx=(double)width/7;
     double ky=(double)height/max;
     QPen pen,penPoint;
     pen.setColor(Qt::black);
@@ -369,7 +371,7 @@ void personalDetails::PaintImage2()
         painter.drawText(pointx+(i+0.65)*width/7,pointy+7,QString::number((int)((i+1)*((double)n/7))));
     }
     //y轴刻度线
-    double maxStep=(double)max/10;
+    double maxStep=(double)max/7;
     for(int i=0;i<7;i++)
     {
         painter.drawLine(pointx,pointy-(i+1)*height/7,

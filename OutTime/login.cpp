@@ -42,8 +42,8 @@ void login::on_pushButton_clicked()
     QString str2 = ui->lineEdit_2->text();
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
-    db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
-    db.setDatabaseName("ourtime");       //要连接的数据库名
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
     db.setUserName("root");
     db.setPassword("CBBc116b.");
     db.setPort(3306);
@@ -51,7 +51,7 @@ void login::on_pushButton_clicked()
 
     QSqlQuery query(db);
     query.exec("SET NAMES 'GBK'");
-    QString str = QString("select userID from user where userName = '%1' and password = '%2'").arg(str1).arg(str2);
+    QString str = QString("select userID from user where userID = '%1' and password = '%2'").arg(str1.toInt()).arg(str2);
     query.exec(str);
     if(query.first()){
         emit showMainwindow();

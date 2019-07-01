@@ -118,7 +118,6 @@ void MainWindow::receiveShowMainwindow(){
     flag = 1;
     w_teaminfo->show();
     this->show();
-    user = new User();
 }
 
 information* MainWindow::getInformation(){
