@@ -7,12 +7,13 @@ User::User()
 }
 bool User::login(int id,QString pwd)
 {
+
     return 1;
 }
 
 void User::logout()
 {
-
+    state=0;
 }
 int User::getState()
 {
@@ -38,13 +39,19 @@ int User::getTeamid()
 {
     return teamid;
 }
-
-bool User::setTeamid(int)
+void User::setState(int _state)
 {
-    //数据库操作
+    state=_state;
 }
 
-bool User::setTeamState(int)
+bool User::setTeamid(int _id)
+{
+    //数据库操作
+
+    return 1;
+}
+
+bool User::setTeamState(int _state)
 {
     return 1;
 }

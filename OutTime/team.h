@@ -3,6 +3,7 @@
 #include <QList>
 #include <QString>
 #include <qpair>
+#include <QSqlQuery>
 class Team
 {
     int id;
