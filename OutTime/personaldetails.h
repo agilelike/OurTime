@@ -2,6 +2,8 @@
 #define PERSONALDETAILS_H
 
 #include <QDialog>
+#include<QPaintEvent>
+#include<QtGui>
 
 namespace Ui {
 class personalDetails;
@@ -16,6 +18,16 @@ public:
     int state = 0;
     void haveTeam(int state);
     ~personalDetails();
+    void PaintImage1();
+    void PaintImage2();
+
+
+protected:
+    void paintEvent(QPaintEvent *){
+        QPainter painter(this);
+        painter.drawImage(20,200,image1);
+        painter.drawImage(310,200,image2);
+    }
 
 private slots:
     void on_pushButton_3_clicked();
@@ -38,6 +50,8 @@ signals:
 
 private:
     Ui::personalDetails *ui;  
+    QImage image1;
+    QImage image2;
 };
 
 #endif // PERSONALDETAILS_H
