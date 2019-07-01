@@ -13,5 +13,5 @@ public:
     void updateTeam();//重新获取对应team信息
     void uploadTeam();
 };
-
+extern Team* team;
 #endif // TEAM_H

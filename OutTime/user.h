@@ -15,8 +15,9 @@ public:
     User();
     bool login(int id,QString pwd);
     void logout();
+    int getState();
     int getid();
-    int getName();
+    QString getName();
     int getTeamState();
     int getTeamid();
     bool setTeamid(int);
