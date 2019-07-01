@@ -13,6 +13,7 @@ INPUT(
 ./debug\edittable.o
 ./debug\desktop.o
 ./debug\tomatoclock.o
+./debug\dbOperation.o
 ./debug\qrc_image.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
