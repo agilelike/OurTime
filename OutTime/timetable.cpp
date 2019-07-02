@@ -2,6 +2,9 @@
 #include "ui_timetable.h"
 #include <QDebug>
 #include <QStringList>
+#include <QAction>
+#include <QMenu>
+
 //判断是周几函数
 int ReturnWeekDay(int iYear,int iMonth,int iDay )
 {
@@ -46,6 +49,7 @@ TimeTable::TimeTable(QWidget *parent) :
     int begin;
 
     //初始化时就读取数据库，进行绘制,按理说应当读取本周的一周的数据
+    //可以根据上面写的判断周几函数，得到今天是周几
     for(int i=0;i<7;i++){
         for(int j=0;j<=2;j++){
             date = QDate(2019,7,i+1);
@@ -73,9 +77,34 @@ TimeTable::TimeTable(QWidget *parent) :
             btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
             //添加点击
             connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
-
+            //按钮绑定右键编辑与删除操作
+            editAct[i]<<new QAction("编辑日程",btn[i][j]);
+            delAct[i]<<new QAction("删除日程",btn[i][j]);
+            btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
+            btn[i][j]->addAction(editAct[i][j]);
+            btn[i][j]->addAction(delAct[i][j]);
+            connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
+            connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
         }
     }
+
+
+ //   btn[0][0]->setContextMenuPolicy(Qt::CustomContextMenu);
+    //上下文菜单策略，右键点控件时会发送信号
+//    connect(btn[0][0],&QPushButton::customContextMenuRequested,[=](const QPoint &pos)
+//    {
+//        qDebug()<<pos;
+//        buttonmenu->exec(QCursor::pos());
+//    });
+//    connect(buttonact1, &QAction::triggered, [=]()
+//    {
+//        qDebug()<<"I'm btnFirstAction";
+//    });
+//    connect(buttonact2, &QAction::triggered, [=]()
+//    {
+//        qDebug()<<"I'm btnSecondAction";
+//    });
+
 
     ui->setupUi(this);
     setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
@@ -84,8 +113,11 @@ TimeTable::TimeTable(QWidget *parent) :
     connect(ui->pushButton,SIGNAL(clicked()),et1,SLOT(makeEdit()));
     et2 = new edittable2();
     connect(ui->pushButton_4,SIGNAL(clicked()),et2,SLOT(makeEdit()));
+    et3 = new edittable3();
+
     ui->pushButton_4->hide();
     connect(et1,SIGNAL(passcontent(QDate,QString,QTime,QTime,bool)),this,SLOT(getcontent1(QDate,QString,QTime,QTime,bool)));
+    connect(et3,SIGNAL(editContent(QDate,QString,QTime,QTime,bool)),this,SLOT(getcontent2(QDate,QString,QTime,QTime,bool)));
 
 }
 
@@ -107,7 +139,7 @@ void TimeTable::on_commandLinkButton_2_clicked()
 }
 
 
-//未实现
+//未实现，编辑和删除按钮可以不用了，最后直接删除两个按钮，都加到独自的右键菜单里了
 void TimeTable::on_pushButton_2_clicked()
 {
     // QPushButton *p = new QPushButton("aaa");
@@ -136,6 +168,7 @@ void TimeTable::clickevent(){
     //下面是在调用数据库的东西然后在右边显示
 }
 
+//从另一个页面点确定后传到该页面，对数据处理，写入数据库并重新绘制
 void TimeTable::getcontent1(QDate date,QString content,QTime bt,QTime et,bool checked){
     //得到周几
     int year = date.year();
@@ -260,4 +293,42 @@ void TimeTable::getcontent1(QDate date,QString content,QTime bt,QTime et,bool ch
 //        }
 //        btn7[btn7.length()-1]->show();
 //    }
+}
+
+//从编辑页面上得到数据，删除数据库，重新绘制
+void TimeTable::getcontent2(QDate date,QString content,QTime bt,QTime et,bool checked){
+    //在数据库里删除
+    //利用暂存的m,n(存的是i,j) 来删除数据库里的东西
+
+
+    //然后将得到的信息加入数据库，重新绘制
+}
+
+//编辑日程，右键点击编辑日程
+void TimeTable::editSchedule(){
+    QAction *source = qobject_cast<QAction*>(sender());
+    qDebug()<<source->parent()->objectName();
+    QStringList list = source->parent()->objectName().split(".");
+    m = list[0].toInt();
+    n = list[1].toInt();
+    qDebug()<<m<<n;
+
+    //得到i，j之后可以进行数据库操作，还该显示一个界面能够进行编辑,应当读取数据到这个界面，点确定后再修改数据库。
+    //读取数据库的内容给et3然后显示et3
+
+
+
+    et3->show();
+
+}
+//删除日程，右键点击删除日程
+void TimeTable::delSchedule(){
+    QAction *source = qobject_cast<QAction*>(sender());
+    qDebug()<<source->parent()->objectName();
+    QStringList list = source->parent()->objectName().split(".");
+    int i = list[0].toInt();
+    int j = list[1].toInt();
+    qDebug()<<i<<j;
+    //得到i，j之后可以进行数据库操作
+    //在数据库里删除，然后重绘页面
 }

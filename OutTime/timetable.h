@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <edittable.h>
 #include <edittable2.h>
+#include <edittable3.h>
 #include <pschedule.h>
 namespace Ui {
 class TimeTable;
@@ -22,15 +23,28 @@ private slots:
 
     void on_pushButton_2_clicked();
     void getcontent1(QDate date,QString content,QTime bt,QTime et,bool checked);
+    void getcontent2(QDate date,QString content,QTime bt,QTime et,bool checked);
 
     void clickevent();
+    void editSchedule();
+    void delSchedule();
 
 
 private:
     Ui::TimeTable *ui;
     editTable *et1;
     edittable2 *et2;
+    edittable3 *et3;
     QList<QPushButton *>btn[7];
+
+    //菜单与动作
+    QList<QAction *>editAct[7];
+    QList<QAction *>delAct[7];
+
+    //只能用该变量来暂存值
+    int m;
+    int n;
+
 //    QList<QPushButton *>btn1;
 //    QList<QPushButton *>btn2;
 //    QList<QPushButton *>btn3;

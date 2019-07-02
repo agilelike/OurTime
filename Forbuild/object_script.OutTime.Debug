@@ -18,6 +18,8 @@ INPUT(
 ./debug\team.o
 ./debug\message.o
 ./debug\edittable2.o
+./debug\edittable3.o
+./debug\pschedule.o
 ./debug\qrc_image.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
@@ -34,4 +36,5 @@ INPUT(
 ./debug\moc_desktop.o
 ./debug\moc_createteam.o
 ./debug\moc_edittable2.o
+./debug\moc_edittable3.o
 );
