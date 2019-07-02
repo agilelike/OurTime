@@ -21,9 +21,9 @@ private slots:
     void on_commandLinkButton_clicked();
     void on_commandLinkButton_2_clicked();
 
-    void on_pushButton_2_clicked();
-    void getcontent1(QDate date,QString content,QTime bt,QTime et,bool checked);
-    void getcontent2(QDate date,QString content,QTime bt,QTime et,bool checked);
+
+    void getcontent1(Schedule sche);
+    void getcontent2(Schedule sche);
 
     void clickevent();
     void editSchedule();
@@ -44,14 +44,6 @@ private:
     //只能用该变量来暂存值
     int m;
     int n;
-
-//    QList<QPushButton *>btn1;
-//    QList<QPushButton *>btn2;
-//    QList<QPushButton *>btn3;
-//    QList<QPushButton *>btn4;
-//    QList<QPushButton *>btn5;
-//    QList<QPushButton *>btn6;
-//    QList<QPushButton *>btn7;
 
 };
 

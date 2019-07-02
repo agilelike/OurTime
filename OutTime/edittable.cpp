@@ -1,6 +1,7 @@
 #include "edittable.h"
 #include "ui_edittable.h"
 #include <QMessageBox>
+
 editTable::editTable(QWidget *parent) :
     BaseWindow(parent),
     ui(new Ui::editTable)
@@ -33,23 +34,23 @@ void editTable::makeEdit()
 //点击显示页面添加日程
 void editTable::on_pushButton_clicked()
 {
-
-    QDate date = ui->dateEdit->date();
-    QString content = ui->lineEdit_2->text();
-    QTime bt = ui->timeEdit->time();
-    QTime et = ui->timeEdit_2->time();
-    bool checked = ui->checkBox->isChecked();
+    Schedule s;
+    s.t = ui->dateEdit->date();
+    s.name = ui->lineEdit_2->text();
+    s.start = ui->timeEdit->time();
+    s.end = ui->timeEdit_2->time();
+    s.isGrabed = ui->checkBox->isChecked();
 
     //容错控制
-    int len =bt.secsTo(et)/60;
+    int len = s.start.secsTo(s.end)/60;
     if(len<30){
         QMessageBox::about(this,tr("提示"),tr("时间必须在30分钟以上"));
     }
-    if(content==""){
+    if(s.name==""){
         QMessageBox::about(this,tr("提示"),tr("事件名不能为空"));
     }
-    if(len>=30&&content!=""){
-        emit passcontent(date,content,bt,et,checked);
+    if(len>=30&&s.name!=""){
+        emit passcontent(s);
         this->hide();
     }
 }

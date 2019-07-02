@@ -5,6 +5,7 @@
 #include <BaseWindow.h>
 #include <QDate>
 #include <QTime>
+#include <pschedule.h>
 
 namespace Ui {
 class editTable;
@@ -20,7 +21,7 @@ public:
 public slots:
     void makeEdit();
 signals:
-    void passcontent(QDate date,QString content,QTime bt,QTime et,bool checked);
+    void passcontent(Schedule sche);
 private slots:
     void on_pushButton_clicked();
 

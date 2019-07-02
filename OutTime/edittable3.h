@@ -5,7 +5,7 @@
 #include <BaseWindow.h>
 #include <QDate>
 #include <QTime>
-
+#include <pschedule.h>
 namespace Ui {
 class edittable3;
 }
@@ -18,7 +18,7 @@ public:
     explicit edittable3(QWidget *parent = 0);
     ~edittable3();
 signals:
-    void editContent(QDate date,QString content,QTime bt,QTime et,bool checked);
+    void editContent(Schedule sche);
 private slots:
     void on_pushButton_clicked();
 

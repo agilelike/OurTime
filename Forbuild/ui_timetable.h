@@ -26,8 +26,6 @@ class Ui_TimeTable
 {
 public:
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
     QCommandLinkButton *commandLinkButton;
     QCommandLinkButton *commandLinkButton_2;
     QLabel *label_2;
@@ -77,13 +75,7 @@ public:
         TimeTable->resize(1200, 480);
         pushButton = new QPushButton(TimeTable);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(130, 310, 93, 28));
-        pushButton_2 = new QPushButton(TimeTable);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(130, 360, 93, 28));
-        pushButton_3 = new QPushButton(TimeTable);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(130, 410, 93, 28));
+        pushButton->setGeometry(QRect(130, 300, 93, 28));
         commandLinkButton = new QCommandLinkButton(TimeTable);
         commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
         commandLinkButton->setGeometry(QRect(50, 40, 187, 41));
@@ -173,7 +165,7 @@ public:
         label_21->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 127);"));
         pushButton_4 = new QPushButton(TimeTable);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(130, 260, 93, 28));
+        pushButton_4->setGeometry(QRect(130, 210, 93, 28));
         line = new QFrame(TimeTable);
         line->setObjectName(QStringLiteral("line"));
         line->setGeometry(QRect(280, 20, 3, 440));
@@ -267,8 +259,6 @@ public:
     {
         TimeTable->setWindowTitle(QApplication::translate("TimeTable", "Form", Q_NULLPTR));
         pushButton->setText(QApplication::translate("TimeTable", "\346\267\273\345\212\240\346\227\245\347\250\213", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("TimeTable", "\347\274\226\350\276\221\346\227\245\347\250\213", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("TimeTable", "\345\210\240\351\231\244\346\227\245\347\250\213", Q_NULLPTR));
         commandLinkButton->setText(QApplication::translate("TimeTable", "\344\270\252\344\272\272\346\227\245\347\250\213\350\241\250", Q_NULLPTR));
         commandLinkButton_2->setText(QApplication::translate("TimeTable", "\345\233\242\351\230\237\346\227\245\347\250\213\350\241\250", Q_NULLPTR));
         label_2->setText(QString());
