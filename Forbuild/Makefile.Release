@@ -328,6 +328,8 @@ release/moc_mainwindow.cpp: ../../../Qt/5.8/mingw53_32/include/QtWidgets/QWidget
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/pschedule.h \
+		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		../../../Git/OurTime/OutTime/mainwindow.h \
 		release/moc_predefs.h \
 		../../../Qt/5.8/mingw53_32/bin/moc.exe
@@ -1359,6 +1361,8 @@ release/moc_timetable.cpp: ../../../Qt/5.8/mingw53_32/include/QtWidgets/QWidget 
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/pschedule.h \
+		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		../../../Git/OurTime/OutTime/timetable.h \
 		release/moc_predefs.h \
 		../../../Qt/5.8/mingw53_32/bin/moc.exe
@@ -1912,6 +1916,8 @@ release/main.o: ../../../Git/OurTime/OutTime/main.cpp ../../../Git/OurTime/OutTi
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/pschedule.h \
+		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		../../../Git/OurTime/OutTime/desktop.h \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
@@ -2069,6 +2075,8 @@ release/mainwindow.o: ../../../Git/OurTime/OutTime/mainwindow.cpp ../../../Git/O
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/pschedule.h \
+		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		ui_mainwindow.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QVariant \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/QAction \
@@ -3411,6 +3419,8 @@ release/timetable.o: ../../../Git/OurTime/OutTime/timetable.cpp ../../../Git/Our
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/pschedule.h \
+		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		ui_timetable.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QVariant \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/QAction \
@@ -3444,7 +3454,8 @@ release/timetable.o: ../../../Git/OurTime/OutTime/timetable.cpp ../../../Git/Our
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/qstyle.h \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/qtabbar.h \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/qrubberband.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/QDebug
+		../../../Qt/5.8/mingw53_32/include/QtCore/QDebug \
+		../../../Qt/5.8/mingw53_32/include/QtCore/QStringList
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\timetable.o ..\..\..\Git\OurTime\OutTime\timetable.cpp
 
 release/edittable.o: ../../../Git/OurTime/OutTime/edittable.cpp ../../../Git/OurTime/OutTime/edittable.h \
@@ -3607,7 +3618,10 @@ release/edittable.o: ../../../Git/OurTime/OutTime/edittable.cpp ../../../Git/Our
 		../../../Qt/5.8/mingw53_32/include/QtGui/qtextformat.h \
 		../../../Qt/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../../Qt/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../../Qt/5.8/mingw53_32/include/QtWidgets/QTimeEdit
+		../../../Qt/5.8/mingw53_32/include/QtWidgets/QTimeEdit \
+		../../../Qt/5.8/mingw53_32/include/QtWidgets/QMessageBox \
+		../../../Qt/5.8/mingw53_32/include/QtWidgets/qmessagebox.h \
+		../../../Qt/5.8/mingw53_32/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\edittable.o ..\..\..\Git\OurTime\OutTime\edittable.cpp
 
 release/desktop.o: ../../../Git/OurTime/OutTime/desktop.cpp ../../../Git/OurTime/OutTime/desktop.h \
@@ -3781,6 +3795,8 @@ release/desktop.o: ../../../Git/OurTime/OutTime/desktop.cpp ../../../Git/OurTime
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/pschedule.h \
+		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QString \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDateTime
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\desktop.o ..\..\..\Git\OurTime\OutTime\desktop.cpp

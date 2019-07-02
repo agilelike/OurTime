@@ -2,6 +2,9 @@
 #include "ui_timetable.h"
 #include <QDebug>
 #include <QStringList>
+#include <QAction>
+#include <QMenu>
+
 //判断是周几函数
 int ReturnWeekDay(int iYear,int iMonth,int iDay )
 {
@@ -73,9 +76,34 @@ TimeTable::TimeTable(QWidget *parent) :
             btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
             //添加点击
             connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
-
+            //按钮绑定右键编辑与删除操作
+            editAct[i]<<new QAction("编辑日程",btn[i][j]);
+            delAct[i]<<new QAction("删除日程",btn[i][j]);
+            btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
+            btn[i][j]->addAction(editAct[i][j]);
+            btn[i][j]->addAction(delAct[i][j]);
+            connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
+            connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
         }
     }
+
+
+ //   btn[0][0]->setContextMenuPolicy(Qt::CustomContextMenu);
+    //上下文菜单策略，右键点控件时会发送信号
+//    connect(btn[0][0],&QPushButton::customContextMenuRequested,[=](const QPoint &pos)
+//    {
+//        qDebug()<<pos;
+//        buttonmenu->exec(QCursor::pos());
+//    });
+//    connect(buttonact1, &QAction::triggered, [=]()
+//    {
+//        qDebug()<<"I'm btnFirstAction";
+//    });
+//    connect(buttonact2, &QAction::triggered, [=]()
+//    {
+//        qDebug()<<"I'm btnSecondAction";
+//    });
+
 
     ui->setupUi(this);
     setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
@@ -260,4 +288,12 @@ void TimeTable::getcontent1(QDate date,QString content,QTime bt,QTime et,bool ch
 //        }
 //        btn7[btn7.length()-1]->show();
 //    }
+}
+void TimeTable::editSchedule(){
+    QAction *source = qobject_cast<QAction*>(sender());
+    qDebug()<<source->parent()->objectName();
+}
+void TimeTable::delSchedule(){
+    QAction *source = qobject_cast<QAction*>(sender());
+    qDebug()<<source->parent()->objectName();
 }

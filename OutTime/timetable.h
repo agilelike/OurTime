@@ -24,6 +24,8 @@ private slots:
     void getcontent1(QDate date,QString content,QTime bt,QTime et,bool checked);
 
     void clickevent();
+    void editSchedule();
+    void delSchedule();
 
 
 private:
@@ -31,6 +33,11 @@ private:
     editTable *et1;
     edittable2 *et2;
     QList<QPushButton *>btn[7];
+
+    //菜单与动作
+    QList<QAction *>editAct[7];
+    QList<QAction *>delAct[7];
+
 //    QList<QPushButton *>btn1;
 //    QList<QPushButton *>btn2;
 //    QList<QPushButton *>btn3;
