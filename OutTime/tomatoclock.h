@@ -23,9 +23,10 @@ private slots:
 private:
     Ui::tomatoClock *ui;
     int tomato_number;
-
     int current_min;
     int current_sec;
+
+    void addTomatoClock();
 };
 
 #endif // TOMATOCLOCK_H

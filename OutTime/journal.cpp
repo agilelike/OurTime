@@ -101,11 +101,11 @@ void journal::getpSchedule(QList<pSche>& daySchedule ,QString scheduleDate)
     //数据库链接
     QSqlDatabase db;
     connectDB(db);
+    db.exec("SET NAMES 'UTF-8'");
 
     QSqlQuery query(db);
-    query.exec("set scheduleName 'GBK'");
-    query.prepare("select scheduleName ,startTime ,endTime"
-                  "from pSchedule"
+    query.prepare("select scheduleName ,startTime ,endTime "
+                  "from pSchedule "
                   "where userID = ? and date = ? ORDER BY userID ASC");
     query.addBindValue(user.userID);
     query.addBindValue(scheduleDate);
@@ -142,19 +142,25 @@ void journal::showJournal()
 
     User user = {1};
 
+    ui->journal_view->setText("");
+    ui->clock_number->setText("X0");
+    journalID = 0;
+
     //数据库链接
     QSqlDatabase db;
     connectDB(db);
+    db.exec("SET NAMES 'UTF-8'");
 
     QSqlQuery query(db);
-    query.prepare("select journalContent ,clockNumber "
-                  "from journal"
+    query.prepare("select journalID ,journalContent ,clockNumber "
+                  "from journal "
                   "where date = ? and userID = ?");
     query.addBindValue(scheduleDate);
     query.addBindValue(user.userID);
     query.exec();
     if(query.next())
     {
+        journalID = query.value("journalID").toInt();
         ui->journal_view->setText(query.value("journalContent").toString());
         ui->clock_number->setText("X" + query.value("clockNumber").toString());
     }
@@ -342,23 +348,51 @@ void journal::on_pushButton_clicked()
     //数据库操作
     QSqlDatabase db;
     connectDB(db);
-
     QSqlQuery query(db);
-    query.prepare("if not exists(select * from journal where date = ? and userID = ?)"
-               "insert into journal(date ,journalContent,clockNumber ,userID) "
-               "values (? ,? ,? ,?)"
-               "else updata journal set journalContent = ? where date = ? ,userID = ?");
+    query.exec("set NAMES 'GBK'");
 
-    query.addBindValue(current_date);
-    query.addBindValue(user.userID);
-    query.addBindValue(current_date);
-    query.addBindValue(ui->journal_view->toPlainText());
-    query.addBindValue(ui->clock_number->text().toInt());
-    query.addBindValue(user.userID);
-    query.addBindValue(ui->journal_view->toPlainText());
-    query.addBindValue(current_date);
-    query.addBindValue(user.userID);
+    if(journalID == 0)
+    {
+        query.prepare("insert into journal(date ,journalContent,clockNumber ,userID) values(?,?,?,?)");
+        query.addBindValue(current_date);
+        query.addBindValue(ui->journal_view->toPlainText());
+        query.addBindValue(0);
+        query.addBindValue(user.userID);
+    }
+    else
+    {
+        query.prepare("update journal set journalContent = ? where journalID = ?");
+        query.addBindValue(ui->journal_view->toPlainText());
+        query.addBindValue(journalID);
+    }
     query.exec();
 
     db.close();
+
+
+//    query.prepare("if not exists(select * from journal where date = ? and userID = ?) \n"
+//               "insert into journal(date ,journalContent,clockNumber ,userID) "
+//               "values (? ,? ,? ,?) \n"
+//               "else update journal set journalContent = ? where date = ? ,userID = ?");
+
+//    query.addBindValue(current_date);
+//    query.addBindValue(user.userID);
+//    query.addBindValue(current_date);
+//    query.addBindValue(ui->journal_view->toPlainText());
+//    query.addBindValue(ui->clock_number->text().remove(QChar('X') ,Qt::CaseInsensitive));
+//    query.addBindValue(user.userID);
+//    query.addBindValue(ui->journal_view->toPlainText());
+//    query.addBindValue(current_date);
+//    query.addBindValue(user.userID);
+////    QString str;
+////    str = QString("insert into journal(date ,journalContent,clockNumber ,userID) values('%1','%2',0,'%3')").arg(current_date).arg(ui->journal_view->toPlainText()).arg(user.userID);
+
+////    query.prepare("insert into journal(date ,journalContent,clockNumber ,userID) values(?,?,?,?)");
+////    query.addBindValue(current_date);
+////    query.addBindValue(ui->journal_view->toPlainText());
+////    query.addBindValue(0);
+////    query.addBindValue(user.userID);
+//    query.exec();
+
+
 }
