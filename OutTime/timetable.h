@@ -30,6 +30,7 @@ private slots:
     void delSchedule();
 
 
+
 private:
     Ui::TimeTable *ui;
     editTable *et1;
@@ -44,6 +45,8 @@ private:
     //只能用该变量来暂存值
     int m;
     int n;
+    //用一个变量来代表应当刷新哪个页面(true代表个人日程，false代表团队日程)
+    bool flag;
 
 };
 

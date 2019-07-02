@@ -49,7 +49,30 @@ void editTable::on_pushButton_clicked()
     if(s.name==""){
         QMessageBox::about(this,tr("提示"),tr("事件名不能为空"));
     }
-    if(len>=30&&s.name!=""){
+
+    //从数据库里读当天所有日程的开始与结束时间
+    //写一个循环，将s.start与s.end与所有这个日期的进行比较，若都不重叠，才允许添加。
+
+
+    bool f = false;
+    int s_start = s.start.hour()*100+s.start.minute();
+    int s_end = s.end.hour()*100+s.end.minute();
+    QList<QTime *> start;
+    QList<QTime *> end;
+    //赋好值
+
+
+
+
+    for(int i=0;i<start.length();i++){
+        if(!(s_end>start[i]||end[i]>s_start)){
+            QMessageBox::about(this,tr("提示"),tr("不能选该时间段"));
+            f = true;
+            break;
+        }
+    }
+
+    if(len>=30&&s.name!=""&&f==false){
         emit passcontent(s);
         this->hide();
     }
