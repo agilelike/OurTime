@@ -24,7 +24,9 @@ typedef struct pSchedule{
 
 typedef struct User{
     int userID;
-}user;
+}User;
+
+extern User user;
 
 namespace Ui {
 class journal;

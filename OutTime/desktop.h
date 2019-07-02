@@ -39,7 +39,7 @@ private:
     QAction *quitAction;
 
     //番茄钟
-    tomatoClock* tomatoClo;
+    tomatoClock* tomatoClo = 0;
 };
 
 #endif // DESKTOP_H

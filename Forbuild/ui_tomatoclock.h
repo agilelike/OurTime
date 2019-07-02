@@ -16,7 +16,6 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -28,7 +27,6 @@ public:
     QLabel *task_value;
     QLabel *tomatoNum;
     QLabel *remained_time;
-    QPushButton *exit_clock;
     QLabel *state;
 
     void setupUi(QDialog *tomatoClock)
@@ -60,13 +58,11 @@ public:
         remained_time->setGeometry(QRect(145, 210, 130, 40));
         QFont font1;
         font1.setFamily(QStringLiteral("Segoe Print"));
-        font1.setPointSize(17);
+        font1.setPointSize(18);
+        font1.setBold(true);
+        font1.setWeight(75);
         remained_time->setFont(font1);
         remained_time->setAlignment(Qt::AlignCenter);
-        exit_clock = new QPushButton(tomatoClock);
-        exit_clock->setObjectName(QStringLiteral("exit_clock"));
-        exit_clock->setGeometry(QRect(320, 440, 90, 30));
-        exit_clock->setFont(font);
         state = new QLabel(tomatoClock);
         state->setObjectName(QStringLiteral("state"));
         state->setGeometry(QRect(145, 270, 130, 40));
@@ -86,7 +82,6 @@ public:
         task_value->setText(QApplication::translate("tomatoClock", "TextLabel", Q_NULLPTR));
         tomatoNum->setText(QApplication::translate("tomatoClock", "TextLabel", Q_NULLPTR));
         remained_time->setText(QApplication::translate("tomatoClock", "29:59", Q_NULLPTR));
-        exit_clock->setText(QApplication::translate("tomatoClock", "exit clock", Q_NULLPTR));
         state->setText(QApplication::translate("tomatoClock", "work", Q_NULLPTR));
     } // retranslateUi
 

@@ -18,12 +18,12 @@ tomatoClock::tomatoClock(QWidget *parent ,QString currentTask ,int tomatoNumber)
     ui->tomatoNum->setText(number);
     current_min = 29;
     current_sec = 59;
+    ui->state->setStyleSheet("color:rgb(255,45,81)");
     ui->state->setText("work");
 
-//    setStyleSheet("background: transparent;border:0px");
+    setStyleSheet("background: transparent;border:20px");
     setStyleSheet("background: transparent");
     setWindowFlags(Qt::FramelessWindowHint);
-
 
     //显示时间
     QTimer *timer=new QTimer(this);
@@ -66,14 +66,17 @@ void tomatoClock::clockUpdata()
     //更新番茄钟状态
     if(current_min >= 5)
     {
+        ui->state->setStyleSheet("color:rgb(255,45,81)");
         ui->state->setText("work");
     }
     else if(current_min == 0 && current_sec == 0 && tomato_number == 0)
     {
+        ui->state->setStyleSheet("color:rgb(0,0,0)");
         ui->state->setText("finish");
     }
     else
     {
+        ui->state->setStyleSheet("color:rgb(0,255,255)");
         ui->state->setText("rest");
     }
 
@@ -83,13 +86,13 @@ void tomatoClock::clockUpdata()
 void tomatoClock::paintEvent(QPaintEvent *e)
 {
     //计算番茄钟剩余时间所占比例
-    float part;
-    part = (current_min + current_sec / 60.0) *  (1.0 / 30);
+    double part;
+    part = (double)(current_min + current_sec / 60.0) / 30.0000;
     //重新绘制番茄钟
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setPen(QPen(Qt::red,5,Qt::SolidLine));
-    painter.drawArc(40,90,340,340 ,1440,1440 * 4 * part);
+    painter.drawArc(40,90,340,340 ,1443,1440 * 4 * part);
 
     QWidget::paintEvent(e);
 }

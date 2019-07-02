@@ -44,18 +44,18 @@ Desktop::Desktop(QWidget *parent) :
 
     this->move(1400,150);
     ui->Button1->setStyleSheet("QPushButton{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255);}"
+                                background-color: rgb(255, 255, 255 ,150);}"
                                 "QPushButton:hover{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255);}"
+                                background-color: rgb(255, 255, 255 ,150);}"
                                 "QPushButton:pressed{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255);}");
+                                background-color: rgb(255, 255, 255 ,150);}");
 
     ui->Button2->setStyleSheet("QPushButton{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255);}"
+                              background-color: rgb(255, 255, 255 ,150);}"
                               "QPushButton:hover{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255);}"
+                              background-color: rgb(255, 255, 255 ,150);}"
                               "QPushButton:pressed{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255);}");
+                              background-color: rgb(255, 255, 255 ,150);}");
 
     //最小化到托盘
     QIcon icon = QIcon(":/Image/time.png");
@@ -206,26 +206,53 @@ void Desktop::on_Button2_clicked()
 
 void Desktop::on_start_tomato_clicked()
 {
-    tomatoClo = new tomatoClock(this ,"mathematical modeling" ,6);
-    tomatoClo->move(20,70);
-    tomatoClo->show();
-    ui->label->hide();
-    ui->label_2->hide();
-    ui->label_3->hide();
-    ui->label_4->hide();
-    ui->label_5->hide();
-    ui->label_6->hide();
-    ui->label_7->hide();
-    ui->label_8->hide();
-    ui->label_9->hide();
-    ui->label_10->hide();
-    ui->label_11->hide();
-    ui->label_12->hide();
-    ui->label_13->hide();
-    ui->label_14->hide();
-    ui->label_15->hide();
-    ui->label_16->hide();
-    ui->label_17->hide();
-    ui->label_18->hide();
-    ui->label_19->hide();
+    if(tomatoClo == 0)
+    {
+        tomatoClo = new tomatoClock(this ,"mathematical modeling" ,6);
+        tomatoClo->move(20,70);
+        tomatoClo->show();
+        ui->label->hide();
+        ui->label_2->hide();
+        ui->label_3->hide();
+        ui->label_4->hide();
+        ui->label_5->hide();
+        ui->label_6->hide();
+        ui->label_7->hide();
+        ui->label_8->hide();
+        ui->label_9->hide();
+        ui->label_10->hide();
+        ui->label_11->hide();
+        ui->label_12->hide();
+        ui->label_13->hide();
+        ui->label_14->hide();
+        ui->label_15->hide();
+        ui->label_16->hide();
+        ui->label_17->hide();
+        ui->label_18->hide();
+        ui->label_19->hide();
+    }
+    else
+    {
+        delete tomatoClo;
+        tomatoClo = 0;
+        ui->label->show();
+        ui->label_2->show();
+        ui->label_3->show();
+        ui->label_4->show();
+        ui->label_5->show();
+        ui->label_6->show();
+        ui->label_7->show();
+        ui->label_8->show();
+        ui->label_9->show();
+        ui->label_10->show();
+        ui->label_11->show();
+        ui->label_12->show();
+        ui->label_13->show();
+        ui->label_14->show();
+        ui->label_15->show();
+        ui->label_16->show();
+        ui->label_17->show();
+        ui->label_18->show();
+        ui->label_19->show();
+    }
 }

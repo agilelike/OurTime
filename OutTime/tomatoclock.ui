@@ -101,7 +101,9 @@
    <property name="font">
     <font>
      <family>Segoe Print</family>
-     <pointsize>17</pointsize>
+     <pointsize>18</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -109,25 +111,6 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="exit_clock">
-   <property name="geometry">
-    <rect>
-     <x>320</x>
-     <y>440</y>
-     <width>90</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Segoe Print</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>exit clock</string>
    </property>
   </widget>
   <widget class="QLabel" name="state">
@@ -142,7 +125,9 @@
    <property name="font">
     <font>
      <family>Segoe Print</family>
-     <pointsize>17</pointsize>
+     <pointsize>18</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">

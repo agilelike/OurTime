@@ -13,6 +13,8 @@ journal::journal(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::journal)
 {
+    User user = {1};
+
     //设置日程显示格式
     /*
      * 日程名  起始时间  结束时间
@@ -25,7 +27,8 @@ journal::journal(QWidget *parent) :
     header<<"日程名"<<"起始时间"<<"结束时间";
     ui->tableWidget->setHorizontalHeaderLabels(header);
     ui->tableWidget->setColumnCount(3);
-    //日程名380 起始时间 结束时间均为100
+
+    //日程名长度380 起始时间 结束时间均为100
     ui->tableWidget->setColumnWidth(0,380);
     for(int i=1;i<3;i++){
         ui->tableWidget->setColumnWidth(i,100);
@@ -93,37 +96,29 @@ void journal::showpSchedule()
 
 void journal::getpSchedule(QList<pSche>& daySchedule ,QString scheduleDate)
 {
-    for(int i = 0 ;i < 3 ;i++)
-    {
-        pSche temp = {"复习计网" ,"8:00-10:00" ,scheduleDate};
-        daySchedule.append(temp);
-    }
+    User user = {1};
 
-/********数据库操作**********/
-/*
     //数据库链接
     QSqlDatabase db;
     connectDB(db);
 
     QSqlQuery query(db);
-    query.exec("select * "
-               "from pSchedule "
-               "where scheduleDate = pSchedule.date and user.userID = userID");
+    query.exec("set scheduleName 'GBK'");
+    query.prepare("select scheduleName ,startTime ,endTime"
+                  "from pSchedule"
+                  "where userID = ? and date = ? ORDER BY userID ASC");
+    query.addBindValue(user.userID);
+    query.addBindValue(scheduleDate);
+    query.exec();
 
-   while(query.next()){
+    while(query.next()){
        pSche tempSche;
-//       tempSche.userID = query.value("userID").toInt();
-//       tempSche.pScheID = query.value("scheduleID").toInt();
-//       tempSche.date = quert.value("date").toString();
        tempSche.scheduleName = query.value("scheduleName").toString();
        tempSche.startTime = query.value("startTime").toString();
        tempSche.endTime = query.value("endTime").toString();
-
        daySchedule.append(tempSche);
-   }
-
-   db.close();
-*/
+    }
+    db.close();
 }
 
 
@@ -132,41 +127,39 @@ void journal::connectDB(QSqlDatabase &db)
     db=QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");      //连接数据库主机名，这里需要注意（若填的为”127.0.0.1“，出现不能连接，则改为localhost)
     db.setPort(3306);                 //连接数据库端口号，与设置一致
-    db.setDatabaseName("test");      //连接数据库名，与设置一致
-    db.setUserName("team");          //数据库用户名，与设置一致
-    db.setPassword("123456");    //数据库密码，与设置一致
+    db.setDatabaseName("ourtime");      //连接数据库名，与设置一致
+    db.setUserName("root");          //数据库用户名，与设置一致
+    db.setPassword("990622");    //数据库密码，与设置一致
     db.open();
 }
 
-
 void journal::showJournal()
 {
+
     //获取当前日期"year-month-day"
     QString scheduleDate;
     scheduleDate = getLabelDate();
 
-    ui->journal_view->setText(scheduleDate);
-    ui->clock_number->setText("X" + ui->label_2->text() + ui->label_3->text());
+    User user = {1};
 
-/*******数据库操作*********/
     //数据库链接
-/*
     QSqlDatabase db;
     connectDB(db);
 
     QSqlQuery query(db);
-    query.exec("select journalContent ,clockNumber "
-               "from journal"
-               "where journal.date = scheduledate and journal.userID = user.userID");
-
+    query.prepare("select journalContent ,clockNumber "
+                  "from journal"
+                  "where date = ? and userID = ?");
+    query.addBindValue(scheduleDate);
+    query.addBindValue(user.userID);
+    query.exec();
     if(query.next())
     {
-        ui->journal_view->setText(query.value("journalContent").toString();
-        ui->clock_number->setText("X" + query.value(clockNumber).toString());
+        ui->journal_view->setText(query.value("journalContent").toString());
+        ui->clock_number->setText("X" + query.value("clockNumber").toString());
     }
 
     db.close();
-*/
 }
 
 void journal::on_toolButton_clicked()
@@ -344,16 +337,28 @@ void journal::on_pushButton_clicked()
     QString current_date;
     current_date = getLabelDate();
 
-    ui->journal_view->setText("数据库待链接!");
-//    //数据库操作
-//    QSqlDatabase db;
-//    connectDB(db);
+    User user = {1};
 
-//    QSqlQuery query(db);
-//    query.exec("if not exists(select * from journal where journal.date = current_date and journal.userID = user.userID)"
-//               "insert into journal(journalID ,date ,journalContent,clockNumber ,userID) "
-//               "values (2 ,current_date ,ui->journal_view->toPlainText() ,ui->clock_number->text().toInt() ,user.userID)"
-//               "else updata journal set journalContent =  ui->journal_view->toPlainText() where date = current_date ,userID = user.userID");
+    //数据库操作
+    QSqlDatabase db;
+    connectDB(db);
 
-//    db.close();
+    QSqlQuery query(db);
+    query.prepare("if not exists(select * from journal where date = ? and userID = ?)"
+               "insert into journal(date ,journalContent,clockNumber ,userID) "
+               "values (? ,? ,? ,?)"
+               "else updata journal set journalContent = ? where date = ? ,userID = ?");
+
+    query.addBindValue(current_date);
+    query.addBindValue(user.userID);
+    query.addBindValue(current_date);
+    query.addBindValue(ui->journal_view->toPlainText());
+    query.addBindValue(ui->clock_number->text().toInt());
+    query.addBindValue(user.userID);
+    query.addBindValue(ui->journal_view->toPlainText());
+    query.addBindValue(current_date);
+    query.addBindValue(user.userID);
+    query.exec();
+
+    db.close();
 }
