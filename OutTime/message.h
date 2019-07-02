@@ -14,6 +14,7 @@ class Message
 
 public:
     int getfromid();
+
     Message(int fromID,int toID,QString context,QDate date,QTime time);
 };
 

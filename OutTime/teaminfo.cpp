@@ -6,18 +6,40 @@
 #include<QTime>
 #include<QTimer>
 #include "message.h"
+#include <QVBoxLayout>
+#include <QTextEdit>
 teaminfo::teaminfo(QWidget *parent):
     QWidget(parent),
     ui(new Ui::teaminfo)
 {
     setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
     hide();
+
     //ui->scrollAreaWidgetContents->setStyleSheet("background-color: rgb(255, 255, 0);");
     ui->setupUi(this);
+
     //定时每秒刷新一次；
     QTimer* timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(this->showmessage()));
+    connect(timer, SIGNAL(timeout()), this, SLOT(showmessage()));
     timer->start(1000);
+
+    //滑动窗口
+    int i = 0;
+    int messagenum = user->messagenum();
+    QVBoxLayout *pLayout = new QVBoxLayout();
+    for( i=0 ; i < messagenum; i++)
+    {
+         QTextEdit *pTe = new QTextEdit();
+         pTe->setText(QString("消息%1").arg(i));
+         pTe->setMinimumSize(QSize(345,120));   //width height
+         pTe->setReadOnly(true);
+         pLayout->addWidget(pTe);//把按钮添加到布局控件中
+    }
+    pLayout->setMargin(10);
+    pLayout->setSpacing(200);
+    ui->scrollAreaWidgetContents->setLayout(pLayout);
+
+
 }
 
 teaminfo::~teaminfo()
@@ -93,7 +115,7 @@ void teaminfo::showmessage()//显示消息
     strdate.append(context);
     strdate.append("\n");
     strdate.append(strfrom);
-    ui->textBrowser->append(strdate);
+    ui->textEdit->append(strdate);
 }
 
 Message teaminfo::readMessage()

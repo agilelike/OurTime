@@ -27,7 +27,7 @@ public:
     bool applyToTeam(int teamid);
     bool dismissTeam();
 
-
+    int messagenum();
     bool sendMessage(int toID,QString context);
     void updateMessage(Message *);
 };

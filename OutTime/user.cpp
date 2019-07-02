@@ -19,3 +19,8 @@ bool User::sendMessage(int toID, QString context)
     Message* m1= new Message(user->getid(),toID,context,date,time);
     //m1存入数据库
 }
+
+int User::messagenum()
+{
+    return 10;
+}

@@ -20,8 +20,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
-#include <QtWidgets/QScrollBar>
-#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -34,9 +32,6 @@ public:
     QCheckBox *checkBox;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
-    QScrollBar *verticalScrollBar;
-    QTextBrowser *textBrowser;
-    QTextBrowser *textBrowser_2;
     QLabel *label;
     QPushButton *pushButton;
     QTextEdit *textEdit;
@@ -63,18 +58,9 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 483, 398));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 462, 1000));
+        scrollAreaWidgetContents->setMinimumSize(QSize(462, 1000));
         scrollAreaWidgetContents->setStyleSheet(QStringLiteral("background-color: rgb(215, 221, 228);"));
-        verticalScrollBar = new QScrollBar(scrollAreaWidgetContents);
-        verticalScrollBar->setObjectName(QStringLiteral("verticalScrollBar"));
-        verticalScrollBar->setGeometry(QRect(470, 0, 16, 401));
-        verticalScrollBar->setOrientation(Qt::Vertical);
-        textBrowser = new QTextBrowser(scrollAreaWidgetContents);
-        textBrowser->setObjectName(QStringLiteral("textBrowser"));
-        textBrowser->setGeometry(QRect(60, 50, 345, 120));
-        textBrowser_2 = new QTextBrowser(scrollAreaWidgetContents);
-        textBrowser_2->setObjectName(QStringLiteral("textBrowser_2"));
-        textBrowser_2->setGeometry(QRect(60, 220, 345, 120));
         scrollArea->setWidget(scrollAreaWidgetContents);
         label = new QLabel(teaminfo);
         label->setObjectName(QStringLiteral("label"));
@@ -116,20 +102,6 @@ public:
     {
         teaminfo->setWindowTitle(QApplication::translate("teaminfo", "Form", Q_NULLPTR));
         checkBox->setText(QApplication::translate("teaminfo", "\346\214\211\344\272\272\345\210\206\347\261\273", Q_NULLPTR));
-        textBrowser->setHtml(QApplication::translate("teaminfo", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", Q_NULLPTR));
-        textBrowser_2->setHtml(QApplication::translate("teaminfo", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2019 11.30 10\357\274\23200</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">	\345\233\275\347\240\264\345\261\261\346\262\263\345\234\250</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">	\345\237\216\346\230\245\350\215\211\346\234\250\346\267\261</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">		From \345\260\217\351\273\221<"
-                        "/p></body></html>", Q_NULLPTR));
         label->setText(QApplication::translate("teaminfo", "\345\233\242\351\230\237\346\266\210\346\201\257\357\274\232", Q_NULLPTR));
         pushButton->setText(QApplication::translate("teaminfo", "\345\217\221\351\200\201", Q_NULLPTR));
         label_2->setText(QApplication::translate("teaminfo", "\345\217\221\351\200\201\345\257\271\350\261\241\357\274\232", Q_NULLPTR));
