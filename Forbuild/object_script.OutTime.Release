@@ -13,6 +13,8 @@ INPUT(
 ./release\edittable.o
 ./release\desktop.o
 ./release\edittable2.o
+./release\edittable3.o
+./release\pschedule.o
 ./release\qrc_image.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o
@@ -28,4 +30,5 @@ INPUT(
 ./release\moc_edittable.o
 ./release\moc_desktop.o
 ./release\moc_edittable2.o
+./release\moc_edittable3.o
 );
