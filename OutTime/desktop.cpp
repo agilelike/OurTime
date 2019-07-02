@@ -44,18 +44,22 @@ Desktop::Desktop(QWidget *parent) :
 
     this->move(1400,150);
     ui->Button1->setStyleSheet("QPushButton{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255 ,150);}"
+                                background-color: rgb(255, 255, 255 ,200);}"
                                 "QPushButton:hover{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255 ,150);}"
+                                background-color: rgb(255, 255, 255 ,200);}"
                                 "QPushButton:pressed{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255 ,150);}");
+                                background-color: rgb(255, 255, 255 ,200);}");
 
     ui->Button2->setStyleSheet("QPushButton{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255 ,150);}"
+                              background-color: rgb(255, 255, 255 ,200);}"
                               "QPushButton:hover{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255 ,150);}"
+                              background-color: rgb(255, 255, 255 ,200);}"
                               "QPushButton:pressed{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255 ,150);}");
+                              background-color: rgb(255, 255, 255 ,200);}");
+
+    QIcon images = QIcon(":/Image/tomato.png");
+    ui->start_tomato->setIcon(images);
+
 
     //最小化到托盘
     QIcon icon = QIcon(":/Image/time.png");

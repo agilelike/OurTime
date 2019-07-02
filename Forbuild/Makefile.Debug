@@ -175,12 +175,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_image.cpp debug\qrc_resource.cpp
 debug/qrc_image.cpp: ../OutTime/image.qrc \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/bin/rcc.exe \
-		../OutTime/Image/account.png \
-		../OutTime/Image/password.png \
-		../OutTime/Image/time.png \
-		../OutTime/Image/2.png \
-		../OutTime/Image/1.png \
-		../OutTime/Image/58ece79b36818.png
+		../OutTime/Image/tomato.png
 	D:\Qt\Qt5.8.0\5.8\mingw53_32\bin\rcc.exe -name image ..\OutTime\image.qrc -o debug\qrc_image.cpp
 
 debug/qrc_resource.cpp: ../OutTime/resource.qrc \
@@ -3914,16 +3909,24 @@ debug/tomatoclock.o: ../OutTime/tomatoclock.cpp ../OutTime/tomatoclock.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qrubberband.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QLabel \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qlabel.h \
-		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QPushButton \
-		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qpushbutton.h \
-		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/QSqlError \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtSql/qsqlerror.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QTimer \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qtimer.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qbasictimer.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/QPainter \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qpainter.h \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qpen.h
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/qpen.h \
+		../OutTime/journal.h \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtGui/QList \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QDateTime \
+		../../../Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/qdatetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\tomatoclock.o ..\OutTime\tomatoclock.cpp
 
 debug/dbOperation.o: ../OutTime/dbOperation.cpp ../OutTime/dbOperation.h \

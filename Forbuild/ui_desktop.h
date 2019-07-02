@@ -172,6 +172,7 @@ public:
         start_tomato = new QPushButton(Desktop);
         start_tomato->setObjectName(QStringLiteral("start_tomato"));
         start_tomato->setGeometry(QRect(390, 20, 31, 31));
+        start_tomato->setStyleSheet(QStringLiteral(""));
         label_20 = new QLabel(Desktop);
         label_20->setObjectName(QStringLiteral("label_20"));
         label_20->setGeometry(QRect(20, 35, 91, 25));
@@ -210,7 +211,7 @@ public:
         label_9->setText(QApplication::translate("Desktop", "15:30~17:00   computer network", Q_NULLPTR));
         label_13->setText(QApplication::translate("Desktop", "20:00~21:30  code interface", Q_NULLPTR));
         label_10->setText(QApplication::translate("Desktop", "17:00~18:00   code interface", Q_NULLPTR));
-        start_tomato->setText(QApplication::translate("Desktop", "\347\225\252\350\214\204", Q_NULLPTR));
+        start_tomato->setText(QString());
         label_20->setText(QApplication::translate("Desktop", "teamTask:", Q_NULLPTR));
         time_value_2->setText(QApplication::translate("Desktop", "\347\224\265\350\257\235\344\274\232\350\256\256", Q_NULLPTR));
     } // retranslateUi

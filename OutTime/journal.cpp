@@ -252,7 +252,6 @@ void journal::on_toolButton_3_clicked()
     }
     ui->label_3->setText("01");
 
-
     //显示该日日程表和日志
     showpSchedule();
     showJournal();
@@ -281,7 +280,6 @@ void journal::on_toolButton_6_clicked()
         }
         ui->label_3->setText(str);
     }
-
 
     //显示该日日程表和日志
     showpSchedule();
@@ -321,7 +319,6 @@ void journal::on_toolButton_5_clicked()
         }
         ui->label_3->setText(str);
     }
-
 
     //显示该日日程表和日志
     showpSchedule();
@@ -368,31 +365,4 @@ void journal::on_pushButton_clicked()
     query.exec();
 
     db.close();
-
-
-//    query.prepare("if not exists(select * from journal where date = ? and userID = ?) \n"
-//               "insert into journal(date ,journalContent,clockNumber ,userID) "
-//               "values (? ,? ,? ,?) \n"
-//               "else update journal set journalContent = ? where date = ? ,userID = ?");
-
-//    query.addBindValue(current_date);
-//    query.addBindValue(user.userID);
-//    query.addBindValue(current_date);
-//    query.addBindValue(ui->journal_view->toPlainText());
-//    query.addBindValue(ui->clock_number->text().remove(QChar('X') ,Qt::CaseInsensitive));
-//    query.addBindValue(user.userID);
-//    query.addBindValue(ui->journal_view->toPlainText());
-//    query.addBindValue(current_date);
-//    query.addBindValue(user.userID);
-////    QString str;
-////    str = QString("insert into journal(date ,journalContent,clockNumber ,userID) values('%1','%2',0,'%3')").arg(current_date).arg(ui->journal_view->toPlainText()).arg(user.userID);
-
-////    query.prepare("insert into journal(date ,journalContent,clockNumber ,userID) values(?,?,?,?)");
-////    query.addBindValue(current_date);
-////    query.addBindValue(ui->journal_view->toPlainText());
-////    query.addBindValue(0);
-////    query.addBindValue(user.userID);
-//    query.exec();
-
-
 }
