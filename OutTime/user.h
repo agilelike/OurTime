@@ -3,6 +3,7 @@
 #include <QString>
 #include <team.h>
 #include <message.h>
+#include <QSqlQuery>
 class User
 {//user作为主函数中的全局变量，只有一个
 private:
@@ -15,10 +16,12 @@ public:
     User();
     bool login(int id,QString pwd);
     void logout();
+    int getState();
     int getid();
     QString getName();
     int getTeamState();
     int getTeamid();
+    void setState(int);
     bool setTeamid(int);
     bool setTeamState(int);
 

@@ -45,7 +45,7 @@ void login::on_pushButton_clicked()
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("root");
-    db.setPassword("CBBc116b.");
+    db.setPassword("e!-gtsIpb1N7");
     db.setPort(3306);
     db.open();
 
