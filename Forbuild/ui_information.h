@@ -53,11 +53,11 @@ public:
         label_3->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\271\274\345\234\206\";"));
         label_4 = new QLabel(information);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(160, 140, 231, 31));
+        label_4->setGeometry(QRect(180, 140, 231, 31));
         label_4->setStyleSheet(QString::fromUtf8("font: 14pt \"\345\271\274\345\234\206\";"));
         label_5 = new QLabel(information);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(10, 140, 131, 31));
+        label_5->setGeometry(QRect(10, 140, 171, 31));
         label_5->setStyleSheet(QString::fromUtf8("font: 14pt \"\345\271\274\345\234\206\";"));
 
         retranslateUi(information);

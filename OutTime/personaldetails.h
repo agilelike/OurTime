@@ -21,6 +21,7 @@ public:
     void PaintImage2();
     void showMember();
     void hideLabel19();
+    void showTotal();
 
 private slots:
     void on_pushButton_3_clicked();
@@ -49,6 +50,8 @@ private:
     Ui::personalDetails *ui;  
     QImage image1;
     QImage image2;
+    int a[7];
+    int b[7];
 };
 
 #endif // PERSONALDETAILS_H

@@ -85,6 +85,9 @@ void MainWindow::on_commandLinkButton_4_clicked()
     w_personalDetails->update();
     w_personalDetails->showMember();
     w_personalDetails->hideLabel19();
+    w_personalDetails->showTotal();
+    w_personalDetails->PaintImage1();
+    w_personalDetails->PaintImage2();
     w_personalDetails->show();
 }
 
@@ -99,6 +102,7 @@ void MainWindow::initTitleBar()
 void MainWindow::receiveShowPersonalDetails()
 {
     w_personalDetails->haveTeam();
+    w_personalDetails->hideLabel19();
     currentInterfaceHide();
     w_personalDetails->show();
 }

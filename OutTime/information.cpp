@@ -32,19 +32,20 @@ void information::on_pushButton_clicked()
 void information::receivePersonalDetails()
 {
     this->create = create;
-    if(user->getTeamState() == 2){
-        ui->label->hide();
-        ui->label_2->hide();
-        ui->label_3->show();
-        ui->label_4->show();
-        ui->label_5->show();
-    }
-    else if(user->getState() == 0){
+
+    if(user->getState() == 0){
         ui->label->hide();
         ui->label_2->show();
         ui->label_3->hide();
         ui->label_4->hide();
         ui->label_5->hide();
+    }
+    else if(user->getTeamState() == 2){
+        ui->label->hide();
+        ui->label_2->hide();
+        ui->label_3->show();
+        ui->label_4->show();
+        ui->label_5->show();
     }
     else{
         if(user->getTeamState() == 3){
