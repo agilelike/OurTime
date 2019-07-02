@@ -19,6 +19,7 @@ public:
 
 private slots:
     void clockUpdata();
+    void fade_on_fade_out();
 
 private:
     Ui::tomatoClock *ui;
@@ -26,7 +27,8 @@ private:
     int current_min;
     int current_sec;
 
-    void addTomatoClock();
+    float opacity = 0.4;
+    int opacityFlag = 0; //0表示opacity递增，1表示opacity递减
 };
 
 #endif // TOMATOCLOCK_H

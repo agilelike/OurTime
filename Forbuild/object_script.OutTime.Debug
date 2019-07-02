@@ -15,7 +15,7 @@ INPUT(
 ./debug\tomatoclock.o
 ./debug\dbOperation.o
 ./debug\qrc_image.o
-./debug\qrc_resource.o
+./debug\qrc_image1.o
 ./debug\moc_mainwindow.o
 ./debug\moc_journal.o
 ./debug\moc_login.o

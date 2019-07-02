@@ -69,6 +69,6 @@ FORMS    += mainwindow.ui \
     tomatoclock.ui
 
 RESOURCES += \
-    image.qrc\
-    resource.qrc
+    image.qrc \
+    image1.qrc
 

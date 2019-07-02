@@ -28,6 +28,7 @@ public:
     QLabel *tomatoNum;
     QLabel *remained_time;
     QLabel *state;
+    QLabel *tomato_graphic;
 
     void setupUi(QDialog *tomatoClock)
     {
@@ -68,6 +69,17 @@ public:
         state->setGeometry(QRect(145, 270, 130, 40));
         state->setFont(font1);
         state->setAlignment(Qt::AlignCenter);
+        tomato_graphic = new QLabel(tomatoClock);
+        tomato_graphic->setObjectName(QStringLiteral("tomato_graphic"));
+        tomato_graphic->setGeometry(QRect(60, 110, 300, 300));
+        tomato_graphic->setAlignment(Qt::AlignCenter);
+        tomato_graphic->raise();
+        current_clock->raise();
+        tomato_number->raise();
+        task_value->raise();
+        tomatoNum->raise();
+        remained_time->raise();
+        state->raise();
 
         retranslateUi(tomatoClock);
 
@@ -83,6 +95,7 @@ public:
         tomatoNum->setText(QApplication::translate("tomatoClock", "TextLabel", Q_NULLPTR));
         remained_time->setText(QApplication::translate("tomatoClock", "29:59", Q_NULLPTR));
         state->setText(QApplication::translate("tomatoClock", "work", Q_NULLPTR));
+        tomato_graphic->setText(QString());
     } // retranslateUi
 
 };

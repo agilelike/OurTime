@@ -15,7 +15,7 @@ INPUT(
 ./release\tomatoclock.o
 ./release\dbOperation.o
 ./release\qrc_image.o
-./release\qrc_resource.o
+./release\qrc_image1.o
 ./release\moc_mainwindow.o
 ./release\moc_journal.o
 ./release\moc_login.o

@@ -49,7 +49,6 @@ Desktop::Desktop(QWidget *parent) :
                                 background-color: rgb(255, 255, 255 ,200);}"
                                 "QPushButton:pressed{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
                                 background-color: rgb(255, 255, 255 ,200);}");
-
     ui->Button2->setStyleSheet("QPushButton{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
                               background-color: rgb(255, 255, 255 ,200);}"
                               "QPushButton:hover{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
@@ -57,9 +56,9 @@ Desktop::Desktop(QWidget *parent) :
                               "QPushButton:pressed{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
                               background-color: rgb(255, 255, 255 ,200);}");
 
-    QIcon images = QIcon(":/Image/tomato.png");
-    ui->start_tomato->setIcon(images);
-
+    //开启番茄钟按钮
+    ui->start_tomato->setStyleSheet("border-image: url(:/imag/Image/tomato.png)");
+    ui->start_tomato->setAttribute(Qt::WA_TranslucentBackground ,true);
 
     //最小化到托盘
     QIcon icon = QIcon(":/Image/time.png");

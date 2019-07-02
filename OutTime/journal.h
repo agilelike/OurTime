@@ -38,7 +38,6 @@ class journal : public QDialog
 
     //记录系统当前日期
     QString system_date;
-    int journalID = 0;
 
 public:
     explicit journal(QWidget *parent = 0);
