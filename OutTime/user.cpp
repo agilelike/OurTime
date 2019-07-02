@@ -5,10 +5,37 @@ User::User()
     state=0;
 
 }
-bool User::login(int id,QString pwd)
+bool User::login(QString _name,QString pwd)
 {
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
-    return 1;
+    db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
+    db.setDatabaseName("ourtime");       //要连接的数据库名
+    db.setUserName("team");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+
+    QSqlQuery query(db);
+    query.exec("SET NAMES 'GBK'");
+    QString str = QString("select userID,userName,teamID,state from user where userName = '%1' and password = '%2'").arg(_name).arg(pwd);
+    query.exec(str);
+    if(query.first())
+    {
+        name=query.value(1).toString();
+        teamid=query.value(2).toInt();
+        teamState=query.value(3).toInt();
+        id=query.value(0).toInt();
+        query.exec("SET NAMES 'UTF8'");
+        db.close();
+        return 1;
+    }else
+    {
+        query.exec("SET NAMES 'UTF8'");
+        db.close();
+        return 0;
+    }
+
 }
 
 void User::logout()

@@ -38,11 +38,8 @@ TimeTable::TimeTable(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::TimeTable)
 {
-    QDate date;
-    QString content;
-    QTime bt;
-    QTime et;
-    bool checked;
+    QDate date=QDate::currentDate();
+    date.addDays(-date.dayOfWeek()+1);
 
     int len;
     QTime b;
@@ -51,26 +48,24 @@ TimeTable::TimeTable(QWidget *parent) :
     //初始化时就读取数据库，进行绘制,按理说应当读取本周的一周的数据
     //可以根据上面写的判断周几函数，得到今天是周几
     for(int i=0;i<7;i++){
-        for(int j=0;j<=2;j++){
-            date = QDate(2019,7,i+1);
-            content = "睡觉";
-            bt = QTime(8+j*3,0);
-            et = QTime(10+j*3,0);
-            len = bt.secsTo(et)/60;
+        psche[i]=new pSchedule(date.addDays(i));
+        for(int j=0;j<psche[i]->s.size();j++)
+        {
+            Schedule tmps=psche[i]->s[j];
+            len = tmps.start.secsTo(tmps.end)/60;
             b = QTime(8,0);
-            begin = b.secsTo(bt)/60;
-            checked = false;
+            begin = b.secsTo(tmps.start)/60;
             btn[i]<<new QPushButton(this);
-            btn[i][j]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
+            btn[i][j]->setText(tmps.name+"\n"+tmps.start.toString("h:mm")+"-"+tmps.end.toString("h:mm"));
             btn[i][j]->setGeometry(280+i*80,70+begin/2,80,len/2);
 
-            if(checked==true)
+            if(tmps.isGrabed==true)
             {
-                btn[i][j]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
+                btn[i][j]->setStyleSheet("background: rgb(90,135,205);font-size:8pt");
             }
             else
             {
-                btn[i][j]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
+                btn[i][j]->setStyleSheet("background: rgb(15,65,135);font-size:8pt");
             }
 
             btn[i][j]->show();

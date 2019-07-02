@@ -14,7 +14,7 @@ private:
     int teamid;
 public:
     User();
-    bool login(int id,QString pwd);
+    bool login(QString _name,QString pwd);
     void logout();
     int getState();
     int getid();

@@ -5,7 +5,7 @@
 #include "BaseWindow.h"
 #include <QStringList>
 #include <QSqlQuery>
-
+#include <user.h>
 namespace Ui {
 class login;
 }

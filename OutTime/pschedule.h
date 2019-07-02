@@ -29,4 +29,4 @@ public:
     bool addSche(Schedule sc);//添加一个日程
 };
 
-//#endif // PSCHEDULE_H
+#endif // PSCHEDULE_H

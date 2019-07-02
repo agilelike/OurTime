@@ -17,9 +17,8 @@ INPUT(
 ./debug\pschedule.o
 ./debug\team.o
 ./debug\message.o
-./debug\edittable2.o
 ./debug\edittable3.o
-./debug\pschedule.o
+./debug\edittable2.o
 ./debug\qrc_image.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o

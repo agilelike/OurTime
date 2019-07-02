@@ -17,9 +17,8 @@ INPUT(
 ./release\pschedule.o
 ./release\team.o
 ./release\message.o
-./release\edittable2.o
 ./release\edittable3.o
-./release\pschedule.o
+./release\edittable2.o
 ./release\qrc_image.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o

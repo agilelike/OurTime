@@ -42,7 +42,8 @@ SOURCES += main.cpp\
     pschedule.cpp \
     team.cpp \
     message.cpp \
-    edittable3.cpp 
+    edittable3.cpp \ 
+    edittable2.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
