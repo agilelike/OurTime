@@ -26,7 +26,7 @@ public:
     bool setTeamState(int);
 
 
-    bool createTeam();
+    bool createTeam(QString);
     bool applyToTeam(int teamid);
     bool dismissTeam();
 

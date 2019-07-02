@@ -44,8 +44,8 @@ void login::on_pushButton_clicked()
 
     db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
     db.setDatabaseName("ourtime");       //要连接的数据库名
-    db.setUserName("root");
-    db.setPassword("e!-gtsIpb1N7");
+    db.setUserName("team");
+    db.setPassword("123456");
     db.setPort(3306);
     db.open();
 

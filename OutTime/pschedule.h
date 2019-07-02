@@ -13,6 +13,7 @@ public:
     QTime end;
     QString name;
     int isGrabed;//若非个人日程，此项无意义
+    int id;//方便删除
     Schedule();
 };//schedule日程,属于一个基本数据结构
 
@@ -25,7 +26,7 @@ public:
     pSchedule(bool person=0);//无参代表当天日程,此处person表示团队和个人的筛选
     pSchedule(QDate day,bool person=0);//某天的日程
     bool deleteSche(int index);//删除某个日程
-    bool addSche(Schedule s);//添加一个日程
+    bool addSche(Schedule sc);//添加一个日程
 };
 
 #endif // PSCHEDULE_H
