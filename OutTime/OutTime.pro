@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT       += mysql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = OutTime

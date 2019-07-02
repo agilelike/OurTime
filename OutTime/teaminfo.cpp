@@ -18,11 +18,6 @@ teaminfo::teaminfo(QWidget *parent):
     //ui->scrollAreaWidgetContents->setStyleSheet("background-color: rgb(255, 255, 0);");
     ui->setupUi(this);
 
-    //定时每秒刷新一次；
-    QTimer* timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(showmessage()));
-    timer->start(1000);
-
     //滑动窗口
     int i = 0;
     int messagenum = user->messagenum();
@@ -39,6 +34,10 @@ teaminfo::teaminfo(QWidget *parent):
     pLayout->setSpacing(200);
     ui->scrollAreaWidgetContents->setLayout(pLayout);
 
+    //定时每秒刷新一次；
+    QTimer* timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(showmessage()));
+    timer->start(1000);
 
 }
 
@@ -47,16 +46,28 @@ teaminfo::~teaminfo()
     delete ui;
 }
 
-QString teaminfo::findname(int userID)
+QString teaminfo::findname(int userID)    //根据用户ID找名字
 {
-    //根据用户ID找名字
+
     QString name;
     return name;
 }
 
-int teaminfo::findID(QString username)
+int teaminfo::findID(QString username)//根据用户名找
 {
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
+    db.setUserName("team");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+    //链接数据库
+    QSqlQuery query(db);
+    query.exec("SET NAMES 'GBK'");
+    QString str = QString("select userID from user where userName = '%1'").arg(username);
+    query.exec(str);
     int id;
     return id;
 }
