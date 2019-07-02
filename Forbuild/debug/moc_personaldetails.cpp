@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_personalDetails_t {
-    QByteArrayData data[13];
-    char stringdata0[227];
+    QByteArrayData data[11];
+    char stringdata0[214];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,20 +34,18 @@ static const qt_meta_stringdata_personalDetails_t qt_meta_stringdata_personalDet
 QT_MOC_LITERAL(0, 0, 15), // "personalDetails"
 QT_MOC_LITERAL(1, 16, 15), // "showInformation"
 QT_MOC_LITERAL(2, 32, 0), // ""
-QT_MOC_LITERAL(3, 33, 5), // "state"
-QT_MOC_LITERAL(4, 39, 6), // "create"
-QT_MOC_LITERAL(5, 46, 14), // "showCreateTeam"
-QT_MOC_LITERAL(6, 61, 23), // "on_pushButton_3_clicked"
-QT_MOC_LITERAL(7, 85, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(8, 109, 23), // "on_pushButton_4_clicked"
-QT_MOC_LITERAL(9, 133, 23), // "on_pushButton_6_clicked"
-QT_MOC_LITERAL(10, 157, 23), // "on_pushButton_7_clicked"
-QT_MOC_LITERAL(11, 181, 23), // "on_pushButton_5_clicked"
-QT_MOC_LITERAL(12, 205, 21) // "on_pushButton_clicked"
+QT_MOC_LITERAL(3, 33, 14), // "showCreateTeam"
+QT_MOC_LITERAL(4, 48, 23), // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(5, 72, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(6, 96, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(7, 120, 23), // "on_pushButton_6_clicked"
+QT_MOC_LITERAL(8, 144, 23), // "on_pushButton_7_clicked"
+QT_MOC_LITERAL(9, 168, 23), // "on_pushButton_5_clicked"
+QT_MOC_LITERAL(10, 192, 21) // "on_pushButton_clicked"
 
     },
-    "personalDetails\0showInformation\0\0state\0"
-    "create\0showCreateTeam\0on_pushButton_3_clicked\0"
+    "personalDetails\0showInformation\0\0"
+    "showCreateTeam\0on_pushButton_3_clicked\0"
     "on_pushButton_2_clicked\0on_pushButton_4_clicked\0"
     "on_pushButton_6_clicked\0on_pushButton_7_clicked\0"
     "on_pushButton_5_clicked\0on_pushButton_clicked"
@@ -68,21 +66,21 @@ static const uint qt_meta_data_personalDetails[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,   59,    2, 0x06 /* Public */,
-       5,    1,   64,    2, 0x06 /* Public */,
+       1,    0,   59,    2, 0x06 /* Public */,
+       3,    0,   60,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    0,   67,    2, 0x08 /* Private */,
-       7,    0,   68,    2, 0x08 /* Private */,
-       8,    0,   69,    2, 0x08 /* Private */,
-       9,    0,   70,    2, 0x08 /* Private */,
-      10,    0,   71,    2, 0x08 /* Private */,
-      11,    0,   72,    2, 0x08 /* Private */,
-      12,    0,   73,    2, 0x08 /* Private */,
+       4,    0,   61,    2, 0x08 /* Private */,
+       5,    0,   62,    2, 0x08 /* Private */,
+       6,    0,   63,    2, 0x08 /* Private */,
+       7,    0,   64,    2, 0x08 /* Private */,
+       8,    0,   65,    2, 0x08 /* Private */,
+       9,    0,   66,    2, 0x08 /* Private */,
+      10,    0,   67,    2, 0x08 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,    3,    4,
-    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void,
@@ -102,8 +100,8 @@ void personalDetails::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         personalDetails *_t = static_cast<personalDetails *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->showInformation((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 1: _t->showCreateTeam((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 0: _t->showInformation(); break;
+        case 1: _t->showCreateTeam(); break;
         case 2: _t->on_pushButton_3_clicked(); break;
         case 3: _t->on_pushButton_2_clicked(); break;
         case 4: _t->on_pushButton_4_clicked(); break;
@@ -117,20 +115,21 @@ void personalDetails::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (personalDetails::*_t)(int , int );
+            typedef void (personalDetails::*_t)();
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&personalDetails::showInformation)) {
                 *result = 0;
                 return;
             }
         }
         {
-            typedef void (personalDetails::*_t)(int );
+            typedef void (personalDetails::*_t)();
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&personalDetails::showCreateTeam)) {
                 *result = 1;
                 return;
             }
         }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObject personalDetails::staticMetaObject = {
@@ -170,17 +169,15 @@ int personalDetails::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void personalDetails::showInformation(int _t1, int _t2)
+void personalDetails::showInformation()
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
-    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
 
 // SIGNAL 1
-void personalDetails::showCreateTeam(int _t1)
+void personalDetails::showCreateTeam()
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
-    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+    QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

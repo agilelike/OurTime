@@ -15,20 +15,23 @@ private:
 public:
     User();
     bool login(int id,QString pwd);
+    int signup(QString name,QString pwd);
     void logout();
     int getState();
     int getid();
     QString getName();
     int getTeamState();
     int getTeamid();
-    void setState(int);
     bool setTeamid(int);
     bool setTeamState(int);
+    bool setAllTeamid(int);
+    bool setAllTeamState(int);
 
 
-    bool createTeam();
+    bool createTeam(QString name);
     bool applyToTeam(int teamid);
     bool dismissTeam();
+    bool exitTeam();
 
 
     bool sendMessage(int toID,QString context);

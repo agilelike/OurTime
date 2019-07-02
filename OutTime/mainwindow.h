@@ -28,9 +28,9 @@ private slots:
     void on_commandLinkButton_2_clicked();
     void on_commandLinkButton_3_clicked();
     void on_commandLinkButton_4_clicked();
-    void receiveShowPersonalDetails(int state);
-    void receiveShowInformation(int state,int create);
-    void receiveShowCreateTeam(int state);
+    void receiveShowPersonalDetails();
+    void receiveShowInformation();
+    void receiveShowCreateTeam();
     void receiveShowMainwindow();
     void receiveHideMain();
 

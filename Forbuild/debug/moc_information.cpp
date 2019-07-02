@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_information_t {
-    QByteArrayData data[7];
-    char stringdata0[80];
+    QByteArrayData data[6];
+    char stringdata0[74];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,13 +34,12 @@ static const qt_meta_stringdata_information_t qt_meta_stringdata_information = {
 QT_MOC_LITERAL(0, 0, 11), // "information"
 QT_MOC_LITERAL(1, 12, 19), // "showPersonalDetails"
 QT_MOC_LITERAL(2, 32, 0), // ""
-QT_MOC_LITERAL(3, 33, 5), // "state"
-QT_MOC_LITERAL(4, 39, 9), // "showLogin"
-QT_MOC_LITERAL(5, 49, 8), // "hideMain"
-QT_MOC_LITERAL(6, 58, 21) // "on_pushButton_clicked"
+QT_MOC_LITERAL(3, 33, 9), // "showLogin"
+QT_MOC_LITERAL(4, 43, 8), // "hideMain"
+QT_MOC_LITERAL(5, 52, 21) // "on_pushButton_clicked"
 
     },
-    "information\0showPersonalDetails\0\0state\0"
+    "information\0showPersonalDetails\0\0"
     "showLogin\0hideMain\0on_pushButton_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -59,15 +58,15 @@ static const uint qt_meta_data_information[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   34,    2, 0x06 /* Public */,
-       4,    0,   37,    2, 0x06 /* Public */,
-       5,    0,   38,    2, 0x06 /* Public */,
+       1,    0,   34,    2, 0x06 /* Public */,
+       3,    0,   35,    2, 0x06 /* Public */,
+       4,    0,   36,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    0,   39,    2, 0x08 /* Private */,
+       5,    0,   37,    2, 0x08 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -83,7 +82,7 @@ void information::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         information *_t = static_cast<information *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->showPersonalDetails((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 0: _t->showPersonalDetails(); break;
         case 1: _t->showLogin(); break;
         case 2: _t->hideMain(); break;
         case 3: _t->on_pushButton_clicked(); break;
@@ -93,7 +92,7 @@ void information::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (information::*_t)(int );
+            typedef void (information::*_t)();
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&information::showPersonalDetails)) {
                 *result = 0;
                 return;
@@ -114,6 +113,7 @@ void information::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
             }
         }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObject information::staticMetaObject = {
@@ -153,10 +153,9 @@ int information::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void information::showPersonalDetails(int _t1)
+void information::showPersonalDetails()
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
-    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
 
 // SIGNAL 1

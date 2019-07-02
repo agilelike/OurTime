@@ -6,6 +6,7 @@
 #include<user.h>
 #include <information.h>
 #include <showid.h>
+#include <team.h>
 
 
 //数据库的需要的头文件
@@ -17,6 +18,7 @@
 int main(int argc, char *argv[])
 {
     user=new User();
+    team=new Team();
     QApplication a(argc, argv);
     MainWindow m;
     login L;

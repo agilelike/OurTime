@@ -58,6 +58,7 @@ public:
     QTableWidget *tableWidget_2;
     QPushButton *pushButton_6;
     QPushButton *pushButton_7;
+    QLabel *label_19;
 
     void setupUi(QDialog *personalDetails)
     {
@@ -75,15 +76,16 @@ public:
         textBrowser = new QTextBrowser(personalDetails);
         textBrowser->setObjectName(QStringLiteral("textBrowser"));
         textBrowser->setGeometry(QRect(940, 40, 231, 41));
-        textBrowser->setStyleSheet(QStringLiteral("background-color: rgb(220, 220, 220);"));
+        textBrowser->setStyleSheet(QString::fromUtf8("background-color: rgb(220, 220, 220);\n"
+"font: 20pt \"\345\256\213\344\275\223\";"));
         textBrowser_2 = new QTextBrowser(personalDetails);
         textBrowser_2->setObjectName(QStringLiteral("textBrowser_2"));
         textBrowser_2->setGeometry(QRect(150, 40, 111, 41));
         textBrowser_2->setStyleSheet(QString::fromUtf8("background-color: rgb(220, 220, 220);\n"
-"font: 14pt \"\345\256\213\344\275\223\";"));
+"font: 20pt \"\345\256\213\344\275\223\";"));
         line = new QFrame(personalDetails);
         line->setObjectName(QStringLiteral("line"));
-        line->setGeometry(QRect(575, 0, 20, 480));
+        line->setGeometry(QRect(580, 20, 20, 460));
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
         label_2 = new QLabel(personalDetails);
@@ -174,7 +176,7 @@ public:
         label_17->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
         pushButton_5 = new QPushButton(personalDetails);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(930, 420, 93, 31));
+        pushButton_5->setGeometry(QRect(1090, 420, 93, 31));
         pushButton_5->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         label_18 = new QLabel(personalDetails);
         label_18->setObjectName(QStringLiteral("label_18"));
@@ -192,6 +194,10 @@ public:
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
         pushButton_7->setGeometry(QRect(780, 420, 93, 31));
         pushButton_7->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
+        label_19 = new QLabel(personalDetails);
+        label_19->setObjectName(QStringLiteral("label_19"));
+        label_19->setGeometry(QRect(820, 300, 181, 31));
+        label_19->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\256\213\344\275\223\";"));
 
         retranslateUi(personalDetails);
 
@@ -206,13 +212,13 @@ public:
         textBrowser->setHtml(QApplication::translate("personalDetails", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">\350\277\205\346\215\267\345\246\202\351\243\216\347\232\204\350\257\276\350\256\276\345\260\217\347\273\204</span></p></body></html>", Q_NULLPTR));
+"</style></head><body style=\" font-family:'\345\256\213\344\275\223'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", Q_NULLPTR));
         textBrowser_2->setHtml(QApplication::translate("personalDetails", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'\345\256\213\344\275\223'; font-size:14pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\351\231\210\351\225\224\346\273\250</p></body></html>", Q_NULLPTR));
+"</style></head><body style=\" font-family:'\345\256\213\344\275\223'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", Q_NULLPTR));
         label_2->setText(QApplication::translate("personalDetails", "\346\225\260\346\215\256\347\273\237\350\256\241\357\274\232", Q_NULLPTR));
         label_4->setText(QApplication::translate("personalDetails", "\345\233\242\351\230\237\346\210\220\345\221\230\357\274\232", Q_NULLPTR));
         pushButton->setText(QApplication::translate("personalDetails", "\346\263\250\351\224\200", Q_NULLPTR));
@@ -234,6 +240,7 @@ public:
         label_18->setText(QApplication::translate("personalDetails", "\347\224\263\350\257\267\344\272\272", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("personalDetails", "\345\220\214\346\204\217", Q_NULLPTR));
         pushButton_7->setText(QApplication::translate("personalDetails", "\346\213\222\347\273\235", Q_NULLPTR));
+        label_19->setText(QApplication::translate("personalDetails", "(\350\257\267\350\276\223\345\205\245\345\233\242\351\230\237\345\217\267!)", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -2,6 +2,8 @@
 #include "ui_login.h"
 #include <stdio.h>
 #include <QTextStream>
+#include <user.h>
+#include <team.h>
 
 login::login(QWidget *parent) :
     BaseWindow(parent),
@@ -40,20 +42,8 @@ void login::on_pushButton_clicked()
 {
     QString str1 = ui->lineEdit->text();
     QString str2 = ui->lineEdit_2->text();
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
-
-    db.setHostName("localhost");
-    db.setDatabaseName("ourtime");
-    db.setUserName("root");
-    db.setPassword("e!-gtsIpb1N7");
-    db.setPort(3306);
-    db.open();
-
-    QSqlQuery query(db);
-    query.exec("SET NAMES 'GBK'");
-    QString str = QString("select userID from user where userID = '%1' and password = '%2'").arg(str1.toInt()).arg(str2);
-    query.exec(str);
-    if(query.first()){
+    if(user->login(str1.toInt(),str2)){
+        team->updateTeam(user->getTeamid());
         emit showMainwindow();
         ui->lineEdit->clear();
         ui->lineEdit_2->clear();
@@ -63,7 +53,5 @@ void login::on_pushButton_clicked()
     else{
         ui->lineEdit_2->clear();
         ui->label_4->show();
-    }
-    query.exec("SET NAMES 'UTF8'");
-    db.close();
+    }  
 }
