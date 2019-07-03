@@ -165,6 +165,7 @@ void Desktop::messagetip()
    ui->time->setText(str);
    if(num > mesnum)
    {
+       mesnum = num;
        ui->label_me->show();
    }
 }

@@ -1,6 +1,7 @@
 #include "user.h"
 #include <QSqlQuery>
 #include "message.h"
+#include<QDateTime>
 User *user;
 User::User()
 {
@@ -14,7 +15,8 @@ int User::getid()
 
 bool User::sendMessage(int toID, QString context)
 {
-    DateTime datetime = QDateTime::currentDateTime();
+    QDateTime dt = QDateTime::currentDateTime();
+    QString currentDate = dt.toString("yyyy:MM:dd hh:mm:ss");
     //Message* m1= new Message(user->getid(),toID,context,date,time);
 
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
@@ -28,7 +30,7 @@ bool User::sendMessage(int toID, QString context)
     //链接数据库
     QSqlQuery query(db);
     query.exec("SET NAMES 'GBK'");
-    QString str = QString("insert into message values('%1','%2','%3','%4')").arg(user->getid()).arg(toID).arg(context).arg(datetime);
+    QString str = QString("insert into message values('%1','%2','%3','%4')").arg(user->getid()).arg(toID).arg(context).arg(currentDate);
     query.prepare(str);
     query.exec();
     db.close();
