@@ -1,39 +1,32 @@
-#include "edittable2.h"
-#include "ui_edittable2.h"
+#include "edittable4.h"
+#include "ui_edittable4.h"
 
-edittable2::edittable2(QWidget *parent) :
+edittable4::edittable4(QWidget *parent) :
     BaseWindow(parent),
-    ui(new Ui::edittable2)
+    ui(new Ui::edittable4)
 {
     initTitleBar();
     ui->setupUi(this);
 }
 
-edittable2::~edittable2()
+edittable4::~edittable4()
 {
     delete ui;
 }
-void edittable2::initTitleBar()
+void edittable4::initTitleBar()
 {
     m_titleBar->setBackgroundColor(40,70,85);
     m_titleBar->setTitleContent(QStringLiteral("Edit Table"));
     m_titleBar->setButtonType(MIN_BUTTON);
     m_titleBar->setTitleWidth(this->width());
 }
-void edittable2::makeEdit()
-{
-    ui->dateEdit->setDate(QDate(2019,1,1));
-    ui->timeEdit->setTime(QTime(8,0));
-    ui->lineEdit->clear();
-    this->show();
-}
 
-void edittable2::on_pushButton_2_clicked()
+void edittable4::on_pushButton_2_clicked()
 {
     this->hide();
 }
 
-void edittable2::on_pushButton_clicked()
+void edittable4::on_pushButton_clicked()
 {
     Schedule s;
     s.t = ui->dateEdit->date();
@@ -44,9 +37,7 @@ void edittable2::on_pushButton_clicked()
         QMessageBox::about(this,tr("提示"),tr("事件名不能为空"));
     }
     if(s.name!=""){
-        emit taskcontent(s);
+        emit taskedit(s);
         this->hide();
     }
-
-
 }

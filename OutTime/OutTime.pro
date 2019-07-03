@@ -44,7 +44,8 @@ SOURCES += main.cpp\
     message.cpp \
     edittable3.cpp \ 
     showid.cpp \
-    edittable2.cpp
+    edittable2.cpp \
+    edittable4.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
@@ -66,7 +67,8 @@ HEADERS  += mainwindow.h \
     showid.h\
     edittable2.h \
     pschedule.h \
-    edittable3.h
+    edittable3.h \
+    edittable4.h
 
 FORMS    += mainwindow.ui \
     journal.ui \
@@ -81,7 +83,8 @@ FORMS    += mainwindow.ui \
     createteam.ui \
     edittable2.ui \
     edittable3.ui \
-    showid.ui
+    showid.ui \
+    edittable4.ui
 
 RESOURCES += \
     image.qrc\

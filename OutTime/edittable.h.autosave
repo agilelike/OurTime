@@ -22,7 +22,7 @@ public:
 public slots:
     void makeEdit(bool f);
 signals:
-    void passcontent(Schedule sche);
+    void schecontent(Schedule sche);
 private slots:
     void on_pushButton_clicked();
 
