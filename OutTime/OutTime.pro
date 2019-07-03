@@ -38,7 +38,8 @@ SOURCES += main.cpp\
     desktop.cpp \
     edittable2.cpp \
     edittable3.cpp \
-    pschedule.cpp
+    pschedule.cpp \
+    edittable4.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
@@ -54,7 +55,8 @@ HEADERS  += mainwindow.h \
     desktop.h \
     edittable2.h \
     pschedule.h \
-    edittable3.h
+    edittable3.h \
+    edittable4.h
 
 FORMS    += mainwindow.ui \
     journal.ui \
@@ -67,7 +69,8 @@ FORMS    += mainwindow.ui \
     edittable.ui \
     desktop.ui \
     edittable2.ui \
-    edittable3.ui
+    edittable3.ui \
+    edittable4.ui
 
 RESOURCES += \
     image.qrc\

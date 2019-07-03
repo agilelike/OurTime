@@ -88,7 +88,7 @@ void editTable::on_pushButton_clicked()
 
 
     if(len>=30&&s.name!=""&&f==false){
-        emit passcontent(s);
+        emit schecontent(s);
         this->hide();
     }
 }
