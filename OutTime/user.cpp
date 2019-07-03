@@ -10,6 +10,15 @@ User::User()
     state=0;
 
 }
+void User::freshSchedule()
+{
+    QDate date=QDate::currentDate();
+    date.addDays(-date.dayOfWeek()+1);
+    for(int i=0;i<7;i++){
+        psche[i]=new pSchedule(date.addDays(i));
+        tsche[i]=new pSchedule(date.addDays(i));
+    }
+}
 bool User::login(QString _name,QString pwd)
 {
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
@@ -22,11 +31,11 @@ bool User::login(QString _name,QString pwd)
 
     QSqlQuery query(db);
     query.exec("SET NAMES 'GBK'");
-    QString str = QString("select userName from user where userID = '%1' and password = '%2'").arg(id).arg(pwd);
+    QString str = QString("select userID from user where userName = '%1' and password = '%2'").arg(_name).arg(pwd);
     query.exec(str);
     if(query.first()){
-        name = query.value(0).toString();
-        this->id = id;
+        name = _name;
+        id = query.value(0).toInt();
         state = 1;
         str = QString("select teamID,state from user where userID = '%1'").arg(id);
         query.exec(str);
@@ -37,6 +46,7 @@ bool User::login(QString _name,QString pwd)
         //cout<<teamid<<teamState<<endl;
         query.exec("SET NAMES 'UTF8'");
         db.close();
+        freshSchedule();
         return true;
     }
     else{

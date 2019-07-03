@@ -4,6 +4,7 @@
 #include <team.h>
 #include <message.h>
 #include <QSqlQuery>
+#include <pschedule.h>
 class User
 {//user作为主函数中的全局变量，只有一个
 private:
@@ -12,10 +13,13 @@ private:
     QString name;
     int teamState;
     int teamid;
+    QList<pSchedule *> psche;
+    QList<pSchedule *> tsche;
 public:
     User();
-    bool login(int id,QString pwd);
+    bool login(QString _name,QString pwd);
     int signup(QString name,QString pwd);
+    void freshSchedule();
     void logout();
     int getState();
     int getid();

@@ -37,7 +37,6 @@ private:
     edittable2 *et2;
     edittable3 *et3;
     QList<QPushButton *>btn[7];
-    pSchedule *psche[7];
     //菜单与动作
     QList<QAction *>editAct[7];
     QList<QAction *>delAct[7];

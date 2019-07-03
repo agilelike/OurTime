@@ -42,7 +42,7 @@ void login::on_pushButton_clicked()
 {
     QString str1 = ui->lineEdit->text();
     QString str2 = ui->lineEdit_2->text();
-    if(user->login(str1.toInt(),str2)){
+    if(user->login(str1,str2)){
         team->updateTeam(user->getTeamid());
         emit showMainwindow();
         ui->lineEdit->clear();
