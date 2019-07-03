@@ -132,7 +132,7 @@
     <string>图例说明：</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_7">
+  <widget class="QLabel" name="r1">
    <property name="geometry">
     <rect>
      <x>1020</x>
@@ -149,7 +149,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_8">
+  <widget class="QLabel" name="l1">
    <property name="geometry">
     <rect>
      <x>910</x>
@@ -165,7 +165,7 @@
     <string>日期</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_9">
+  <widget class="QLabel" name="l3">
    <property name="geometry">
     <rect>
      <x>910</x>
@@ -181,7 +181,7 @@
     <string>起始时间</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_10">
+  <widget class="QLabel" name="r3">
    <property name="geometry">
     <rect>
      <x>1020</x>
@@ -197,7 +197,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_11">
+  <widget class="QLabel" name="l4">
    <property name="geometry">
     <rect>
      <x>910</x>
@@ -213,7 +213,7 @@
     <string>终止时间</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_12">
+  <widget class="QLabel" name="r4">
    <property name="geometry">
     <rect>
      <x>1020</x>
@@ -229,7 +229,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_13">
+  <widget class="QLabel" name="l2">
    <property name="geometry">
     <rect>
      <x>910</x>
@@ -245,7 +245,7 @@
     <string>日程名</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_14">
+  <widget class="QLabel" name="r2">
    <property name="geometry">
     <rect>
      <x>1020</x>
@@ -277,7 +277,7 @@
     <string>日程详细信息：</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_16">
+  <widget class="QLabel" name="l5">
    <property name="geometry">
     <rect>
      <x>910</x>
@@ -293,7 +293,7 @@
     <string>是否可抢占</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_17">
+  <widget class="QLabel" name="r5">
    <property name="geometry">
     <rect>
      <x>1020</x>

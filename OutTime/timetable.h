@@ -19,6 +19,7 @@ class TimeTable : public QWidget
 public:
     explicit TimeTable(QWidget *parent = 0);
     ~TimeTable();
+    void refreshBox();
 private slots:
     void on_commandLinkButton_clicked();
     void on_commandLinkButton_2_clicked();
@@ -36,7 +37,7 @@ private slots:
 
 
     void on_pushButton_clicked();
-
+    void showEvent(QShowEvent *event);
 signals:
     void passflag(bool f);
 private:
