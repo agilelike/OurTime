@@ -13,7 +13,7 @@ INPUT(
 ./release\edittable.o
 ./release\desktop.o
 ./release\tomatoclock.o
-./release\dbOperation.o
+./release\user.o
 ./release\qrc_image.o
 ./release\qrc_image1.o
 ./release\moc_mainwindow.o

@@ -4,13 +4,15 @@
 #include"login.h"
 #include"signup.h"
 #include <journal.h>
-
+#include <user.h>
 
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     //MainWindow w;
+
+    user = new User();
 
     login L;
     signup Sign;

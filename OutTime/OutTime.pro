@@ -39,7 +39,7 @@ SOURCES += main.cpp\
     edittable.cpp \
     desktop.cpp \
     tomatoclock.cpp \
-    dbOperation.cpp
+    user.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
@@ -54,7 +54,7 @@ HEADERS  += mainwindow.h \
     edittable.h \
     desktop.h \
     tomatoclock.h \
-    dbOperation.h
+    user.h
 
 FORMS    += mainwindow.ui \
     journal.ui \

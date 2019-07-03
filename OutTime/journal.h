@@ -22,11 +22,11 @@ typedef struct pSchedule{
     QString endTime;
 }pSche;
 
-typedef struct User{
-    int userID;
-}User;
+//typedef struct User{
+//    int userID;
+//}User;
 
-extern User user;
+//extern User user;
 
 namespace Ui {
 class journal;
@@ -38,6 +38,7 @@ class journal : public QDialog
 
     //记录系统当前日期
     QString system_date;
+    int journalID = 0;
 
 public:
     explicit journal(QWidget *parent = 0);

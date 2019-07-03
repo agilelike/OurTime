@@ -23,11 +23,12 @@ private slots:
 
 private:
     Ui::tomatoClock *ui;
+    void addTomatoClock();
+
     int tomato_number;
     int current_min;
     int current_sec;
-
-    float opacity = 0.4;
+    float opacity = 0.3;
     int opacityFlag = 0; //0表示opacity递增，1表示opacity递减
 };
 
