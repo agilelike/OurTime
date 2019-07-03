@@ -157,6 +157,15 @@ void Desktop::timeUpdate()
 
 void Desktop::messagetip()
 {
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
+    db.setUserName("root");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+
     ui->label_me->show();
 }
 
@@ -216,6 +225,7 @@ void Desktop::on_Button1_clicked()
 
 void Desktop::on_Button2_clicked()
 {
+    ui->label_me->hide();
     MainWindow * win = new MainWindow;
     win->show();
 }
