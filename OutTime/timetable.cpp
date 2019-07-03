@@ -163,15 +163,71 @@ void TimeTable::clickevent(){
     //根据i,j调用
 
 
+    //根据颜色判断，不同的颜色。
 
 
 
-    //在右边展示，下面没写全，应当从数据库得到东西，下面再set
-//    ui->label_7->setText();
-//    ui->label_14->setText();
-//    ui->label_10->setText();
-//    ui->label_12->setText();
-//    ui->label_17->setText();
+
+
+
+    //在右边展示，下面没写全，应当从数据库得到东西，下面再set，不同的设置不同的数据在右边
+//    if(){
+//        ui->label_7->show();
+//        ui->label_14->show();
+//        ui->label_10->show();
+//        ui->label_12->show();
+//        ui->label_17->show();
+//        ui->label_8->show();
+//        ui->label_13->show();
+//        ui->label_9->show();
+//        ui->label_11->show();
+//        ui->label_16->show();
+
+//        ui->label_7->setText();
+//        ui->label_14->setText();
+//        ui->label_10->setText();
+//        ui->label_12->setText();
+//        ui->label_17->setText();
+//    }
+//    else if(){
+//        ui->label_7->show();
+//        ui->label_14->show();
+//        ui->label_10->show();
+//        ui->label_12->show();
+//        ui->label_8->show();
+//        ui->label_13->show();
+//        ui->label_9->show();
+//        ui->label_11->show();
+
+//        ui->label_7->setText();
+//        ui->label_14->setText();
+//        ui->label_10->setText();
+//        ui->label_12->setText();
+//        ui->label_17->setText();
+//        ui->label_16->hide();
+//        ui->label_17->hide();
+//    }
+//    else{
+//        ui->label_8->show();
+//        ui->label_7->show();
+//        ui->label_13->show();
+//        ui->label_14->show();
+//        ui->label_11->show();
+//        ui->label_12->show();
+
+
+
+
+//        ui->label_10->hide();
+//        ui->label_17->hide();
+//        ui->label_9->hide();
+//        ui->label_16->hide();
+
+//        ui->label_7->setText();
+//        ui->label_14->setText();
+//        ui->label_12->setText();
+//    }
+
 
 }
 
