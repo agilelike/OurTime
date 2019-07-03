@@ -35,5 +35,5 @@ private:
     QAction *quitAction;
 
 };
-
+extern int mesnum;
 #endif // DESKTOP_H

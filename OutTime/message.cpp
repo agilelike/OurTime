@@ -1,6 +1,7 @@
 #include "message.h"
 #include<QString>
 #include<QDate>
+#include <QSqlQuery>
 #include<QTime>
 Message::Message(int fromID,int toID,QString context,QDate date,QTime time)
 {

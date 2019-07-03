@@ -224,6 +224,7 @@ Makefile: ../../../Git/OurTime/OutTime/OutTime.pro E:/Qt5.8/5.8/mingw53_32/mkspe
 		E:/Qt5.8/5.8/mingw53_32/lib/qtmaind.prl \
 		E:/Qt5.8/5.8/mingw53_32/lib/Qt5Widgets.prl \
 		E:/Qt5.8/5.8/mingw53_32/lib/Qt5Gui.prl \
+		E:/Qt5.8/5.8/mingw53_32/lib/Qt5Sql.prl \
 		E:/Qt5.8/5.8/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ..\..\..\Git\OurTime\OutTime\OutTime.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 E:/Qt5.8/5.8/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -391,6 +392,7 @@ E:/Qt5.8/5.8/mingw53_32/mkspecs/features/lex.prf:
 E:/Qt5.8/5.8/mingw53_32/lib/qtmaind.prl:
 E:/Qt5.8/5.8/mingw53_32/lib/Qt5Widgets.prl:
 E:/Qt5.8/5.8/mingw53_32/lib/Qt5Gui.prl:
+E:/Qt5.8/5.8/mingw53_32/lib/Qt5Sql.prl:
 E:/Qt5.8/5.8/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\..\..\Git\OurTime\OutTime\OutTime.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

@@ -9,6 +9,8 @@
 #include <QString>
 #include <QDateTime>
 #include<QTimer>
+#include "user.h"
+int mesnum=user->messagenum();
 static bool enumUserWindowsCB(HWND hwnd,LPARAM lParam)
 {
     long wflags = GetWindowLong(hwnd, GWL_STYLE);
@@ -84,10 +86,11 @@ Desktop::Desktop(QWidget *parent) :
     connect(timer,SIGNAL(timeout()),this,SLOT(timeUpdate()));
     timer->start(1000); // 每次发射timeout信号时间间隔为1秒
     //定时刷新消息
+    //int mesnum = user->messagenum();
     ui->label_me->hide();
     QTimer* timer2 = new QTimer(this);
     connect(timer2, SIGNAL(timeout()), this, SLOT(messagetip()));
-    timer2->start(30000);
+    timer2->start(3000);
 
 }
 
@@ -157,16 +160,13 @@ void Desktop::timeUpdate()
 
 void Desktop::messagetip()
 {
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
-
-    db.setHostName("localhost");
-    db.setDatabaseName("ourtime");
-    db.setUserName("root");
-    db.setPassword("123456");
-    db.setPort(3306);
-    db.open();
-
-    ui->label_me->show();
+   int num = user->messagenum();
+   QString str = QString("'%1'").arg(num);
+   ui->time->setText(str);
+   if(num > mesnum)
+   {
+       ui->label_me->show();
+   }
 }
 
 Desktop::~Desktop()

@@ -3,6 +3,7 @@
 #include "user.h"
 #include <QString>
 #include<QDate>
+#include <QSqlQuery>
 #include<QTime>
 #include<QTimer>
 #include "message.h"
