@@ -14,8 +14,8 @@ int User::getid()
 
 bool User::sendMessage(int toID, QString context)
 {
-    /*DateTime datetime = QDateTime::currentDateTime();
-    Message* m1= new Message(user->getid(),toID,context,date,time);
+    DateTime datetime = QDateTime::currentDateTime();
+    //Message* m1= new Message(user->getid(),toID,context,date,time);
 
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
@@ -31,7 +31,7 @@ bool User::sendMessage(int toID, QString context)
     QString str = QString("insert into message values('%1','%2','%3','%4')").arg(user->getid()).arg(toID).arg(context).arg(datetime);
     query.prepare(str);
     query.exec();
-    db.close();*/
+    db.close();
 }
 
 int User::messagenum()
