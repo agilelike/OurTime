@@ -196,7 +196,6 @@ Makefile: ../OutTime/OutTime.pro ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/win3
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/qt_config.prf \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/win32-g++/qmake.conf \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/toolchain.prf \
 		../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/default_pre.prf \
@@ -364,7 +363,6 @@ Makefile: ../OutTime/OutTime.pro ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/win3
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/qt_config.prf:
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/win32-g++/qmake.conf:
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/spec_post.prf:
-.qmake.stash:
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/toolchain.prf:
 ../../../Qt/Qt5.8.0/5.8/mingw53_32/mkspecs/features/default_pre.prf:

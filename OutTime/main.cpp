@@ -1,8 +1,8 @@
 ﻿#include "mainwindow.h"
 #include "desktop.h"
 #include <QApplication>
-#include"login.h"
-#include"signup.h"
+#include "login.h"
+#include "signup.h"
 #include <journal.h>
 #include <user.h>
 

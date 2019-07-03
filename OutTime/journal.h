@@ -22,12 +22,6 @@ typedef struct pSchedule{
     QString endTime;
 }pSche;
 
-//typedef struct User{
-//    int userID;
-//}User;
-
-//extern User user;
-
 namespace Ui {
 class journal;
 }
