@@ -15,11 +15,13 @@ class personalDetails : public QDialog
 
 public:
     explicit personalDetails(QWidget *parent = 0);
-    int state = 0;
-    void haveTeam(int state);
+    void haveTeam();
     ~personalDetails();
     void PaintImage1();
     void PaintImage2();
+    void showMember();
+    void hideLabel19();
+    void showTotal();
 
 private slots:
     void on_pushButton_3_clicked();
@@ -38,20 +40,18 @@ private slots:
 
 
 protected:
-    void paintEvent(QPaintEvent *){
-        QPainter painter(this);
-        painter.drawImage(20,200,image1);
-        painter.drawImage(310,200,image2);
-    }
+    void paintEvent(QPaintEvent *);
 
 signals:
-    void showInformation(int state,int create);
-    void showCreateTeam(int state);
+    void showInformation();
+    void showCreateTeam();
 
 private:
     Ui::personalDetails *ui;  
     QImage image1;
     QImage image2;
+    int a[7];
+    int b[7];
 };
 
 #endif // PERSONALDETAILS_H

@@ -1,4 +1,9 @@
 #include "user.h"
+#include <QDebug>
+#include <QTextStream>
+#include <stdio.h>
+
+
 User *user;
 User::User()
 {
@@ -8,9 +13,8 @@ User::User()
 bool User::login(QString _name,QString pwd)
 {
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
-
-    db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
-    db.setDatabaseName("ourtime");       //要连接的数据库名
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
     db.setUserName("team");
     db.setPassword("123456");
     db.setPort(3306);
@@ -18,24 +22,54 @@ bool User::login(QString _name,QString pwd)
 
     QSqlQuery query(db);
     query.exec("SET NAMES 'GBK'");
-    QString str = QString("select userID,userName,teamID,state from user where userName = '%1' and password = '%2'").arg(_name).arg(pwd);
+    QString str = QString("select userName from user where userID = '%1' and password = '%2'").arg(id).arg(pwd);
     query.exec(str);
-    if(query.first())
-    {
-        name=query.value(1).toString();
-        teamid=query.value(2).toInt();
-        teamState=query.value(3).toInt();
-        id=query.value(0).toInt();
+    if(query.first()){
+        name = query.value(0).toString();
+        this->id = id;
+        state = 1;
+        str = QString("select teamID,state from user where userID = '%1'").arg(id);
+        query.exec(str);
+        query.next();
+        teamid = query.value(0).toInt();
+        teamState = query.value(1).toInt();
+        //QTextStream cout(stdout,  QIODevice::WriteOnly);
+        //cout<<teamid<<teamState<<endl;
         query.exec("SET NAMES 'UTF8'");
         db.close();
-        return 1;
-    }else
-    {
-        query.exec("SET NAMES 'UTF8'");
-        db.close();
-        return 0;
+        return true;
     }
+    else{
+        query.exec("SET NAMES 'UTF8'");
+        db.close();
+        return false;
+    }
+}
 
+int User::signup(QString name,QString pwd){
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
+    db.setUserName("team");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+
+    QSqlQuery query(db);
+    query.exec("SET NAMES 'GBK'");
+    int id;
+    query.exec("select userID from user");
+    if(query.first()){
+        query.last();
+        id = query.value(0).toInt()+1;
+    }
+    else
+        id = 1;
+    QString str = QString("insert into user values('%1','%2',NULL,'%3',0)").arg(id).arg(name).arg(pwd);
+    query.exec(str);
+    query.exec("SET NAMES 'UTF8'");
+    db.close();
+    return id;
 }
 
 void User::logout()
@@ -72,8 +106,8 @@ bool User::setTeamid(int _id)
     //数据库操作
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
-    db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
-    db.setDatabaseName("ourtime");       //要连接的数据库名
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
     db.setUserName("team");
     db.setPassword("123456");
     db.setPort(3306);
@@ -81,7 +115,7 @@ bool User::setTeamid(int _id)
 
     QSqlQuery query(db);
     query.exec("SET NAMES 'GBK'");
-    QString str=QString("update user set teamID='%1'").arg(_id);
+    QString str=QString("update user set teamID='%1' where userID = '%2'").arg(_id).arg(id);
     query.exec(str);
     query.exec("SET NAMES 'UTF8'");
     db.close();
@@ -93,8 +127,8 @@ bool User::setTeamState(int _state)
 {
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
-    db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
-    db.setDatabaseName("ourtime");       //要连接的数据库名
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
     db.setUserName("team");
     db.setPassword("123456");
     db.setPort(3306);
@@ -102,7 +136,7 @@ bool User::setTeamState(int _state)
 
     QSqlQuery query(db);
     query.exec("SET NAMES 'GBK'");
-    QString str=QString("update user set state='%1'").arg(_state);
+    QString str=QString("update user set state='%1' where userID = '%2'").arg(_state).arg(id);
     query.exec(str);
     query.exec("SET NAMES 'UTF8'");
     db.close();
@@ -110,13 +144,53 @@ bool User::setTeamState(int _state)
     return 1;
 }
 
+bool User::setAllTeamid(int _id){
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
+    db.setUserName("team");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+
+    QSqlQuery query(db);
+    query.exec("SET NAMES 'GBK'");
+    QString str=QString("update user set teamID='%1' where teamID = '%2'").arg(_id).arg(teamid);
+    query.exec(str);
+    query.exec("SET NAMES 'UTF8'");
+    db.close();
+    teamid=_id;
+    return 1;
+}
+
+bool User::setAllTeamState(int _state)
+{
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
+    db.setUserName("team");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+
+    QSqlQuery query(db);
+    query.exec("SET NAMES 'GBK'");
+    QString str=QString("update user set state='%1' where teamID = '%2'").arg(_state).arg(teamid);
+    query.exec(str);
+    query.exec("SET NAMES 'UTF8'");
+    db.close();
+    teamState=_state;
+    return 1;
+}
 
 bool User::createTeam(QString Name)
 {
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
-    db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
-    db.setDatabaseName("ourtime");       //要连接的数据库名
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
     db.setUserName("team");
     db.setPassword("123456");
     db.setPort(3306);
@@ -136,7 +210,7 @@ bool User::createTeam(QString Name)
     query.exec(str);
     query.exec("SET NAMES 'UTF8'");
     db.close();
-    user->setTeamState(1);
+    user->setTeamState(2);
     user->setTeamid(_id);
     return 1;
 }
@@ -145,7 +219,7 @@ bool User::applyToTeam(int teamid)
 {
     user->setTeamState(3);
     user->setTeamid(teamid);
-    team->updateTeam();
+    team->updateTeam(teamid);
     return 1;
 }
 
@@ -156,8 +230,8 @@ bool User::dismissTeam()
 
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
-    db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
-    db.setDatabaseName("ourtime");       //要连接的数据库名
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
     db.setUserName("team");
     db.setPassword("123456");
     db.setPort(3306);
@@ -166,6 +240,27 @@ bool User::dismissTeam()
     QSqlQuery query(db);
     query.exec("SET NAMES 'GBK'");
     QString str=QString("delete from team where teamID='%2'").arg(user->getTeamid());
+    query.exec(str);
+    query.exec("SET NAMES 'UTF8'");
+    db.close();
+    user->setAllTeamState(0);
+    user->setAllTeamid(0);
+    return 1;
+}
+
+bool User::exitTeam(){
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
+    db.setUserName("team");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+
+    QSqlQuery query(db);
+    query.exec("SET NAMES 'GBK'");
+    QString str = QString("update user set teamID = 0,state = 0 from team where userID='%1'").arg(user->getid());
     query.exec(str);
     query.exec("SET NAMES 'UTF8'");
     db.close();

@@ -16,13 +16,14 @@ MainWindow::MainWindow(QWidget *parent) :
     w_information = new information(this);
     w_information->move(400,160);
     w_createTeam = new createTeam(this);
-    w_createTeam->move(350,280);
+    w_createTeam->move(0,120);
     w_createTeam->hide();
-    QObject::connect(w_personalDetails,SIGNAL(showInformation(int,int)),this,SLOT(receiveShowInformation(int,int)));
-    QObject::connect(w_information,SIGNAL(showPersonalDetails(int)),this,SLOT(receiveShowPersonalDetails(int)));
-    QObject::connect(w_personalDetails,SIGNAL(showCreateTeam(int)),this,SLOT(receiveShowCreateTeam(int)));
-    QObject::connect(w_createTeam,SIGNAL(showInformation(int,int)),this,SLOT(receiveShowInformation(int,int)));
+    QObject::connect(w_personalDetails,SIGNAL(showInformation()),this,SLOT(receiveShowInformation()));
+    QObject::connect(w_information,SIGNAL(showPersonalDetails()),this,SLOT(receiveShowPersonalDetails()));
+    QObject::connect(w_personalDetails,SIGNAL(showCreateTeam()),this,SLOT(receiveShowCreateTeam()));
+    QObject::connect(w_createTeam,SIGNAL(showInformation()),this,SLOT(receiveShowInformation()));
     QObject::connect(w_information,SIGNAL(hideMain()),this,SLOT(receiveHideMain()));
+    QObject::connect(w_createTeam,SIGNAL(showPersonalDetails()),this,SLOT(receiveShowPersonalDetails()));
     w_teaminfo = new teaminfo(this);
     w_teaminfo->move(0,130);
     t=new TimeTable(this);
@@ -81,6 +82,12 @@ void MainWindow::on_commandLinkButton_4_clicked()
 {
     currentInterfaceHide();
     flag = 4;
+    w_personalDetails->update();
+    w_personalDetails->showMember();
+    w_personalDetails->hideLabel19();
+    w_personalDetails->showTotal();
+    w_personalDetails->PaintImage1();
+    w_personalDetails->PaintImage2();
     w_personalDetails->show();
 }
 
@@ -92,25 +99,23 @@ void MainWindow::initTitleBar()
     m_titleBar->setTitleWidth(this->width());
 }
 
-void MainWindow::receiveShowPersonalDetails(int state)
+void MainWindow::receiveShowPersonalDetails()
 {
-    w_personalDetails->state = state;
-    w_personalDetails->haveTeam(state);
+    w_personalDetails->haveTeam();
+    w_personalDetails->hideLabel19();
     currentInterfaceHide();
     w_personalDetails->show();
 }
 
-void MainWindow::receiveShowInformation(int state,int create)
+void MainWindow::receiveShowInformation()
 {
-    w_information->state = state;
-    w_information->receivePersonalDetails(state,create);
+    w_information->receivePersonalDetails();
     currentInterfaceHide();
     w_information->show();
 }
 
-void MainWindow::receiveShowCreateTeam(int state){
+void MainWindow::receiveShowCreateTeam(){
     currentInterfaceHide();
-    w_createTeam->state = state;
     w_createTeam->show();
 }
 
@@ -118,7 +123,6 @@ void MainWindow::receiveShowMainwindow(){
     flag = 1;
     w_teaminfo->show();
     this->show();
-    user = new User();
 }
 
 information* MainWindow::getInformation(){

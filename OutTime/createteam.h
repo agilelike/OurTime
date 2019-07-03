@@ -14,13 +14,15 @@ class createTeam : public QWidget
 public:
     explicit createTeam(QWidget *parent = 0);
     ~createTeam();
-    int state;
 
 private slots:
     void on_pushButton_3_clicked();
 
+    void on_pushButton_clicked();
+
 signals:
-    void showInformation(int state,int create);
+    void showInformation();
+    void showPersonalDetails();
 
 private:
     Ui::createTeam *ui;

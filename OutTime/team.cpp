@@ -1,11 +1,15 @@
 #include "team.h"
-Team* team;
+#include <QTextStream>
+#include <stdio.h>
+
+Team *team;
 Team::Team()
 {
 
 }
-void Team::updateTeam()//重新获取对应team信息
+void Team::updateTeam(int teamid)//重新获取对应team信息
 {
+    id = teamid;
     QPair<int,int> tmp;
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
@@ -20,17 +24,22 @@ void Team::updateTeam()//重新获取对应team信息
     query.exec("SET NAMES 'GBK'");
     QString str = QString("select teamName from team where teamID='%1'").arg(id);
     query.exec(str);
+    query.next();
     name=query.value(0).toString();
     member.clear();
     str = QString("select * from user where teamID='%1'").arg(id);
     query.exec(str);
-    while(query.numRowsAffected() != 0)
+    while(query.next())
     {
-        query.next();
-        QPair<int,int> q=QPair<int,int>(query.value(0).toInt(),query.value(4).toInt());
-        member.append(q);
+        tmp = QPair<int,int>(query.value(0).toInt(),query.value(4).toInt());
+        member.append(tmp);
+        //QTextStream cout(stdout,  QIODevice::WriteOnly);
+        //cout<<tmp.first<<tmp.second<<endl;
     }
     query.exec("SET NAMES 'UTF8'");
     db.close();
 }
 
+QList<QPair<int,int> > Team::getMember(){
+    return member;
+}

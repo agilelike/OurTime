@@ -25,6 +25,7 @@ private slots:
 
 signals:
     void showLogin();
+    void showID(int id);
 
 private:
     void initTitleBar();

@@ -2,6 +2,7 @@
 #include "ui_signup.h"
 #include <stdio.h>
 #include <QTextStream>
+#include <user.h>
 
 signup::signup(QWidget *parent) :
     BaseWindow(parent),
@@ -38,36 +39,14 @@ void signup::on_pushButton_clicked()
     str1 = ui->lineEdit->text();
     str2 = ui->lineEdit_2->text();
     str3 = ui->lineEdit_3->text();
-    if(!str2.isNull() && !str3.isNull() && str2 == str3){
+    if(!str1.isEmpty() && !str2.isEmpty() && !str3.isEmpty() && str2 == str3){
+        int id = user->signup(str1,str2);
         ui->label_5->hide();
-        QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
-
-        db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
-        db.setDatabaseName("ourtime");       //要连接的数据库名
-        db.setUserName("root");
-        db.setPassword("e!-gtsIpb1N7");
-        db.setPort(3306);
-        db.open();
-
-        QSqlQuery query(db);
-        query.exec("SET NAMES 'GBK'");
-        int id;
-        query.exec("select userID from user");
-        if(query.first()){
-            query.last();
-            id = query.value(0).toInt()+1;
-        }
-        else
-            id = 1;
-        QString str = QString("insert into user values('%1','%2',NULL,'%3',0)").arg(id).arg(str1).arg(str2);
-        query.exec(str);
-        query.exec("SET NAMES 'UTF8'");
         ui->lineEdit->clear();
         ui->lineEdit_2->clear();
         ui->lineEdit_3->clear();
-        db.close();
         this->hide();
-        emit showLogin();
+        emit showID(id);
     }
     else{
         ui->label_5->show();
