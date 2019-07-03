@@ -2,7 +2,8 @@
 #define TEAMINFO_H
 
 #include <QWidget>
-#include"message.h"
+#include "message.h"
+#include <QVBoxLayout>
 
 namespace Ui {
 class teaminfo;
@@ -19,13 +20,14 @@ public:
     QString findname(int userID);
     void judge();
     void update();
-    void showmessage();
     Message readMessage(int i);
 private slots:
     void on_pushButton_clicked();
+    void showmessage();
 
 private:
     Ui::teaminfo *ui;
+    QVBoxLayout *pLayout;
 };
 
 #endif // TEAMINFO_H

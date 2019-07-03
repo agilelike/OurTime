@@ -3177,6 +3177,7 @@ debug/teaminfo.o: ../../../Git/OurTime/OutTime/teaminfo.cpp ../../../Git/OurTime
 		../../../Git/OurTime/OutTime/team.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/QList \
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QDateTime \
 		E:/Qt5.8/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		E:/Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
@@ -3188,7 +3189,12 @@ debug/teaminfo.o: ../../../Git/OurTime/OutTime/teaminfo.cpp ../../../Git/OurTime
 		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayout.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../../Git/OurTime/OutTime/desktop.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QMenu \
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qmenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\teaminfo.o ..\..\..\Git\OurTime\OutTime\teaminfo.cpp
 
 debug/timetable.o: ../../../Git/OurTime/OutTime/timetable.cpp ../../../Git/OurTime/OutTime/timetable.h \
@@ -3767,7 +3773,8 @@ debug/user.o: ../../../Git/OurTime/OutTime/user.cpp ../../../Git/OurTime/OutTime
 		E:/Qt5.8/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		E:/Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
-		E:/Qt5.8/5.8/mingw53_32/include/QtSql/qsqldatabase.h
+		E:/Qt5.8/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QDateTime
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\user.o ..\..\..\Git\OurTime\OutTime\user.cpp
 
 debug/pschedule.o: ../../../Git/OurTime/OutTime/pschedule.cpp ../../../Git/OurTime/OutTime/pschedule.h \

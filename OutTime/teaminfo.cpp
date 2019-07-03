@@ -8,6 +8,7 @@
 #include "message.h"
 #include <QVBoxLayout>
 #include <QTextEdit>
+#include <QList>
 #include "desktop.h"
 teaminfo::teaminfo(QWidget *parent):
     QWidget(parent),
@@ -20,10 +21,20 @@ teaminfo::teaminfo(QWidget *parent):
     ui->setupUi(this);
 
     //滑动窗口
-    QVBoxLayout *pLayout = new QVBoxLayout();
+    pLayout = new QVBoxLayout();
     //showmessage();
+//    int i = 0;
+//     int messagenum = 10;
+//     for( i=0 ; i < messagenum; i++)
+//     {
+//          QTextEdit *pTe = new QTextEdit();
+//          pTe->setText(QString("消息%1").arg(i));
+//          pTe->setMinimumSize(QSize(345,120));   //width height
+//          pTe->setReadOnly(true);
+//          pLayout->addWidget(pTe);//把按钮添加到布局控件中
+//     }
     pLayout->setMargin(10);
-    pLayout->setSpacing(200);
+    pLayout->setSpacing(50);
     ui->scrollAreaWidgetContents->setLayout(pLayout);
 
     //定时每秒刷新一次；
@@ -101,6 +112,12 @@ void teaminfo::on_pushButton_clicked()
 
 void teaminfo::showmessage()//显示消息和排序
 {
+    //将信息清空
+    QLayoutItem *child;
+    while(child=pLayout->layout()->takeAt(0)) {
+        delete child;
+    }
+
     if(ui->checkBox->isChecked()==true)//排序
     {
         QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
@@ -114,35 +131,32 @@ void teaminfo::showmessage()//显示消息和排序
         //链接数据库
         QSqlQuery query(db);
         query.exec("SET NAMES 'GBK'");
-        QString str = QString("select receiverID from message where receiverID='%1' order by datetime ").arg(user->getid());
+        QString str = QString("select * from message where receiverID='%1' ORDER BY senderID ASC ").arg(12345687);
         query.prepare(str);
         query.exec();
 
         while(query.next())
         {
-            QDateTime dt=query.value("datetime");
+            QString strdate = query.value("datetime").toString();
             int fromID = query.value("senderID").toInt();
             QString context=query.value("messageContent").toString();
-            QString strfrom = findname(fromID);
-            QString strdate = dt.toString("yyyy:MM:dd hh:mm:ss");
-            strdate.append("\n");
+            QString strfrom =QString("'%1'").arg(fromID);
+            strdate.append("\r\n   ");
             strdate.append(context);
-            strdate.append("\n");
+            strdate.append("\r\n  from:");
             strdate.append(strfrom);
+
             QTextEdit *pTe = new QTextEdit();
-            pTe->setText(QString(strdate);
+            pTe->setText(QString(strdate));
             pTe->setMinimumSize(QSize(345,120));   //width height
             pTe->setReadOnly(true);
             pLayout->addWidget(pTe);//把文本框添加到布局控件中
-
         }
 
         db.close();
     }
     else//正常的显示消息
     {
-        //int messagenum = user->messagenum();
-
         QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
         db.setHostName("localhost");
@@ -154,96 +168,29 @@ void teaminfo::showmessage()//显示消息和排序
         //链接数据库
         QSqlQuery query(db);
         query.exec("SET NAMES 'GBK'");
-        QString str = QString("select receiverID from message where receiverID='%1").arg(user->getid());
+        QString str = QString("select * from message where receiverID = '%1' ORDER BY senderID DESC").arg(12345687);
         query.prepare(str);
         query.exec();
 
         while(query.next())
         {
-            QDateTime dt=query.value("datetime");
+            QString strdate = query.value("datetime").toString();
             int fromID = query.value("senderID").toInt();
             QString context=query.value("messageContent").toString();
-            QString strfrom = findname(fromID);
-            QString strdate = dt.toString("yyyy:MM:dd hh:mm:ss");
-            strdate.append("\n");
+            QString strfrom =QString("'%1'").arg(fromID);
+
+            strdate.append("\r\n");
             strdate.append(context);
-            strdate.append("\n");
+            strdate.append("\r\n");
             strdate.append(strfrom);
             QTextEdit *pTe = new QTextEdit();
-            pTe->setText(QString(strdate);
+            pTe->setText(QString(strdate));
             pTe->setMinimumSize(QSize(345,120));   //width height
             pTe->setReadOnly(true);
             pLayout->addWidget(pTe);//把文本框添加到布局控件中
-
         }
 
         db.close();
     }
 
-}
-
-Message teaminfo::readMessage(int i)
-{
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
-
-    db.setHostName("localhost");
-    db.setDatabaseName("ourtime");
-    db.setUserName("root");
-    db.setPassword("123456");
-    db.setPort(3306);
-    db.open();
-    //链接数据库
-    QSqlQuery query(db);
-    query.exec("SET NAMES 'GBK'");
-    QString str = QString("select toID from message where toID='%1").arg(user->getid());
-    query.prepare(str);
-    query.exec();
-    if(query.seek(i))
-    {
-        QDate date=query.value("date");
-        QTime time;
-        int fromID = query.value("senderID").toInt();
-        QString context=query.value("messageContent").toString();
-        Message mes = new Message(fromID,user->getid(),context,date,time);
-    }
-    db.close;
-    return mes;
-}
-
-void teaminfo::judge()//排序
-{
-
-    {
-        int i=0;
-        int j=0;
-        int len = user->messagenum();//数据条数
-        QList<Message>mes;
-        for(i=1;i<=len;i++)
-        {
-            mes.append(readMessage(i));
-        }
-        for(i=0;i<len-1;i++)
-        {
-            for(j=0;j<len-1-i;j++)
-            {
-                if(mes[j].getfromid()>mes[j+1].getfromid())
-                    qSwap(mes[j],mes[j+1]);
-            }
-        }
-    }
-    for(i=1;i<=len;i++)
-    {
-        QDate date=mes[i].getDate;
-       // QTime time;
-        int fromID = mes[i].getFromid();
-        QString context=mes[i].getContext();
-        QString strfrom = findname(fromID);
-        QString strdate = date.toString("dddd, MMMM , yyyy");
-       // QString strtime = time.toString("h:m ap");
-       //strdate.append(strtime);//内容加时间
-        strdate.append("\n");
-        strdate.append(context);
-        strdate.append("\n");
-        strdate.append(strfrom);
-    }
 }

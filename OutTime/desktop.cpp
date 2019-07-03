@@ -161,8 +161,6 @@ void Desktop::timeUpdate()
 void Desktop::messagetip()
 {
    int num = user->messagenum();
-   QString str = QString("'%1'").arg(num);
-   ui->time->setText(str);
    if(num > mesnum)
    {
        mesnum = num;
