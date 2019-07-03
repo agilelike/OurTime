@@ -18,7 +18,7 @@ public:
     explicit edittable3(QWidget *parent = 0);
     ~edittable3();
 signals:
-    void editContent(Schedule sche);
+    void scheedit(Schedule sche);
 private slots:
     void on_pushButton_clicked();
 

@@ -23,9 +23,10 @@ private slots:
     void on_commandLinkButton_2_clicked();
 
 
-    void getcontent1(Schedule sche);
-    void getcontent2(Schedule sche);
-    void gettask(Schedule sche);
+    void getschecontent(Schedule sche);
+    void getscheedit(Schedule sche);
+    void gettaskcontent(Schedule sche);
+    void gettaskedit(Schedule sche);
 
     void clickevent();
     void editSchedule();
@@ -42,6 +43,7 @@ private:
     editTable *et1;
     edittable2 *et2;
     edittable3 *et3;
+    edittable4 *et4;
     QList<QPushButton *>btn[7];
 
     //菜单与动作

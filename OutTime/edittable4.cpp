@@ -37,7 +37,7 @@ void edittable4::on_pushButton_clicked()
         QMessageBox::about(this,tr("提示"),tr("事件名不能为空"));
     }
     if(s.name!=""){
-        emit passtask(s);
+        emit taskedit(s);
         this->hide();
     }
 }

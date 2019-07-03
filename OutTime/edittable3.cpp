@@ -40,7 +40,7 @@ void edittable3::on_pushButton_clicked()
         QMessageBox::about(this,tr("提示"),tr("事件名不能为空"));
     }
     if(len>=30&&s.name!=""){
-        emit editContent(s);
+        emit scheedit(s);
         this->hide();
     }
 }
