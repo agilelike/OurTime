@@ -23,9 +23,8 @@ pSchedule::pSchedule(bool person)
 
         QString str = QString("select * from pschedule where userID = '%1' and Date = '%2'").arg(user->getid()).arg(date.toString("yyyy-MM-dd"));
         query.exec(str);
-        while(query.numRowsAffected() != 0)
+        while(query.next())
         {
-            query.next();
             Schedule sche;
             sche.state=0;
             sche.t=QDate::fromString(query.value(0).toString(),"dd-MM-yyyy");
@@ -43,9 +42,8 @@ pSchedule::pSchedule(bool person)
     {
         QString str = QString("select * from tschedule where teamID = '%1' and Date = '%2'").arg(user->getTeamid()).arg(date.toString("yyyy-MM-dd"));
         query.exec(str);
-        while(query.numRowsAffected() != 0)
+        while(query.next())
         {
-            query.next();
             Schedule sche;
             sche.state=1;
             sche.t=QDate::fromString(query.value(0).toString(),"dd-MM-yyyy");
@@ -57,9 +55,8 @@ pSchedule::pSchedule(bool person)
         }
         str = QString("select * from task where teamID = '%1' and to_days(deadline) = '%2'").arg(user->getTeamid()).arg(date.toString("yyyy-MM-dd"));
         query.exec(str);
-        while(query.numRowsAffected() != 0)
+        while(query.next())
         {
-            query.next();
             Schedule sche;
             sche.id=query.value(0).toInt();
             sche.state=2;
@@ -254,9 +251,8 @@ void pSchedule::startend(QList<QTime*> _start,QList<QTime*> _end,QDate day,bool 
 
         QString str = QString("select * from pschedule where userID = '%1' and Date = '%2'").arg(user->getid()).arg(date.toString("yyyy-MM-dd"));
         query.exec(str);
-        while(query.numRowsAffected() != 0)
+        while(query.next())
         {
-            query.next();
             Schedule sche;
             sche.state=0;
             sche.t=QDate::fromString(query.value(0).toString(),"dd-MM-yyyy");
@@ -279,9 +275,8 @@ void pSchedule::startend(QList<QTime*> _start,QList<QTime*> _end,QDate day,bool 
     {
         QString str = QString("select * from tschedule where teamID = '%1' and Date = '%2'").arg(user->getTeamid()).arg(date.toString("yyyy-MM-dd"));
         query.exec(str);
-        while(query.numRowsAffected() != 0)
+        while(query.next())
         {
-            query.next();
             Schedule sche;
             sche.state=1;
             sche.t=QDate::fromString(query.value(0).toString(),"dd-MM-yyyy");
@@ -298,9 +293,8 @@ void pSchedule::startend(QList<QTime*> _start,QList<QTime*> _end,QDate day,bool 
         }
         str = QString("select * from task where teamID = '%1' and to_days(deadline) = '%2'").arg(user->getTeamid()).arg(date.toString("yyyy-MM-dd"));
         query.exec(str);
-        while(query.numRowsAffected() != 0)
+        while(query.next())
         {
-            query.next();
             Schedule sche;
             sche.state=2;
             sche.id=query.value(0).toInt();

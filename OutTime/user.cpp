@@ -19,6 +19,7 @@ void User::freshSchedule()
         tsche[i]=new pSchedule(date.addDays(i));
     }
 }
+
 bool User::login(QString _name,QString pwd)
 {
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");

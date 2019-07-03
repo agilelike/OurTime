@@ -13,6 +13,7 @@ private:
     QString name;
     int teamState;
     int teamid;
+public:
     QList<pSchedule *> psche;
     QList<pSchedule *> tsche;
 public:
