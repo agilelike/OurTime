@@ -52,7 +52,7 @@ QString teaminfo::findname(int userID)    //根据用户ID找名字
     //链接数据库
     QSqlQuery query(db);
     query.exec("SET NAMES 'GBK'");
-    QString str = QString("select userName from user where userID = '%1'").arg(12345678);
+    QString str = QString("select userName from user where userID = '%1'").arg(userID);
     query.prepare(str);
     query.exec();
 
@@ -128,7 +128,7 @@ void teaminfo::showmessage()//显示消息和排序
         query.exec("SET NAMES 'GBK'");
         QString str = QString("select datetime,messageContent,userName from message,user "
                               "where receiverID = '%1' and senderID = userID "
-                              " ORDER BY senderID ASC ").arg(12345687);
+                              " ORDER BY senderID ASC ").arg(user->getid());
         query.prepare(str);
         query.exec();
 
@@ -167,7 +167,7 @@ void teaminfo::showmessage()//显示消息和排序
         query.exec("SET NAMES 'GBK'");
         QString str = QString("select datetime,messageContent,userName from message,user "
                               "where receiverID = '%1' and senderID = userID "
-                              "ORDER BY senderID DESC").arg(12345687);
+                              "ORDER BY senderID DESC").arg(user->getid());
         query.prepare(str);
         query.exec();
 
