@@ -20,6 +20,7 @@ INPUT(
 ./release\edittable3.o
 ./release\showid.o
 ./release\edittable2.o
+./release\edittable4.o
 ./release\qrc_image.o
 ./release\qrc_resource.o
 ./release\moc_mainwindow.o
@@ -38,4 +39,5 @@ INPUT(
 ./release\moc_showid.o
 ./release\moc_edittable2.o
 ./release\moc_edittable3.o
+./release\moc_edittable4.o
 );

@@ -74,13 +74,10 @@ void editTable::on_pushButton_clicked()
     //从数据库里读当天所有日程的开始与结束时间
     //写一个循环，将s.start与s.end与所有这个日期的进行比较，若都不重叠，才允许添加。
 
-
-    int s_start = s.start.hour()*100+s.start.minute();
-    int s_end = s.end.hour()*100+s.end.minute();
     if(flag)
     {
         for(int i=0;i<user->psche[s.t.dayOfWeek()-1]->s.length();i++){
-            if(!(s_end>user->psche[s.t.dayOfWeek()-1]->s[i].start ||user->psche[s.t.dayOfWeek()-1]->s[i].end>s_start)){
+            if(!(s.end > user->psche[s.t.dayOfWeek()-1]->s[i].start ||user->psche[s.t.dayOfWeek()-1]->s[i].end>s.start)){
                 QMessageBox::about(this,tr("提示"),tr("不能选该时间段"));
                 f = true;
                 break;

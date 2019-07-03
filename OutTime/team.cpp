@@ -11,7 +11,7 @@ void Team::updateTeam(int teamid)//重新获取对应team信息
 {
     id = teamid;
     QPair<int,int> tmp;
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+    QSqlDatabase db = QSqlDatabase::database("mysql");
 
     db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
     db.setDatabaseName("ourtime");       //要连接的数据库名

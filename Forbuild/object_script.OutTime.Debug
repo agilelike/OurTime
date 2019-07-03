@@ -20,6 +20,7 @@ INPUT(
 ./debug\edittable3.o
 ./debug\showid.o
 ./debug\edittable2.o
+./debug\edittable4.o
 ./debug\qrc_image.o
 ./debug\qrc_resource.o
 ./debug\moc_mainwindow.o
@@ -38,4 +39,5 @@ INPUT(
 ./debug\moc_showid.o
 ./debug\moc_edittable2.o
 ./debug\moc_edittable3.o
+./debug\moc_edittable4.o
 );

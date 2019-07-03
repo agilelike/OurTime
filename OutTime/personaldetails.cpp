@@ -188,7 +188,7 @@ void personalDetails::on_pushButton_6_clicked()
         int row1 = ui->tableWidget_2->currentItem()->row();
         QString str = ui->tableWidget_2->item(row1,1)->text();
 
-        QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+        QSqlDatabase  db =  QSqlDatabase::database("database");
         db.setHostName("localhost");
         db.setDatabaseName("ourtime");
         db.setUserName("team");
@@ -214,7 +214,7 @@ void personalDetails::on_pushButton_7_clicked()
         int row1 = ui->tableWidget_2->currentItem()->row();
         QString str = ui->tableWidget_2->item(row1,1)->text();
 
-        QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+        QSqlDatabase  db =  QSqlDatabase::database("mysql");
         db.setHostName("localhost");
         db.setDatabaseName("ourtime");
         db.setUserName("team");
@@ -412,7 +412,7 @@ void personalDetails::showMember(){
     ui->tableWidget_2->setColumnCount(2);
     team->updateTeam(user->getTeamid());
 
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+    QSqlDatabase  db =  QSqlDatabase::database("mysql");
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");
@@ -483,7 +483,7 @@ void personalDetails::hideLabel19(){
 }
 
 void personalDetails::showTotal(){
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+    QSqlDatabase  db =  QSqlDatabase::database("mysql");
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");

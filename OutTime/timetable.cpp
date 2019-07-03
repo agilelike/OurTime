@@ -22,7 +22,7 @@ TimeTable::TimeTable(QWidget *parent) :
     et2 = new edittable2();
     connect(ui->pushButton_4,SIGNAL(clicked()),et2,SLOT(makeEdit()));
     et3 = new edittable3();
-    connect(this,SIGNAL(passflag(bool),et1,SLOT(makeEdit(bool));
+    connect(this,SIGNAL(passflag(bool)),et1,SLOT(makeEdit(bool)));
 
     et4 = new edittable4();
 
@@ -30,7 +30,7 @@ TimeTable::TimeTable(QWidget *parent) :
     //页面传参
     connect(et1,SIGNAL(schecontent(Schedule)),this,SLOT(getschecontent(Schedule)));
     connect(et3,SIGNAL(scheedit(Schedule)),this,SLOT(getscheedit(Schedule)));
-    connect(et2,SIGNAL(taskcontent(Schedule),this,SLOT(gettaskcontent(Schedule));
+    connect(et2,SIGNAL(taskcontent(Schedule)),this,SLOT(gettaskcontent(Schedule)));
     connect(et4,SIGNAL(taskedit(Schedule)),this,SLOT(gettaskedit(Schedule)));
 
 }
@@ -56,10 +56,10 @@ void TimeTable::refreshBox()
         QTime b;
         b = QTime(8,0);
         int begin;
-
+        QList<pSchedule *> p=user->psche;
         for(int i=0;i<7;i++){
             for(int j=0;j<p[i]->s.length();j++){
-               len = p[i]->s[j].start.secsTo(p[i]->s[j].end)/60;
+                len = p[i]->s[j].start.secsTo(p[i]->s[j].end)/60;
                 begin = b.secsTo(p[i]->s[j].start)/60;
                 btn[i]<<new QPushButton(this);
                 btn[i][j]->setText(p[i]->s[j].name+"\n"+p[i]->s[j].start.toString("h:mm")+"-"+p[i]->s[j].end.toString("h:mm"));
@@ -93,7 +93,7 @@ void TimeTable::refreshBox()
         QTime b;
         b = QTime(8,0);
         int begin;
-
+        QList<pSchedule *> p=user->tsche;
         for(int i=0;i<7;i++){
             for(int j=0;j<p[i]->s.length();j++){
                 Schedule tmp=p[i]->s[j];
@@ -252,12 +252,6 @@ void TimeTable::clickevent(){
 
 //从另一个页面点确定后传到该页面，对数据处理，增加到数据库并重新绘制
 void TimeTable::getschecontent(Schedule sche){
-    //区间长
-    int len ;
-    QTime b = QTime(8,0);
-    int begin;
-
-
     //把sche的一些东西重新写到数据库重新读取重新绘制
     if(flag==true){
         //把sche写到个人日程的数据库
