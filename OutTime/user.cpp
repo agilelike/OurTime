@@ -30,10 +30,11 @@ bool User::sendMessage(int toID, QString context)
     //链接数据库
     QSqlQuery query(db);
     query.exec("SET NAMES 'GBK'");
-    QString str = QString("insert into message values('%1','%2','%3','%4')").arg(user->getid()).arg(toID).arg(context).arg(currentDate);
+    QString str = QString("insert into message(senderID ,receiverID ,messagecontent ,datetime) values('%1','%2','%3','%4')").arg(12345678).arg(toID).arg(context).arg(currentDate);
     query.prepare(str);
     query.exec();
     db.close();
+
 }
 
 int User::messagenum()

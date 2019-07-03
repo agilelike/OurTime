@@ -22,19 +22,8 @@ teaminfo::teaminfo(QWidget *parent):
 
     //滑动窗口
     pLayout = new QVBoxLayout();
-    //showmessage();
-//    int i = 0;
-//     int messagenum = 10;
-//     for( i=0 ; i < messagenum; i++)
-//     {
-//          QTextEdit *pTe = new QTextEdit();
-//          pTe->setText(QString("消息%1").arg(i));
-//          pTe->setMinimumSize(QSize(345,120));   //width height
-//          pTe->setReadOnly(true);
-//          pLayout->addWidget(pTe);//把按钮添加到布局控件中
-//     }
     pLayout->setMargin(10);
-    pLayout->setSpacing(50);
+    pLayout->setSpacing(20);
     ui->scrollAreaWidgetContents->setLayout(pLayout);
 
     //定时每秒刷新一次；
@@ -63,7 +52,7 @@ QString teaminfo::findname(int userID)    //根据用户ID找名字
     //链接数据库
     QSqlQuery query(db);
     query.exec("SET NAMES 'GBK'");
-    QString str = QString("select userID from user where userName = '%1'").arg(userID);
+    QString str = QString("select userName from user where userID = '%1'").arg(12345678);
     query.prepare(str);
     query.exec();
 
@@ -82,7 +71,7 @@ int teaminfo::findID(QString username)//根据用户名找
 
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
-    db.setUserName("team");
+    db.setUserName("root");
     db.setPassword("123456");
     db.setPort(3306);
     db.open();
@@ -92,12 +81,14 @@ int teaminfo::findID(QString username)//根据用户名找
     QString str = QString("select userID from user where userName = '%1'").arg(username);
     query.prepare(str);
     query.exec();
-      int userid;
+
+    int userid;
     if(query.first())
     {
         userid=query.value("userID").toInt();
     }
-     db.close();
+
+    db.close();
     return userid;
 }
 
@@ -115,6 +106,10 @@ void teaminfo::showmessage()//显示消息和排序
     //将信息清空
     QLayoutItem *child;
     while(child=pLayout->layout()->takeAt(0)) {
+        if(child->widget())
+        {
+           child->widget()->setParent(NULL);
+        }
         delete child;
     }
 
@@ -131,7 +126,9 @@ void teaminfo::showmessage()//显示消息和排序
         //链接数据库
         QSqlQuery query(db);
         query.exec("SET NAMES 'GBK'");
-        QString str = QString("select * from message where receiverID='%1' ORDER BY senderID ASC ").arg(12345687);
+        QString str = QString("select datetime,messageContent,userName from message,user "
+                              "where receiverID = '%1' and senderID = userID "
+                              " ORDER BY senderID ASC ").arg(12345687);
         query.prepare(str);
         query.exec();
 
@@ -143,7 +140,7 @@ void teaminfo::showmessage()//显示消息和排序
             QString strfrom =QString("'%1'").arg(fromID);
             strdate.append("\r\n   ");
             strdate.append(context);
-            strdate.append("\r\n  from:");
+            strdate.append("\r\n");
             strdate.append(strfrom);
 
             QTextEdit *pTe = new QTextEdit();
@@ -168,29 +165,33 @@ void teaminfo::showmessage()//显示消息和排序
         //链接数据库
         QSqlQuery query(db);
         query.exec("SET NAMES 'GBK'");
-        QString str = QString("select * from message where receiverID = '%1' ORDER BY senderID DESC").arg(12345687);
+        QString str = QString("select datetime,messageContent,userName from message,user "
+                              "where receiverID = '%1' and senderID = userID "
+                              "ORDER BY senderID DESC").arg(12345687);
         query.prepare(str);
         query.exec();
 
         while(query.next())
         {
             QString strdate = query.value("datetime").toString();
-            int fromID = query.value("senderID").toInt();
+//            int fromID = query.value("senderID").toInt();
+            QString fromName = query.value("userName").toString();
             QString context=query.value("messageContent").toString();
-            QString strfrom =QString("'%1'").arg(fromID);
+//            QString strfrom =QString("'%1'").arg(fromID);
 
             strdate.append("\r\n");
             strdate.append(context);
             strdate.append("\r\n");
-            strdate.append(strfrom);
+            strdate.append(fromName);
             QTextEdit *pTe = new QTextEdit();
             pTe->setText(QString(strdate));
             pTe->setMinimumSize(QSize(345,120));   //width height
             pTe->setReadOnly(true);
             pLayout->addWidget(pTe);//把文本框添加到布局控件中
         }
-
         db.close();
+        int num = user->messagenum();
+        ui->scrollAreaWidgetContents->setMinimumHeight(num*140);
     }
 
 }

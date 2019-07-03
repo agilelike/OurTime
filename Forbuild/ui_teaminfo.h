@@ -107,8 +107,8 @@ public:
         label_2->setText(QApplication::translate("teaminfo", "\345\217\221\351\200\201\345\257\271\350\261\241\357\274\232", Q_NULLPTR));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
-         << QApplication::translate("teaminfo", "teamleader", Q_NULLPTR)
-         << QApplication::translate("teaminfo", "\345\260\217\351\273\221", Q_NULLPTR)
+         << QApplication::translate("teaminfo", "wjj", Q_NULLPTR)
+         << QApplication::translate("teaminfo", "lsc", Q_NULLPTR)
         );
         label_3->setText(QApplication::translate("teaminfo", "\345\217\221\351\200\201\346\266\210\346\201\257\357\274\232", Q_NULLPTR));
     } // retranslateUi
