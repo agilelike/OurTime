@@ -334,6 +334,8 @@ debug/moc_mainwindow.cpp: E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QWidget \
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qtimer.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qbasictimer.h \
 		../../../Git/OurTime/OutTime/teaminfo.h \
+		../../../Git/OurTime/OutTime/message.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/timetable.h \
 		../../../Git/OurTime/OutTime/edittable.h \
 		../../../Git/OurTime/OutTime/mainwindow.h \
@@ -1244,6 +1246,11 @@ debug/moc_teaminfo.cpp: E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QWidget \
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qfiledevice.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/qvector2d.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../Git/OurTime/OutTime/message.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QString \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QDate \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qdatetime.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/teaminfo.h \
 		debug/moc_predefs.h \
 		E:/Qt5.8/5.8/mingw53_32/bin/moc.exe
@@ -1788,6 +1795,8 @@ debug/main.o: ../../../Git/OurTime/OutTime/main.cpp ../../../Git/OurTime/OutTime
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qtimer.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qbasictimer.h \
 		../../../Git/OurTime/OutTime/teaminfo.h \
+		../../../Git/OurTime/OutTime/message.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/timetable.h \
 		../../../Git/OurTime/OutTime/edittable.h \
 		../../../Git/OurTime/OutTime/desktop.h \
@@ -1809,9 +1818,7 @@ debug/main.o: ../../../Git/OurTime/OutTime/main.cpp ../../../Git/OurTime/OutTime
 		../../../Git/OurTime/OutTime/user.h \
 		../../../Git/OurTime/OutTime/team.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/QList \
-		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
-		../../../Git/OurTime/OutTime/message.h \
-		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QTime
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qpair
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\..\..\Git\OurTime\OutTime\main.cpp
 
 debug/mainwindow.o: ../../../Git/OurTime/OutTime/mainwindow.cpp ../../../Git/OurTime/OutTime/mainwindow.h \
@@ -1940,6 +1947,8 @@ debug/mainwindow.o: ../../../Git/OurTime/OutTime/mainwindow.cpp ../../../Git/Our
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qtimer.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qbasictimer.h \
 		../../../Git/OurTime/OutTime/teaminfo.h \
+		../../../Git/OurTime/OutTime/message.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/timetable.h \
 		../../../Git/OurTime/OutTime/edittable.h \
 		ui_mainwindow.h \
@@ -3107,6 +3116,11 @@ debug/teaminfo.o: ../../../Git/OurTime/OutTime/teaminfo.cpp ../../../Git/OurTime
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qfiledevice.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/qvector2d.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../Git/OurTime/OutTime/message.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QString \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QDate \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qdatetime.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		ui_teaminfo.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QVariant \
 		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QAction \
@@ -3152,26 +3166,25 @@ debug/teaminfo.o: ../../../Git/OurTime/OutTime/teaminfo.cpp ../../../Git/OurTime
 		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qpushbutton.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QScrollArea \
 		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qscrollarea.h \
-		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QScrollBar \
-		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qscrollbar.h \
-		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QTextBrowser \
-		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qtextbrowser.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QTextEdit \
 		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qtextedit.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/qtextdocument.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/qtextoption.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/qtextcursor.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/qtextformat.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/qpen.h \
-		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QTextEdit \
 		../../../Git/OurTime/OutTime/user.h \
-		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QString \
 		../../../Git/OurTime/OutTime/team.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtGui/QList \
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
-		../../../Git/OurTime/OutTime/message.h \
-		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QDate \
-		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qdatetime.h \
-		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QTime
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QTimer \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qtimer.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qbasictimer.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayout.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\teaminfo.o ..\..\..\Git\OurTime\OutTime\teaminfo.cpp
 
 debug/timetable.o: ../../../Git/OurTime/OutTime/timetable.cpp ../../../Git/OurTime/OutTime/timetable.h \
@@ -3649,6 +3662,8 @@ debug/desktop.o: ../../../Git/OurTime/OutTime/desktop.cpp ../../../Git/OurTime/O
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qtimer.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/qbasictimer.h \
 		../../../Git/OurTime/OutTime/teaminfo.h \
+		../../../Git/OurTime/OutTime/message.h \
+		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Git/OurTime/OutTime/timetable.h \
 		../../../Git/OurTime/OutTime/edittable.h \
 		E:/Qt5.8/5.8/mingw53_32/include/QtCore/QDateTime

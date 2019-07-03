@@ -23,6 +23,7 @@ private slots:
     void on_Button1_clicked();
     void on_Button2_clicked();
     void timeUpdate();
+    void messagetip();
 
 private:
     Ui::Desktop *ui;

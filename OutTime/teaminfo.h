@@ -20,7 +20,7 @@ public:
     void judge();
     void update();
     void showmessage();
-    Message readMessage();
+    Message readMessage(int i);
 private slots:
     void on_pushButton_clicked();
 

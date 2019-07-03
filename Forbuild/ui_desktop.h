@@ -46,6 +46,7 @@ public:
     QLabel *label_9;
     QLabel *label_13;
     QLabel *label_10;
+    QLabel *label_me;
 
     void setupUi(QWidget *Desktop)
     {
@@ -166,6 +167,10 @@ public:
         label_10->setGeometry(QRect(20, 340, 410, 20));
         label_10->setFont(font);
         label_10->setStyleSheet(QStringLiteral("color: rgb(85, 255, 127);"));
+        label_me = new QLabel(Desktop);
+        label_me->setObjectName(QStringLiteral("label_me"));
+        label_me->setGeometry(QRect(130, 560, 41, 31));
+        label_me->setStyleSheet(QString::fromUtf8("border-image: url(:/Image/\351\273\204\350\211\262\346\204\237\345\217\271\345\217\267\347\256\200\346\230\223\345\260\217\347\201\257\346\263\241.png);"));
 
         retranslateUi(Desktop);
 
@@ -198,6 +203,7 @@ public:
         label_9->setText(QApplication::translate("Desktop", "15:30~17:00   computer network", Q_NULLPTR));
         label_13->setText(QApplication::translate("Desktop", "20:00~21:30  code interface", Q_NULLPTR));
         label_10->setText(QApplication::translate("Desktop", "17:00~18:00   code interface", Q_NULLPTR));
+        label_me->setText(QString());
     } // retranslateUi
 
 };

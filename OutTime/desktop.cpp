@@ -8,7 +8,7 @@
 #include <QTimer>
 #include <QString>
 #include <QDateTime>
-
+#include<QTimer>
 static bool enumUserWindowsCB(HWND hwnd,LPARAM lParam)
 {
     long wflags = GetWindowLong(hwnd, GWL_STYLE);
@@ -22,6 +22,8 @@ static bool enumUserWindowsCB(HWND hwnd,LPARAM lParam)
     HWND* resultHwnd = (HWND*)lParam;
     *resultHwnd = targetWnd;
     return FALSE;
+
+
 }
 
 HWND Desktop::findDesktopIconWnd()
@@ -81,6 +83,11 @@ Desktop::Desktop(QWidget *parent) :
     QTimer *timer=new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timeUpdate()));
     timer->start(1000); // 每次发射timeout信号时间间隔为1秒
+    //定时刷新消息
+    ui->label_me->hide();
+    QTimer* timer2 = new QTimer(this);
+    connect(timer2, SIGNAL(timeout()), this, SLOT(messagetip()));
+    timer2->start(30000);
 
 }
 
@@ -148,6 +155,10 @@ void Desktop::timeUpdate()
     ui->time_value->setText(currentDate);
 }
 
+void Desktop::messagetip()
+{
+    ui->label_me->show();
+}
 
 Desktop::~Desktop()
 {

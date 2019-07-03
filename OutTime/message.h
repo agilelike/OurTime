@@ -13,8 +13,10 @@ class Message
     bool flagPop;//是否已经弹窗
 
 public:
-    int getfromid();
-
+    int getFromid();
+    int getToid();
+    QString getContext();
+    QDate getDate();
     Message(int fromID,int toID,QString context,QDate date,QTime time);
 };
 

@@ -11,9 +11,22 @@ Message::Message(int fromID,int toID,QString context,QDate date,QTime time)
     this->time=time;
 }
 
-int Message::getfromid()
+int Message::getFromid()
 {
-
+   return this->fromID;
 }
 
+int Message::getToid()
+{
+    return this->toID;
+}
 
+QString Message::getContext()
+{
+    return this->context;
+}
+
+QDate Message::getDate()
+{
+    return this->date;
+}
