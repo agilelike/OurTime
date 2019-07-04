@@ -1,6 +1,6 @@
 #include "edittable4.h"
 #include "ui_edittable4.h"
-#include "qmessagebox.h"
+
 edittable4::edittable4(QWidget *parent) :
     BaseWindow(parent),
     ui(new Ui::edittable4)

@@ -2,7 +2,9 @@
 #include <QDebug>
 #include <QTextStream>
 #include <stdio.h>
-
+#include <QSqlQuery>
+#include "message.h"
+#include<QDateTime>
 
 User *user;
 User::User()
@@ -13,22 +15,16 @@ User::User()
 void User::freshSchedule()
 {
     QDate date=QDate::currentDate();
-    date=date.addDays(-date.dayOfWeek()+1);
-    qDeleteAll(psche);
-    psche.clear();
-    qDeleteAll(tsche);
-    tsche.clear();
+    date.addDays(-date.dayOfWeek()+1);
     for(int i=0;i<7;i++){
-        pSchedule* tmp=new pSchedule(date.addDays(i));
-        pSchedule* tmp2=new pSchedule(date.addDays(i));
-        psche.append(tmp);
-        tsche.append(tmp2);
+        psche[i]=new pSchedule(date.addDays(i));
+        tsche[i]=new pSchedule(date.addDays(i));
     }
 }
 
 bool User::login(QString _name,QString pwd)
 {
-    QSqlDatabase db = QSqlDatabase::database("mysql");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");
@@ -44,8 +40,11 @@ bool User::login(QString _name,QString pwd)
         name = _name;
         id = query.value(0).toInt();
         state = 1;
-        teamid = query.value(2).toInt();
-        teamState = query.value(4).toInt();
+        str = QString("select teamID,state from user where userID = '%1'").arg(id);
+        query.exec(str);
+        query.next();
+        teamid = query.value(0).toInt();
+        teamState = query.value(1).toInt();
         //QTextStream cout(stdout,  QIODevice::WriteOnly);
         //cout<<teamid<<teamState<<endl;
         query.exec("SET NAMES 'UTF8'");
@@ -61,7 +60,7 @@ bool User::login(QString _name,QString pwd)
 }
 
 int User::signup(QString name,QString pwd){
-    QSqlDatabase db = QSqlDatabase::database("mysql");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");
@@ -118,7 +117,8 @@ int User::getTeamid()
 bool User::setTeamid(int _id)
 {
     //数据库操作
-    QSqlDatabase db = QSqlDatabase::database("mysql");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");
@@ -138,7 +138,8 @@ bool User::setTeamid(int _id)
 
 bool User::setTeamState(int _state)
 {
-    QSqlDatabase db = QSqlDatabase::database("mysql");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");
@@ -157,7 +158,8 @@ bool User::setTeamState(int _state)
 }
 
 bool User::setAllTeamid(int _id){
-    QSqlDatabase db = QSqlDatabase::database("mysql");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");
@@ -177,7 +179,8 @@ bool User::setAllTeamid(int _id){
 
 bool User::setAllTeamState(int _state)
 {
-    QSqlDatabase db = QSqlDatabase::database("mysql");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");
@@ -197,7 +200,8 @@ bool User::setAllTeamState(int _state)
 
 bool User::createTeam(QString Name)
 {
-    QSqlDatabase db = QSqlDatabase::database("mysql");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");
@@ -237,7 +241,8 @@ bool User::dismissTeam()
     if(user->getTeamState()==0)
         return 0;
 
-    QSqlDatabase db = QSqlDatabase::database("mysql");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");
@@ -257,7 +262,8 @@ bool User::dismissTeam()
 }
 
 bool User::exitTeam(){
-    QSqlDatabase db = QSqlDatabase::database("mysql");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
     db.setUserName("team");
@@ -274,4 +280,56 @@ bool User::exitTeam(){
     user->setTeamState(0);
     user->setTeamid(0);
     return 1;
+}
+
+bool User::sendMessage(int toID, QString context)
+{
+    QDateTime dt = QDateTime::currentDateTime();
+    QString currentDate = dt.toString("yyyy:MM:dd hh:mm:ss");
+    //Message* m1= new Message(user->getid(),toID,context,date,time);
+
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
+    db.setUserName("root");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+    //链接数据库
+    QSqlQuery query(db);
+    query.exec("SET NAMES 'GBK'");
+    QString str = QString("insert into message(senderID ,receiverID ,messagecontent ,datetime) values('%1','%2','%3','%4')").arg(user->getid()).arg(toID).arg(context).arg(currentDate);
+    query.prepare(str);
+    query.exec();
+    db.close();
+
+}
+
+int User::messagenum()
+{
+    int num=0;
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
+    db.setUserName("root");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+    //链接数据库
+
+    QSqlQuery query(db);
+    query.exec("SET NAMES 'GBK'");
+    QString str = QString("select * from message where receiverID='%1'").arg(user->getid());
+    query.prepare(str);
+    query.exec();
+
+    while(query.next())
+    {
+        num++;
+    }
+    db.close();
+    return num;
+
 }
