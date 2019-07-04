@@ -1,6 +1,6 @@
 #include "edittable2.h"
 #include "ui_edittable2.h"
-
+#include "qmessagebox.h"
 edittable2::edittable2(QWidget *parent) :
     BaseWindow(parent),
     ui(new Ui::edittable2)
@@ -47,6 +47,5 @@ void edittable2::on_pushButton_clicked()
         emit taskcontent(s);
         this->hide();
     }
-
 
 }

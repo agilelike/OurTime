@@ -3,7 +3,6 @@
 #include<QList>
 #include<QDate>
 #include<QTime>
-#include<user.h>
 #include <QSqlQuery>
 class Schedule{
 public:
@@ -28,8 +27,6 @@ public:
     bool deleteSche(int index);//删除某个日程
     bool addSche(Schedule sc);//添加一个日程
 
-    //传入的开始结束时间的数组在里面被赋值
-    static void startend(QList<QTime*> _start,QList<QTime*> _end,QDate day,bool person=0);
 };
 
 #endif // PSCHEDULE_H

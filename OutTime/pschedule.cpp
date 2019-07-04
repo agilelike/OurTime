@@ -1,4 +1,5 @@
 #include "pschedule.h"
+#include<user.h>
 Schedule::Schedule()
 {
 
@@ -226,89 +227,4 @@ bool pSchedule::addSche(Schedule sc)
     s.append(sc);
     db.close();
     return 1;
-}
-
-void pSchedule::startend(QList<QTime*> _start,QList<QTime*> _end,QDate day,bool person=0){
-
-    //基本上沿用上边的构造函数，稍作修改
-
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
-
-    db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
-    db.setDatabaseName("ourtime");       //要连接的数据库名
-    db.setUserName("team");
-    db.setPassword("123456");
-    db.setPort(3306);
-    db.open();
-
-
-
-    QSqlQuery query(db);
-    query.exec("SET NAMES 'GBK'");
-    QDate date=day;
-    if(person==0)
-    {
-
-        QString str = QString("select * from pschedule where userID = '%1' and Date = '%2'").arg(user->getid()).arg(date.toString("yyyy-MM-dd"));
-        query.exec(str);
-        while(query.next())
-        {
-            Schedule sche;
-            sche.state=0;
-            sche.t=QDate::fromString(query.value(0).toString(),"dd-MM-yyyy");
-            sche.start=QTime::fromString(query.value(1).toString(),"hh:mm:ss");
-            sche.end=QTime::fromString(query.value(2).toString(),"hh:mm:ss");
-            sche.name=query.value(3).toString();
-            sche.id=query.value(4).toInt();
-            sche.isGrabed=query.value(6).toInt();
-
-
-            //只取开始与结束时间
-            _start<<new QTime(sche.start.hour(),sche.start.minute());
-            _end<<new QTime(sche.end.hour(),sche.end.minute());
-
-            //s.append(sche);
-        }
-
-    }
-    else if(person==1)
-    {
-        QString str = QString("select * from tschedule where teamID = '%1' and Date = '%2'").arg(user->getTeamid()).arg(date.toString("yyyy-MM-dd"));
-        query.exec(str);
-        while(query.next())
-        {
-            Schedule sche;
-            sche.state=1;
-            sche.t=QDate::fromString(query.value(0).toString(),"dd-MM-yyyy");
-            sche.start=QTime::fromString(query.value(1).toString(),"hh:mm:ss");
-            sche.end=QTime::fromString(query.value(2).toString(),"hh:mm:ss");
-            sche.name=query.value(3).toString();
-            sche.id=query.value(4).toInt();
-            //s.append(sche);
-
-            //只取开始结束
-            _start<<new QTime(sche.start.hour(),sche.start.minute());
-            _end<<new QTime(sche.end.hour(),sche.end.minute());
-
-        }
-        str = QString("select * from task where teamID = '%1' and to_days(deadline) = '%2'").arg(user->getTeamid()).arg(date.toString("yyyy-MM-dd"));
-        query.exec(str);
-        while(query.next())
-        {
-            Schedule sche;
-            sche.state=2;
-            sche.id=query.value(0).toInt();
-            QDateTime t=QDateTime::fromString(query.value(2).toString(),"dd-MM-yyyy hh:mm:ss");
-            sche.t=t.date();
-            sche.end=t.time();
-            sche.name=query.value(3).toString();
-            //s.append(sche);
-
-            //只取开始结束
-            _start<<new QTime(sche.start.hour(),sche.start.minute());
-            _end<<new QTime(sche.end.hour(),sche.end.minute());
-        }
-    }
-    query.exec("SET NAMES 'UTF8'");
-    db.close();
 }

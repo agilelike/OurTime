@@ -104,7 +104,7 @@ void journal::getpSchedule(QList<pSche>& daySchedule ,QString scheduleDate)
     query.prepare("select scheduleName ,startTime ,endTime "
                   "from pSchedule "
                   "where userID = ? and date = ? ORDER BY userID ASC");
-    query.addBindValue(user->userID);
+    query.addBindValue(user->getid());
     query.addBindValue(scheduleDate);
     query.exec();
 
@@ -125,8 +125,8 @@ void journal::connectDB(QSqlDatabase &db)
     db.setHostName("localhost");      //连接数据库主机名，这里需要注意（若填的为”127.0.0.1“，出现不能连接，则改为localhost)
     db.setPort(3306);                 //连接数据库端口号，与设置一致
     db.setDatabaseName("ourtime");      //连接数据库名，与设置一致
-    db.setUserName("root");          //数据库用户名，与设置一致
-    db.setPassword("990622");    //数据库密码，与设置一致
+    db.setUserName("team");          //数据库用户名，与设置一致
+    db.setPassword("123456");    //数据库密码，与设置一致
     db.open();
 }
 
@@ -150,7 +150,7 @@ void journal::showJournal()
                   "from journal "
                   "where date = ? and userID = ?");
     query.addBindValue(scheduleDate);
-    query.addBindValue(user->userID);
+    query.addBindValue(user->getid());
     query.exec();
     if(query.next())
     {
@@ -347,7 +347,7 @@ void journal::on_pushButton_clicked()
        query.addBindValue(current_date);
        query.addBindValue(ui->journal_view->toPlainText());
        query.addBindValue(0);
-       query.addBindValue(user->userID);
+       query.addBindValue(user->getid());
     }
     else
     {

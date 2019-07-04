@@ -91,5 +91,6 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     image.qrc \
-    image1.qrc
+    image1.qrc \
+    tomato.qrc
 

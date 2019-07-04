@@ -25,7 +25,7 @@ teaminfo::teaminfo(QWidget *parent):
 
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
-    db.setUserName("root");
+    db.setUserName("team");
     db.setPassword("123456");
     db.setPort(3306);
     db.open();
@@ -71,7 +71,7 @@ QString teaminfo::findname(int userID)    //根据用户ID找名字
 
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
-    db.setUserName("root");
+    db.setUserName("team");
     db.setPassword("123456");
     db.setPort(3306);
     db.open();
@@ -97,7 +97,7 @@ int teaminfo::findID(QString username)//根据用户名找
 
     db.setHostName("localhost");
     db.setDatabaseName("ourtime");
-    db.setUserName("root");
+    db.setUserName("team");
     db.setPassword("123456");
     db.setPort(3306);
     db.open();
@@ -145,7 +145,7 @@ void teaminfo::showmessage()//显示消息和排序
 
         db.setHostName("localhost");
         db.setDatabaseName("ourtime");
-        db.setUserName("root");
+        db.setUserName("team");
         db.setPassword("123456");
         db.setPort(3306);
         db.open();
@@ -184,7 +184,7 @@ void teaminfo::showmessage()//显示消息和排序
 
         db.setHostName("localhost");
         db.setDatabaseName("ourtime");
-        db.setUserName("root");
+        db.setUserName("team");
         db.setPassword("123456");
         db.setPort(3306);
         db.open();

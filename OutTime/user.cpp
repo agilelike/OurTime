@@ -303,7 +303,7 @@ bool User::sendMessage(int toID, QString context)
     query.prepare(str);
     query.exec();
     db.close();
-
+    return 1;
 }
 
 int User::messagenum()
