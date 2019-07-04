@@ -1,4 +1,4 @@
-#include "desktop.h"
+﻿#include "desktop.h"
 #include "ui_desktop.h"
 #include "stdio.h"
 #include <QDesktopWidget>
@@ -8,6 +8,7 @@
 #include <QTimer>
 #include <QString>
 #include <QDateTime>
+#include <QGraphicsView>
 
 static bool enumUserWindowsCB(HWND hwnd,LPARAM lParam)
 {
@@ -40,23 +41,26 @@ Desktop::Desktop(QWidget *parent) :
     setWindowFlags(Qt::FramelessWindowHint);
     //界面透明
     setAttribute(Qt::WA_TranslucentBackground, true);
+
     this->move(1400,150);
     ui->Button1->setStyleSheet("QPushButton{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255);}"
+                                background-color: rgb(255, 255, 255 ,200);}"
                                 "QPushButton:hover{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255);}"
+                                background-color: rgb(255, 255, 255 ,200);}"
                                 "QPushButton:pressed{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255);}");
-
+                                background-color: rgb(255, 255, 255 ,200);}");
     ui->Button2->setStyleSheet("QPushButton{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255);}"
+                              background-color: rgb(255, 255, 255 ,200);}"
                               "QPushButton:hover{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255);}"
+                              background-color: rgb(255, 255, 255 ,200);}"
                               "QPushButton:pressed{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255);}");
+                              background-color: rgb(255, 255, 255 ,200);}");
+
+    //开启番茄钟按钮
+    ui->start_tomato->setStyleSheet("border-image: url(:/imag/Image/tomato.png)");
+    ui->start_tomato->setAttribute(Qt::WA_TranslucentBackground ,true);
 
     //最小化到托盘
-
     QIcon icon = QIcon(":/Image/time.png");
     trayIcon = new QSystemTrayIcon(this);
     trayIcon->setIcon(icon);
@@ -81,7 +85,6 @@ Desktop::Desktop(QWidget *parent) :
     QTimer *timer=new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timeUpdate()));
     timer->start(1000); // 每次发射timeout信号时间间隔为1秒
-
 }
 
 
@@ -112,21 +115,16 @@ void Desktop::paintEvent(QPaintEvent *e)
     painter.setBrush(linearGrad);
     painter.drawRoundedRect(rect(),20,20);
 
-//    //设置内容区
-//    painter.setPen(QColor(0,0,0)); //边界为黑色线
-//    painter.setBrush(QColor(255,255,255,125));  //中间为白色透明
-//    painter.drawRoundedRect(15,10,420,50,10,10);  //圆角矩形
-//    painter.drawRoundedRect(15,70,420,480,10,10);
-
-    //设置内容区
+    /***设置内容区***/
     painter.setPen(QColor(0,0,0)); //边界为黑色线
     painter.setBrush(QColor(255,255,255,125));  //中间为白色透明
     painter.drawRoundedRect(15,10,420,50,10,10);  //圆角矩形
 
+    //内容区背景渐变
     QLinearGradient linearGrad2(15,70,420,480);
     linearGrad2.setColorAt(0 ,QColor(255,255,255,150));
     linearGrad2.setColorAt(0.25 ,QColor(255,255,255,50));
-    linearGrad2.setColorAt(0.5 ,QColor(255,255,255,250));
+    linearGrad2.setColorAt(0.5 ,QColor(255,255,255,150));
     linearGrad2.setColorAt(0.75 ,QColor(255,255,255,50));
     linearGrad2.setColorAt(1 ,QColor(255,255,255,150));
     painter.setBrush(linearGrad2);
@@ -206,4 +204,57 @@ void Desktop::on_Button1_clicked()
 void Desktop::on_Button2_clicked()
 {
     emit showMainwindow();
+}
+
+void Desktop::on_start_tomato_clicked()
+{
+    if(tomatoClo == 0)
+    {
+        tomatoClo = new tomatoClock(this ,"mathematical modeling" ,6);
+        tomatoClo->move(20,70);
+        tomatoClo->show();
+        ui->label->hide();
+        ui->label_2->hide();
+        ui->label_3->hide();
+        ui->label_4->hide();
+        ui->label_5->hide();
+        ui->label_6->hide();
+        ui->label_7->hide();
+        ui->label_8->hide();
+        ui->label_9->hide();
+        ui->label_10->hide();
+        ui->label_11->hide();
+        ui->label_12->hide();
+        ui->label_13->hide();
+        ui->label_14->hide();
+        ui->label_15->hide();
+        ui->label_16->hide();
+        ui->label_17->hide();
+        ui->label_18->hide();
+        ui->label_19->hide();
+    }
+    else
+    {
+        delete tomatoClo;
+        tomatoClo = 0;
+        ui->label->show();
+        ui->label_2->show();
+        ui->label_3->show();
+        ui->label_4->show();
+        ui->label_5->show();
+        ui->label_6->show();
+        ui->label_7->show();
+        ui->label_8->show();
+        ui->label_9->show();
+        ui->label_10->show();
+        ui->label_11->show();
+        ui->label_12->show();
+        ui->label_13->show();
+        ui->label_14->show();
+        ui->label_15->show();
+        ui->label_16->show();
+        ui->label_17->show();
+        ui->label_18->show();
+        ui->label_19->show();
+    }
 }

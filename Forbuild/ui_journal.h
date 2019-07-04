@@ -30,7 +30,7 @@ public:
     QFrame *line_2;
     QTableWidget *tableWidget;
     QFrame *line_3;
-    QTextEdit *textEdit;
+    QTextEdit *journal_view;
     QPushButton *pushButton;
     QToolButton *toolButton;
     QToolButton *toolButton_2;
@@ -41,6 +41,8 @@ public:
     QToolButton *toolButton_5;
     QToolButton *toolButton_6;
     QLabel *label_3;
+    QLabel *clock_number;
+    QLabel *label_5;
 
     void setupUi(QDialog *journal)
     {
@@ -60,13 +62,13 @@ public:
         line_3->setGeometry(QRect(60, 70, 1091, 20));
         line_3->setFrameShape(QFrame::HLine);
         line_3->setFrameShadow(QFrame::Sunken);
-        textEdit = new QTextEdit(journal);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(680, 130, 491, 191));
-        textEdit->setStyleSheet(QString::fromUtf8("font: 14pt \"\346\245\267\344\275\223\";"));
+        journal_view = new QTextEdit(journal);
+        journal_view->setObjectName(QStringLiteral("journal_view"));
+        journal_view->setGeometry(QRect(680, 100, 491, 191));
+        journal_view->setStyleSheet(QString::fromUtf8("font: 14pt \"\346\245\267\344\275\223\";"));
         pushButton = new QPushButton(journal);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(870, 380, 93, 31));
+        pushButton->setGeometry(QRect(870, 400, 93, 31));
         pushButton->setStyleSheet(QString::fromUtf8("font: 18pt \"\351\232\266\344\271\246\";"));
         toolButton = new QToolButton(journal);
         toolButton->setObjectName(QStringLiteral("toolButton"));
@@ -104,6 +106,18 @@ public:
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(920, 30, 31, 41));
         label_3->setStyleSheet(QStringLiteral("font: 14pt \"Verdana\";"));
+        clock_number = new QLabel(journal);
+        clock_number->setObjectName(QStringLiteral("clock_number"));
+        clock_number->setGeometry(QRect(920, 340, 100, 30));
+        clock_number->setMaximumSize(QSize(16777215, 16777215));
+        QFont font;
+        font.setFamily(QStringLiteral("Segoe Print"));
+        font.setPointSize(12);
+        clock_number->setFont(font);
+        label_5 = new QLabel(journal);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(830, 340, 81, 30));
+        label_5->setFont(font);
 
         retranslateUi(journal);
 
@@ -123,6 +137,8 @@ public:
         toolButton_5->setText(QString());
         toolButton_6->setText(QString());
         label_3->setText(QApplication::translate("journal", "13", Q_NULLPTR));
+        clock_number->setText(QApplication::translate("journal", "TextLabel", Q_NULLPTR));
+        label_5->setText(QApplication::translate("journal", "\347\225\252\350\214\204\351\222\237\357\274\232", Q_NULLPTR));
     } // retranslateUi
 
 };

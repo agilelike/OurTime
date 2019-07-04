@@ -1,3 +1,4 @@
+
 #include "user.h"
 #include <QDebug>
 #include <QTextStream>
@@ -283,4 +284,5 @@ void User::deleteDesktop(){
 
 Desktop* User::getDesktop(){
     return w;
+
 }
