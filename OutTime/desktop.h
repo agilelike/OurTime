@@ -25,6 +25,7 @@ private slots:
     void on_Button1_clicked();
     void on_Button2_clicked();
     void timeUpdate();
+    void messagetip();
 
     void on_start_tomato_clicked();
 
@@ -41,5 +42,5 @@ private:
     //番茄钟
     tomatoClock* tomatoClo = 0;
 };
-
+extern int mesnum;
 #endif // DESKTOP_H

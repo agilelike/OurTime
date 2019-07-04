@@ -38,7 +38,7 @@ public:
     bool dismissTeam();
     bool exitTeam();
 
-
+    int messagenum();
     bool sendMessage(int toID,QString context);
     void updateMessage(Message *);
 };
