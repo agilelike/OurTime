@@ -22,6 +22,7 @@ public:
 
 
 private slots:
+    void on_start_tomato_clicked();
     void on_Button1_clicked();
     void on_Button2_clicked();
     void timeUpdate();
@@ -29,7 +30,7 @@ private slots:
 
 signals:
     showMainwindow();
-    void on_start_tomato_clicked();
+
 
 
 private:

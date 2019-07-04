@@ -12,6 +12,7 @@ login::login(QWidget *parent) :
     initTitleBar();
     ui->setupUi(this);
     ui->label_4->hide();
+    m=new MainWindow();
 }
 
 login::~login()
@@ -49,10 +50,11 @@ void login::on_pushButton_clicked()
         ui->label_4->hide();
         this->hide();
 
+
         user->createDesktop();
-        QObject::connect(m.getInformation(),SIGNAL(showLogin()),this,SLOT(receiveShowLogin()));
-        QObject::connect(this,SIGNAL(showMainwindow()),&m,SLOT(receiveShowMainwindow()));
-        QObject::connect(user->getDesktop(),SIGNAL(showMainwindow()),&m,SLOT(receiveShowMainwindow()));
+        QObject::connect(m->getInformation(),SIGNAL(showLogin()),this,SLOT(receiveShowLogin()));
+        QObject::connect(this,SIGNAL(showMainwindow()),m,SLOT(receiveShowMainwindow()));
+        QObject::connect(user->getDesktop(),SIGNAL(showMainwindow()),m,SLOT(receiveShowMainwindow()));
         emit showMainwindow();
     }
     else{

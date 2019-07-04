@@ -24,7 +24,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(w_createTeam,SIGNAL(showInformation()),this,SLOT(receiveShowInformation()));
     QObject::connect(w_information,SIGNAL(hideMain()),this,SLOT(receiveHideMain()));
     QObject::connect(w_createTeam,SIGNAL(showPersonalDetails()),this,SLOT(receiveShowPersonalDetails()));
-    QObject::connect(user->getDesktop(),SIGNAL(showMainwindow()),this,SLOT(receiveShowMainwindow()));
     w_teaminfo = new teaminfo(this);
     w_teaminfo->move(0,130);
     t=new TimeTable(this);
@@ -138,5 +137,6 @@ void MainWindow::closeEvent(QCloseEvent *event)
 {
     event->ignore();
     currentInterfaceHide();
+    t->hideMain();
     this->hide();
 }

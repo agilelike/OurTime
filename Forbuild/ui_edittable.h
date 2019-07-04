@@ -101,7 +101,7 @@ public:
         label_3->setText(QApplication::translate("editTable", "\350\265\267\345\247\213\346\227\266\351\227\264\357\274\232", Q_NULLPTR));
         label_4->setText(QApplication::translate("editTable", "\347\273\210\346\255\242\346\227\266\351\227\264\357\274\232", Q_NULLPTR));
         checkBox->setText(QString());
-        label_5->setText(QApplication::translate("editTable", "\345\217\257\346\212\242\345\215\240\357\274\232", Q_NULLPTR));
+        label_5->setText(QApplication::translate("editTable", "\344\270\215\351\207\215\350\246\201\357\274\232", Q_NULLPTR));
     } // retranslateUi
 
 };

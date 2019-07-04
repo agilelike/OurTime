@@ -18,12 +18,11 @@
 //    QString endTime;
 //    int isGrabed;
 //}pSche;
-
-typedef struct pSchedule{
+struct pSche{
     QString scheduleName;
     QString startTime;
     QString endTime;
-}pSche;
+};
 
 
 namespace Ui {

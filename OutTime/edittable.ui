@@ -124,7 +124,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>可抢占：</string>
+    <string>不重要：</string>
    </property>
   </widget>
   <widget class="QTimeEdit" name="timeEdit">

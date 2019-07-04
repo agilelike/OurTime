@@ -11,6 +11,21 @@ User::User()
     state=0;
 
 }
+void User::freshSchedule()
+{
+    QDate date=QDate::currentDate();
+    qDeleteAll(psche);
+    psche.clear();
+    qDeleteAll(tsche);
+    tsche.clear();
+    date=date.addDays(-date.dayOfWeek()+1);
+    for(int i=0;i<7;i++){
+        pSchedule *tmp1=new pSchedule(date.addDays(i));
+        pSchedule *tmp2=new pSchedule(date.addDays(i),1);
+        psche.append(tmp1);
+        tsche.append(tmp2);
+    }
+}
 bool User::login(int id,QString pwd)
 {
     QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");

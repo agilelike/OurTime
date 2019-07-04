@@ -2,262 +2,393 @@
 #include "ui_timetable.h"
 #include <QDebug>
 #include <QStringList>
-//判断是周几函数
-int ReturnWeekDay(int iYear,int iMonth,int iDay )
-{
-    int iWeek = 0;
-    int y = 0, c = 0, m = 0, d = 0;
+#include <QAction>
+#include <QMenu>
 
-    if ( iMonth == 1 || iMonth == 2 )
-    {
-        c = ( iYear - 1 ) / 100;
-        y = ( iYear - 1 ) % 100;
-        m = iMonth + 12;
-        d = iDay;
-    }
-    else
-    {
-        c = iYear / 100;
-        y = iYear % 100;
-        m = iMonth;
-        d = iDay;
-    }
-
-    iWeek = y + y / 4 + c / 4 - 2 * c + 26 * ( m + 1 ) / 10 + d - 1;    //蔡勒公式
-    iWeek = iWeek >= 0 ? ( iWeek % 7 ) : ( iWeek % 7 + 7 );    //iWeek为负时取模
-    if ( iWeek == 0 )    //星期日不作为一周的第一天
-    {
-        iWeek = 7;
-    }
-    return iWeek;
-}
 TimeTable::TimeTable(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::TimeTable)
 {
-    QDate date;
-    QString content;
-    QTime bt;
-    QTime et;
-    bool checked;
 
-    int len;
-    QTime b;
-    int begin;
-
-    //初始化时就读取数据库，进行绘制,按理说应当读取本周的一周的数据
-    for(int i=0;i<7;i++){
-        for(int j=0;j<=2;j++){
-            date = QDate(2019,7,i+1);
-            content = "睡觉";
-            bt = QTime(8+j*3,0);
-            et = QTime(10+j*3,0);
-            len = bt.secsTo(et)/60;
-            b = QTime(8,0);
-            begin = b.secsTo(bt)/60;
-            checked = false;
-            btn[i]<<new QPushButton(this);
-            btn[i][j]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
-            btn[i][j]->setGeometry(280+i*80,70+begin/2,80,len/2);
-
-            if(checked==true)
-            {
-                btn[i][j]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-            }
-            else
-            {
-                btn[i][j]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-            }
-
-            btn[i][j]->show();
-            btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
-            //添加点击
-            connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
-
-        }
-    }
+    //第一次应当将flag置为true
+    flag = true;
 
     ui->setupUi(this);
     setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
     hide();
+
     et1 = new editTable();
-    connect(ui->pushButton,SIGNAL(clicked()),et1,SLOT(makeEdit()));
+    //connect(ui->pushButton,SIGNAL(clicked()),et1,SLOT(makeEdit()));
     et2 = new edittable2();
     connect(ui->pushButton_4,SIGNAL(clicked()),et2,SLOT(makeEdit()));
-    ui->pushButton_4->hide();
-    connect(et1,SIGNAL(passcontent(QDate,QString,QTime,QTime,bool)),this,SLOT(getcontent1(QDate,QString,QTime,QTime,bool)));
+    et3 = new edittable3();
+    connect(this,SIGNAL(passflag(bool)),et1,SLOT(makeEdit(bool)));
 
+    et4 = new edittable4();
+
+    ui->pushButton_4->hide();
+    //页面传参
+    connect(et1,SIGNAL(schecontent(Schedule)),this,SLOT(getschecontent(Schedule)));
+    connect(et3,SIGNAL(scheedit(Schedule)),this,SLOT(getscheedit(Schedule)));
+    connect(et2,SIGNAL(taskcontent(Schedule)),this,SLOT(gettaskcontent(Schedule)));
+    connect(et4,SIGNAL(taskedit(Schedule)),this,SLOT(gettaskedit(Schedule)));
+
+    //与编辑页面et3与et4
+    connect(this,SIGNAL(call3(int,int,bool)),et3,SLOT(get3(int,int,bool)));
+    connect(this,SIGNAL(call4(int,int)),et4,SLOT(get4(int,int)));
+
+
+
+}
+void TimeTable::hideMain()
+{
+    et1->hide();
+    et2->hide();
+    et3->hide();
+    et4->hide();
 }
 
 TimeTable::~TimeTable()
 {
     delete ui;
 }
+void TimeTable::refreshBox()
+{
+    user->freshSchedule();
+    for(int i=0;i<7;i++){
+        for(int j=0;j<btn[i].length();j++){
+            btn[i][j]->hide();
+            destroy(btn[i][j]);
+        }
+    }
+    for(int i=0;i<7;i++){
+        btn[i].clear();
+        qDeleteAll(editAct[i]);
+        editAct[i].clear();
+        qDeleteAll(delAct[i]);
+        delAct[i].clear();
+    }
+    if(flag)
+    {
+        int len;
+        QTime b;
+        b = QTime(8,0);
+        int begin;
+        QList<pSchedule *>p=user->psche;
+        for(int i=0;i<7;i++){
+            for(int j=0;j<p[i]->s.length();j++){
+               len = p[i]->s[j].start.secsTo(p[i]->s[j].end)/60;
+                begin = b.secsTo(p[i]->s[j].start)/60;
+                btn[i]<<new QPushButton(this);
+                btn[i][j]->setText(p[i]->s[j].name+"\n"+p[i]->s[j].start.toString("h:mm")+"-"+p[i]->s[j].end.toString("h:mm"));
+                btn[i][j]->setGeometry(280+i*80,70+begin/2,80,len/2);
+
+                if(p[i]->s[j].isGrabed==true)
+                {
+                    btn[i][j]->setStyleSheet("background: rgb(90,135,205);font-size:8pt");
+                }
+                else
+                {
+                    btn[i][j]->setStyleSheet("background: rgb(15,65,135);font-size:8pt");
+                }
+
+                btn[i][j]->show();
+                btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
+                //添加点击
+                connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
+                //按钮绑定右键编辑与删除操作
+                editAct[i]<<new QAction("编辑日程",btn[i][j]);
+                delAct[i]<<new QAction("删除日程",btn[i][j]);
+                btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
+                btn[i][j]->addAction(editAct[i][j]);
+                btn[i][j]->addAction(delAct[i][j]);
+                connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
+                connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
+            }
+        }
+    }else{
+        int len;
+        QTime b;
+        b = QTime(8,0);
+        int begin;
+        QList<pSchedule *>p=user->tsche;
+        for(int i=0;i<7;i++){
+            for(int j=0;j<p[i]->s.length();j++){
+                Schedule tmp=p[i]->s[j];
+                if(tmp.state==1)
+                {
+                    len = tmp.start.secsTo(tmp.end)/60;
+                    begin = b.secsTo(tmp.start)/60;
+                    btn[i]<<new QPushButton(this);
+                    btn[i][j]->setText(tmp.name+"\n"+tmp.start.toString("HH:mm")+"-"+tmp.end.toString("HH:mm"));
+                    btn[i][j]->setGeometry(280+i*80,70+begin/2,80,len/2);
+                    btn[i][j]->setStyleSheet("background: rgb(255,170,0);font-size:8pt");
+
+                    btn[i][j]->show();
+                    btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
+                    //添加点击
+                    connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
+                    //按钮绑定右键编辑与删除操作
+                    editAct[i]<<new QAction("编辑日程",btn[i][j]);
+                    delAct[i]<<new QAction("删除日程",btn[i][j]);
+                    btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
+                    btn[i][j]->addAction(editAct[i][j]);
+                    btn[i][j]->addAction(delAct[i][j]);
+                    connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
+                    connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
+                }else{
+                    len=5;
+                    begin = b.secsTo(p[i]->s[j].end)/60;
+
+                    btn[i]<<new QPushButton(this);
+                    btn[i][j]->setGeometry(280+i*80,70+begin/2,80,len);
+                    btn[i][j]->setStyleSheet("background: rgb(255,255,127);font-size:8pt");
+
+                    btn[i][j]->show();
+                    btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
+                    //添加点击
+                    connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
+                    //按钮绑定右键编辑与删除操作
+                    editAct[i]<<new QAction("编辑日程",btn[i][j]);
+                    delAct[i]<<new QAction("删除日程",btn[i][j]);
+                    btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
+                    btn[i][j]->addAction(editAct[i][j]);
+                    btn[i][j]->addAction(delAct[i][j]);
+                    connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
+                    connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
+                }
+            }
+        }
+
+    }
+
+    //
+}
+void TimeTable::showEvent(QShowEvent *event)
+{
+    event->accept();
+    refreshBox();
+}
 
 void TimeTable::on_commandLinkButton_clicked()
 {
     //ui->label->setStyleSheet("border-image: url(:/image/personaltable.png);");
     ui->pushButton_4->hide();
+    flag = true;
+    //应当绘制个人的日程(重绘)
+    refreshBox();
 }
 
 void TimeTable::on_commandLinkButton_2_clicked()
 {
    // ui->label->setStyleSheet("border-image: url(:/image/teamtable.png);");
     ui->pushButton_4->show();
+    flag = false;
+   //应当绘制团队的日程(重绘)
+    refreshBox();
 }
 
 
-//未实现
-void TimeTable::on_pushButton_2_clicked()
-{
-    // QPushButton *p = new QPushButton("aaa");
-    // ui->verticalLayout->addWidget(p);
-
-    //QPushButton *p = new QPushButton(this);
-    //p->setGeometry(280,90,80,40);
-    //p->show();
-
-//    for(int i=0;i<=5;i++){
-//        btn1<<new QPushButton(this);
-//        btn1[i]->setText("吃饭");
-//        btn1[i]->setGeometry(280,50+i*50,80,40);
-//        btn1[i]->show();
-//    }
-}
 
 //点击按钮后可以得到i，j的值，之后可以进行在右边显示
 void TimeTable::clickevent(){
     QPushButton *source=qobject_cast<QPushButton*>(sender());
-    qDebug()<<source->objectName();
     QStringList list = source->objectName().split(".");
-    int i = list[0].toInt();
-    int j = list[1].toInt();
-    qDebug()<<i<<j;
+    m = list[0].toInt();
+    n = list[1].toInt();
     //下面是在调用数据库的东西然后在右边显示
+    //根据i,j调用
+
+    ui->l1->hide();
+    ui->l2->hide();
+    ui->l3->hide();
+    ui->l4->hide();
+    ui->l5->hide();
+    ui->r1->hide();
+    ui->r2->hide();
+    ui->r3->hide();
+    ui->r4->hide();
+    ui->r5->hide();
+    if(flag)
+    {
+        Schedule x=user->psche[m]->s[n];
+        ui->l1->setText("日期");
+        ui->l2->setText("日程名");
+        ui->l3->setText("起始时间");
+        ui->l4->setText("终止时间");
+        ui->l5->setText("重要性");
+        ui->r1->setText(x.t.toString("yyyy-MM-dd"));
+        ui->r2->setText(x.name);
+        ui->r3->setText(x.start.toString("HH:mm"));
+        ui->r4->setText(x.end.toString("HH:mm"));
+        ui->r5->setText((x.isGrabed)?"不重要":"重要");
+        ui->l1->show();
+        ui->l2->show();
+        ui->l3->show();
+        ui->l4->show();
+        ui->l5->show();
+        ui->r1->show();
+        ui->r2->show();
+        ui->r3->show();
+        ui->r4->show();
+        ui->r5->show();
+    }else{
+        Schedule x=user->tsche[m]->s[n];
+        if(x.state==1)
+        {
+
+            ui->l1->setText("日期");
+            ui->l2->setText("日程名");
+            ui->l3->setText("起始时间");
+            ui->l4->setText("终止时间");
+            ui->r1->setText(x.t.toString("yyyy-MM-dd"));
+            ui->r2->setText(x.name);
+            ui->r3->setText(x.start.toString("HH:mm"));
+            ui->r4->setText(x.end.toString("HH:mm"));
+            ui->l1->show();
+            ui->l2->show();
+            ui->l3->show();
+            ui->l4->show();
+            ui->r1->show();
+            ui->r2->show();
+            ui->r3->show();
+            ui->r4->show();
+        }else{
+            ui->l1->setText("日期");
+            ui->l2->setText("任务名");
+            ui->l3->setText("截止时间");
+            ui->r1->setText(x.t.toString("yyyy-MM-dd"));
+            ui->r2->setText(x.name);
+            ui->r3->setText(x.end.toString("HH:mm"));
+            ui->l1->show();
+            ui->l2->show();
+            ui->l3->show();
+            ui->r1->show();
+            ui->r2->show();
+            ui->r3->show();
+        }
+    }
 }
 
-void TimeTable::getcontent1(QDate date,QString content,QTime bt,QTime et,bool checked){
-    //得到周几
-    int year = date.year();
-    int month = date.month();
-    int day = date.day();
-    int week = ReturnWeekDay(year,month,day);
-    //区间长
-    int len = bt.secsTo(et)/60;
-    QTime b = QTime(8,0);
-    int begin = b.secsTo(bt)/60;
+//从另一个页面点确定后传到该页面，对数据处理，增加到数据库并重新绘制
+void TimeTable::getschecontent(Schedule sche){
+    //把sche的一些东西重新写到数据库重新读取重新绘制
+    if(flag==true){
+        //把sche写到个人日程的数据库
+        pSchedule::addSche(sche);
+    }
+    else{
+        //把sche写到团队日程的数据库
+        pSchedule::addSche(sche);
+    }
 
-    //将链表清空
-//    qDeleteAll(btn1);
-//    btn1.clear();
-//    qDeleteAll(btn2);
-//    btn2.clear();
-//    qDeleteAll(btn3);
-//    btn3.clear();
-//    qDeleteAll(btn4);
-//    btn4.clear();
-//    qDeleteAll(btn5);
-//    btn5.clear();
-//    qDeleteAll(btn6);
-//    btn6.clear();
-//    qDeleteAll(btn7);
-//    btn7.clear();
+    //重绘
+    //flag为真则重绘个人的，否则绘制团队的
+    refreshBox();
 
-    //重新写到数据库重新读取重新绘制
+}
+
+//从编辑页面上得到数据，删除数据库相应内容，重新绘制
+void TimeTable::getscheedit(Schedule sche){
+    //在数据库里删除
+    //利用暂存的m,n(存的是i,j) 来删除数据库里的东西
+    if(flag)
+    {
+        user->psche[m]->deleteSche(n);
+    }else{
+        user->tsche[m]->deleteSche(n);
+    }
+    //然后将得到的信息sche加入数据库，重新绘制
+    if(flag==true){
+        //把sche写到个人日程的数据库
+        pSchedule::addSche(sche);
+    }
+    else{
+        //把sche写到团队日程的数据库
+        pSchedule::addSche(sche);
+    }
+    refreshBox();
+}
+
+
+//添加团队任务后，应该去修改数据库，然后重新绘制团队的日程
+void TimeTable::gettaskcontent(Schedule sche){
+    //根据传来的sche的信息，修改数据库
+    if(flag==true){
+        //把sche写到个人日程的数据库
+        pSchedule::addSche(sche);
+    }
+    else{
+        //把sche写到团队日程的数据库
+        pSchedule::addSche(sche);
+    }
+    refreshBox();
+}
+
+
+
+//得到编辑的团队任务后，将原来的从数据库删除，写入新的，重绘
+void TimeTable::gettaskedit(Schedule sche){
+    if(flag)
+    {
+        user->psche[m]->deleteSche(n);
+    }else{
+        user->tsche[m]->deleteSche(n);
+    }
+    //然后将得到的信息sche加入数据库，重新绘制
+    if(flag==true){
+        //把sche写到个人日程的数据库
+        pSchedule::addSche(sche);
+    }
+    else{
+        //把sche写到团队日程的数据库
+        pSchedule::addSche(sche);
+    }
+    refreshBox();
+}
 
 
 
 
+//编辑日程，右键点击编辑日程
+void TimeTable::editSchedule()
+{
+    QAction *source = qobject_cast<QAction*>(sender());
+    QStringList list = source->parent()->objectName().split(".");
+    m = list[0].toInt();
+    n = list[1].toInt();
+    Schedule x;
+    if(flag)
+        x=user->psche[m]->s[n];
+    else
+        x=user->tsche[m]->s[n];
+    //根据m,n来操作
+    //读取数据库的内容给et3，设置好et3的每一项，然后显示et3
+    if(flag||x.state==1){
+        emit call3(m,n,flag);
+        et3->show();
+    }
+    else{
+        emit call4(m,n);
+        et4->show();
+    }
+}
+//删除日程，右键点击删除日程
+void TimeTable::delSchedule(){
+    QAction *source = qobject_cast<QAction*>(sender());
+    QStringList list = source->parent()->objectName().split(".");
+    m = list[0].toInt();
+    n = list[1].toInt();
+    if(flag)
+    {
+        user->psche[m]->deleteSche(n);
+    }else{
+        user->tsche[m]->deleteSche(n);
+    }
+    refreshBox();
+}
 
-
-
-
-
-
-
-    //添加直接绘制，以前的写法，不必要
-//    if(week==1){
-//        btn1<<new QPushButton(this);
-//        btn1[btn1.length()-1]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
-//        btn1[btn1.length()-1]->setGeometry(280+(week-1)*80,70+begin/2,80,len/2);
-//        if(checked==true){
-//            btn1[btn1.length()-1]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-//        }
-//        else{
-//            btn1[btn1.length()-1]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-//        }
-//        btn1[btn1.length()-1]->show();
-//    }
-//    else if(week==2){
-//        btn2<<new QPushButton(this);
-//        btn2[btn2.length()-1]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
-//        btn2[btn2.length()-1]->setGeometry(280+(week-1)*80,70+begin/2,80,len/2);
-//        if(checked==true){
-//            btn2[btn2.length()-1]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-//        }
-//        else{
-//            btn2[btn2.length()-1]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-//        }
-//        btn2[btn2.length()-1]->show();
-//    }
-//    else if(week==3){
-//        btn3<<new QPushButton(this);
-//        btn3[btn3.length()-1]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
-//        btn3[btn3.length()-1]->setGeometry(280+(week-1)*80,70+begin/2,80,len/2);
-//        if(checked==true){
-//            btn3[btn3.length()-1]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-//        }
-//        else{
-//            btn3[btn3.length()-1]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-//        }
-//        btn3[btn3.length()-1]->show();
-//    }
-//    else if(week==4){
-//        btn4<<new QPushButton(this);
-//        btn4[btn4.length()-1]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
-//        btn4[btn4.length()-1]->setGeometry(280+(week-1)*80,70+begin/2,80,len/2);
-//        if(checked==true){
-//            btn4[btn4.length()-2]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-//        }
-//        else{
-//            btn4[btn4.length()-2]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-//        }
-//        btn4[btn4.length()-1]->show();
-//    }
-//    else if(week==5){
-//        btn5<<new QPushButton(this);
-//        btn5[btn5.length()-1]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
-//        btn5[btn5.length()-1]->setGeometry(280+(week-1)*80,70+begin/2,80,len/2);
-//        if(checked==true){
-//            btn5[btn5.length()-1]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-//        }
-//        else{
-//            btn5[btn5.length()-1]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-//        }
-//        btn5[btn1.length()-1]->show();
-//    }
-//    else if(week==6){
-//        btn6<<new QPushButton(this);
-//        btn6[btn6.length()-1]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
-//        btn6[btn6.length()-1]->setGeometry(280+(week-1)*80,70+begin/2,80,len/2);
-//        if(checked==true){
-//            btn6[btn6.length()-1]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-//        }
-//        else{
-//            btn6[btn6.length()-1]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-//        }
-//        btn6[btn6.length()-1]->show();
-//    }
-//    else if(week==7){
-//        btn7<<new QPushButton(this);
-//        btn7[btn7.length()-1]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
-//        btn7[btn7.length()-1]->setGeometry(280+(week-1)*80,70+begin/2,80,len/2);
-//        if(checked==true){
-//            btn7[btn7.length()-1]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-//        }
-//        else{
-//            btn7[btn7.length()-1]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-//        }
-//        btn7[btn7.length()-1]->show();
-//    }
+void TimeTable::on_pushButton_clicked()
+{
+    emit passflag(flag);
 }

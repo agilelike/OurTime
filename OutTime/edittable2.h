@@ -3,6 +3,9 @@
 
 #include <QWidget>
 #include <BaseWindow.h>
+#include <QDate>
+#include <QTime>
+#include <pschedule.h>
 namespace Ui {
 class edittable2;
 }
@@ -16,6 +19,13 @@ public:
     ~edittable2();
 public slots:
     void makeEdit();
+signals:
+    void taskcontent(Schedule sche);
+private slots:
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::edittable2 *ui;
     void initTitleBar();

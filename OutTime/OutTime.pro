@@ -44,7 +44,9 @@ SOURCES += main.cpp\
     message.cpp \
     showid.cpp\
     edittable2.cpp\
-    tomatoclock.cpp 
+    tomatoclock.cpp \ 
+    edittable3.cpp \
+    edittable4.cpp
 
 HEADERS  += mainwindow.h \
     journal.h \
@@ -66,7 +68,9 @@ HEADERS  += mainwindow.h \
     showid.h\
     edittable2.h \
     pschedule.h\
-    tomatoclock.h 
+    tomatoclock.h \ 
+    edittable3.h \
+    edittable4.h
 
 FORMS    += mainwindow.ui \
     journal.ui \
@@ -81,9 +85,12 @@ FORMS    += mainwindow.ui \
     createteam.ui \
     showid.ui\
     edittable2.ui\
-    tomatoclock.ui
+    tomatoclock.ui \
+    edittable3.ui \
+    edittable4.ui
 
 RESOURCES += \
     image.qrc \
-    image1.qrc
+    image1.qrc \
+    resource.qrc
 

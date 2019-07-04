@@ -32,7 +32,7 @@ signals:
 private:
     void initTitleBar();
     Ui::login *ui;
-    MainWindow m;
+    MainWindow *m;
 };
 
 #endif // LOGIN_H
