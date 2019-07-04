@@ -20,6 +20,32 @@ teaminfo::teaminfo(QWidget *parent):
     //ui->scrollAreaWidgetContents->setStyleSheet("background-color: rgb(255, 255, 0);");
     ui->setupUi(this);
 
+    //下拉列表生成
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
+    db.setUserName("root");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+    //链接数据库
+    QSqlQuery query(db);
+    query.exec("SET NAMES 'GBK'");
+    QString str = QString("select userName from user "
+                          "where teamID = '%1' and userID <> '%2'"
+                          " ORDER BY userID ASC ").arg(user->getTeamid()).arg(user->getid());
+    query.prepare(str);
+    query.exec();
+
+    while(query.next())
+    {
+        QString cstr = query.value("userName").toString() ;
+        ui->comboBox->addItem(cstr);
+    }
+    db.close();
+
+
     //滑动窗口
     pLayout = new QVBoxLayout();
     pLayout->setMargin(10);
