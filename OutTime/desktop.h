@@ -1,9 +1,11 @@
-#ifndef DESKTOP_H
+﻿#ifndef DESKTOP_H
 #define DESKTOP_H
 #include<windows.h>
 #include <QWidget>
 #include <QSystemTrayIcon>
 #include <QMenu>
+#include <tomatoclock.h>
+
 namespace Ui {
 class Desktop;
 }
@@ -24,15 +26,20 @@ private slots:
     void on_Button2_clicked();
     void timeUpdate();
 
+    void on_start_tomato_clicked();
+
 private:
     Ui::Desktop *ui;
     QSystemTrayIcon *trayIcon;
     QMenu *trayIconMenu;
+
     //窗口管理
     QAction *minAction;
     QAction *restoreAction;
     QAction *quitAction;
 
+    //番茄钟
+    tomatoClock* tomatoClo = 0;
 };
 
 #endif // DESKTOP_H
