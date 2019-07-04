@@ -43,19 +43,37 @@ Desktop::Desktop(QWidget *parent) :
     setAttribute(Qt::WA_TranslucentBackground, true);
     this->move(1400,150);
 
-    ui->label->hide();
-    ui->label_2->hide();
-    ui->label_3->hide();
-    ui->label_4->hide();
-    ui->label_5->hide();
-    ui->label_6->hide();
-    ui->label_7->hide();
-    ui->label_8->hide();
-    ui->label_9->hide();
-    ui->label_10->hide();
-    ui->label_11>hide();
-    ui->label_12->hide();
-    ui->label_13->hide();
+
+
+
+
+    QList<QLabel* >label;
+    label<<ui->label;
+    label<<ui->label_2;
+    label<<ui->label_3;
+    label<<ui->label_4;
+    label<<ui->label_5;
+    label<<ui->label_6;
+    label<<ui->label_7;
+    label<<ui->label_8;
+    label<<ui->label_9;
+    label<<ui->label_10;
+    label<<ui->label_11;
+    label<<ui->label_12;
+    label<<ui->label_13;
+    for(int i=0;i<13;i++){
+        label[i]->hide();
+    }
+
+    //获取当前日期的所有日程读到控件中
+    Schedule s;
+    for(int i = 0;i<s.length();i++){
+        s = user->psche[QTime::currentTime().dayOfWeek()-1]->s[i];
+        label[i]->setText(s.start.toString("h:mm")+"-"+s.end.toString("h:mm")+"    "+s.name);
+        label[i]->show();
+    }
+
+
 
     ui->Button1->setStyleSheet("QPushButton{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
                                 background-color: rgb(255, 255, 255);}"
@@ -174,9 +192,60 @@ void Desktop::on_Button1_clicked()
 {
     if(ui->Button1->text()=="团队"){
         ui->Button1->setText("个人");
+        QList<QLabel* >label;
+        label<<ui->label;
+        label<<ui->label_2;
+        label<<ui->label_3;
+        label<<ui->label_4;
+        label<<ui->label_5;
+        label<<ui->label_6;
+        label<<ui->label_7;
+        label<<ui->label_8;
+        label<<ui->label_9;
+        label<<ui->label_10;
+        label<<ui->label_11;
+        label<<ui->label_12;
+        label<<ui->label_13;
+        for(int i=0;i<13;i++){
+            label[i]->hide();
+        }
+
+        //获取当前日期的所有日程读到控件中
+        Schedule s;
+        for(int i = 0;i<s.length();i++){
+            s = user->psche[QTime::currentTime().dayOfWeek()-1]->s[i];
+            label[i]->setText(s.start.toString("h:mm")+"-"+s.end.toString("h:mm")+"    "+s.name);
+            label[i]->show();
+        }
+
     }
     else{
         ui->Button1->setText("团队");
+        QList<QLabel* >label;
+        label<<ui->label;
+        label<<ui->label_2;
+        label<<ui->label_3;
+        label<<ui->label_4;
+        label<<ui->label_5;
+        label<<ui->label_6;
+        label<<ui->label_7;
+        label<<ui->label_8;
+        label<<ui->label_9;
+        label<<ui->label_10;
+        label<<ui->label_11;
+        label<<ui->label_12;
+        label<<ui->label_13;
+        for(int i=0;i<13;i++){
+            label[i]->hide();
+        }
+
+        //获取当前日期的所有日程读到控件中
+        Schedule s;
+        for(int i = 0;i<s.length();i++){
+            s = user->tsche[QTime::currentTime().dayOfWeek()-1]->s[i];
+            label[i]->setText(s.start.toString("h:mm")+"-"+s.end.toString("h:mm")+"    "+s.name);
+            label[i]->show();
+        }
     }
 
 }
