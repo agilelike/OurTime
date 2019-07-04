@@ -35,12 +35,28 @@ Desktop::Desktop(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Desktop)
 {
+
     ui->setupUi(this);
     //界面无边框
     setWindowFlags(Qt::FramelessWindowHint);
     //界面透明
     setAttribute(Qt::WA_TranslucentBackground, true);
     this->move(1400,150);
+
+    ui->label->hide();
+    ui->label_2->hide();
+    ui->label_3->hide();
+    ui->label_4->hide();
+    ui->label_5->hide();
+    ui->label_6->hide();
+    ui->label_7->hide();
+    ui->label_8->hide();
+    ui->label_9->hide();
+    ui->label_10->hide();
+    ui->label_11>hide();
+    ui->label_12->hide();
+    ui->label_13->hide();
+
     ui->Button1->setStyleSheet("QPushButton{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
                                 background-color: rgb(255, 255, 255);}"
                                 "QPushButton:hover{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
@@ -158,47 +174,9 @@ void Desktop::on_Button1_clicked()
 {
     if(ui->Button1->text()=="团队"){
         ui->Button1->setText("个人");
-        ui->label->setText("6:00~6:30       wake up");
-        ui->label_2->setText("6:30~7:00       wash and rinse");
-        ui->label_3->setText("7:00~8:00       have a breakfast");
-        ui->label_4->setText("8:00~9:30       computer network");
-        ui->label_5->show();
-        ui->label_6->show();
-        ui->label_7->show();
-        ui->label_8->show();
-        ui->label_9->show();
-        ui->label_10->show();
-        ui->label_11->show();
-        ui->label_12->show();
-        ui->label_13->show();
-        ui->label_14->show();
-        ui->label_15->show();
-        ui->label_16->show();
-        ui->label_17->show();
-        ui->label_18->show();
-        ui->label_19->show();
     }
     else{
         ui->Button1->setText("团队");
-        ui->label->setText("6:00~6:30       task1");
-        ui->label_2->setText("6:30~7:00       task2");
-        ui->label_3->setText("7:00~8:00       task3");
-        ui->label_4->setText("8:00~9:30       task4");
-        ui->label_5->hide();
-        ui->label_6->hide();
-        ui->label_7->hide();
-        ui->label_8->hide();
-        ui->label_9->hide();
-        ui->label_10->hide();
-        ui->label_11->hide();
-        ui->label_12->hide();
-        ui->label_13->hide();
-        ui->label_14->hide();
-        ui->label_15->hide();
-        ui->label_16->hide();
-        ui->label_17->hide();
-        ui->label_18->hide();
-        ui->label_19->hide();
     }
 
 }
