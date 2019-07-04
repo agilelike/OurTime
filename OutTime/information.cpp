@@ -20,6 +20,7 @@ information::~information()
 
 void information::on_pushButton_clicked()
 {
+
     this->hide();
     if(user->getState() == 0){
         emit showLogin();

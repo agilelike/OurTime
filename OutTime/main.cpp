@@ -30,11 +30,7 @@ int main(int argc, char *argv[])
     QObject::connect(m.getInformation(),SIGNAL(showLogin()),&L,SLOT(receiveShowLogin()));
     QObject::connect(&Sign,SIGNAL(showID(int)),&si,SLOT(receiveShowID(int)));
     QObject::connect(&si,SIGNAL(showLogin()),&L,SLOT(receiveShowLogin()));
-    Desktop w;
 
-    HWND desktopHwnd = w.findDesktopIconWnd();
-    if(desktopHwnd) SetParent((HWND)w.winId(), desktopHwnd);
-    w.show();
     L.show();
     //L.show();
 

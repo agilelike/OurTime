@@ -49,9 +49,10 @@ void login::on_pushButton_clicked()
         ui->lineEdit_2->clear();
         ui->label_4->hide();
         this->hide();
+        user->createDesktop();
     }
     else{
         ui->lineEdit_2->clear();
         ui->label_4->show();
-    }  
+    }
 }

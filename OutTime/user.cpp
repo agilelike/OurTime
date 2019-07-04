@@ -2,6 +2,7 @@
 #include <QDebug>
 #include <QTextStream>
 #include <stdio.h>
+#include <desktop.h>
 
 
 User *user;
@@ -267,4 +268,16 @@ bool User::exitTeam(){
     user->setTeamState(0);
     user->setTeamid(0);
     return 1;
+}
+
+void User::createDesktop(){
+    w = new Desktop();
+    HWND desktopHwnd = w->findDesktopIconWnd();
+    if(desktopHwnd) SetParent((HWND)w->winId(), desktopHwnd);
+    w->show();
+}
+
+void User::deleteDesktop(){
+    delete w;
+    w=0;
 }

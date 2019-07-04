@@ -178,7 +178,9 @@ void personalDetails::on_pushButton_5_clicked()
 void personalDetails::on_pushButton_clicked()
 {
     user->logout();
+    user->deleteDesktop();
     emit showInformation();
+
 }
 
 void personalDetails::on_pushButton_6_clicked()
@@ -251,43 +253,47 @@ void personalDetails::PaintImage1()
     double sum=0;
     double ave=0;
     int max=0;
-
+    int minPos = 7;
     for(int i=0;i<7;i++){
         if(a[6-i] != -1){
-            n++;
-            sum += a[6-i];
+            minPos = 6-i;
         }
         if(a[i]>max){
             max=a[i];
         }
     }
-    ave=sum/n;//平均数
+    n = 7-minPos;
 
     double kx=(double)width/7; //x轴的系数
     double ky=(double)height/max;//y轴系数
     QPen pen,penPoint;
     pen.setColor(Qt::black);
-    pen.setWidth(2);
+    pen.setWidth(1);
 
     penPoint.setColor(Qt::blue);
     penPoint.setWidth(5);
     int c[n];
     for(int i = 0;i<n;i++){
-        c[i] = a[i+7-n];
+        if(a[i+7-n] == -1){
+            c[i] = 0;
+        }
+        else c[i] = a[i+7-n];
+        sum += c[i];
     }
+    ave = sum/n;
     for(int i=1;i<n;i++)
     {
         painter.setPen(pen);//黑色笔用于连线
         painter.drawLine(pointx+kx*i,pointy-c[i-1]*ky,pointx+kx*(i+1),pointy-c[i]*ky);
-        painter.drawText(pointx+kx*i,pointy-c[i-1]*ky+15,QString::number(c[i-1]));
         painter.setPen(penPoint);//蓝色的笔，用于标记各个点
+        painter.drawText(pointx+kx*i,pointy-c[i-1]*ky+15,QString::number(c[i-1]));
         painter.drawPoint(pointx+kx*i,pointy-c[i-1]*ky);
     }
     if(n!=0){
         painter.setPen(pen);
         painter.drawLine(pointx+kx*(n-1),pointy-c[n-2]*ky,pointx+kx*(n),pointy-c[n-1]*ky);
-        painter.drawText(pointx+kx*n,pointy-c[n-1]*ky+15,QString::number(c[n-1]));
         painter.setPen(penPoint);
+        painter.drawText(pointx+kx*n,pointy-c[n-1]*ky+15,QString::number(c[n-1]));
         painter.drawPoint(pointx+kx*n,pointy-c[n-1]*ky);//绘制最后一个点
     }
 
@@ -333,11 +339,13 @@ void personalDetails::PaintImage2()
     painter.drawLine(pointx,pointy-height,pointx,pointy);
 
     int n=0;
+    int minPos = 7;
     for(int i=0;i<7;i++){
         if(a[6-i] != -1){
-            n++;
+            minPos = 6-i;
         }
     }
+    n = 7-minPos;
 
     int c[n];
     for(int i = 0;i<n;i++){
@@ -347,7 +355,7 @@ void personalDetails::PaintImage2()
     double ky=(double)height/2;
     QPen pen,penPoint;
     pen.setColor(Qt::black);
-    pen.setWidth(2);
+    pen.setWidth(1);
 
     penPoint.setColor(Qt::blue);
     penPoint.setWidth(5);
@@ -355,15 +363,15 @@ void personalDetails::PaintImage2()
     {
         painter.setPen(pen);//黑色笔用于连线
         painter.drawLine(pointx+kx*i,pointy-c[i-1]*ky,pointx+kx*(i+1),pointy-c[i]*ky);
-        painter.drawText(pointx+kx*i,pointy-c[i-1]*ky+15,QString::number(c[i-1]));
         painter.setPen(penPoint);//蓝色的笔，用于标记各个点
+        painter.drawText(pointx+kx*i,pointy-c[i-1]*ky+15,QString::number(c[i-1]));
         painter.drawPoint(pointx+kx*i,pointy-c[i-1]*ky);
     }
     if(n!=0){
         painter.setPen(pen);
         painter.drawLine(pointx+kx*(n-1),pointy-c[n-2]*ky,pointx+kx*(n),pointy-c[n-1]*ky);
-        painter.drawText(pointx+kx*n,pointy-c[n-1]*ky+15,QString::number(c[n-1]));
         painter.setPen(penPoint);
+        painter.drawText(pointx+kx*n,pointy-c[n-1]*ky+15,QString::number(c[n-1]));
         painter.drawPoint(pointx+kx*n,pointy-c[n-1]*ky);//绘制最后一个点
     }
 
@@ -382,8 +390,8 @@ void personalDetails::PaintImage2()
     //y轴刻度线
     for(int i=0;i<2;i++)
     {
-        painter.drawLine(pointx,pointy-(i+1)*height/2,pointx-4,pointy-(i+1)*height/2);
-        painter.drawText(pointx-20,pointy-(i+0.85)*height/2,QString::number(i));
+        painter.drawLine(pointx,pointy-(i)*height/2,pointx-4,pointy-(i)*height/2);
+        painter.drawText(pointx-20,pointy-(i+0.05)*height/2,QString::number(i));
     }
 }
 

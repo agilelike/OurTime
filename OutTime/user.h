@@ -4,6 +4,7 @@
 #include <team.h>
 #include <message.h>
 #include <QSqlQuery>
+#include <desktop.h>
 class User
 {//user作为主函数中的全局变量，只有一个
 private:
@@ -12,6 +13,8 @@ private:
     QString name;
     int teamState;
     int teamid;
+    Desktop *w;
+
 public:
     User();
     bool login(int id,QString pwd);
@@ -36,6 +39,8 @@ public:
 
     bool sendMessage(int toID,QString context);
     void updateMessage(Message *);
+    void createDesktop();
+    void deleteDesktop();
 };
 extern User *user;
 #endif // USER_H
