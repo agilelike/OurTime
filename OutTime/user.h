@@ -14,8 +14,8 @@ private:
     int teamState;
     int teamid;
 public:
-    QList<pSchedule*> psche;
-    QList<pSchedule*> tsche;
+    QList<pSchedule *> psche;
+    QList<pSchedule *> tsche;
 public:
     User();
     bool login(QString _name,QString pwd);
