@@ -52,11 +52,11 @@ public:
         lineEdit_2->setGeometry(QRect(130, 210, 211, 21));
         label = new QLabel(login);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(80, 130, 51, 41));
+        label->setGeometry(QRect(80, 140, 31, 21));
         label->setStyleSheet(QStringLiteral("border-image: url(:/Image/account.png);"));
         label_2 = new QLabel(login);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(80, 200, 51, 41));
+        label_2->setGeometry(QRect(80, 210, 31, 21));
         label_2->setStyleSheet(QStringLiteral("border-image: url(:/Image/password.png);"));
         label_2->setPixmap(QPixmap(QString::fromUtf8(":/login/\347\224\250\346\210\267\345\233\276\346\240\207.png")));
         label_3 = new QLabel(login);

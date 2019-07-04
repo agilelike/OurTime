@@ -237,6 +237,8 @@ void personalDetails::on_pushButton_7_clicked()
 
 void personalDetails::PaintImage1()
 {
+    QColor backColor = qRgb(255,255,255);
+    image1.fill(backColor);
     QTextStream cout(stdout,  QIODevice::WriteOnly);
     QPainter painter(&image1);
     painter.setRenderHint(QPainter::Antialiasing, true);//设置反锯齿模式
@@ -329,6 +331,8 @@ void personalDetails::PaintImage1()
 
 void personalDetails::PaintImage2()
 {
+    QColor backColor = qRgb(255,255,255);
+    image2.fill(backColor);
     QPainter painter(&image2);
     painter.setRenderHint(QPainter::Antialiasing, true);
     int pointx=40,pointy=130;
