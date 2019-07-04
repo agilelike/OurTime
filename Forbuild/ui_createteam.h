@@ -53,7 +53,7 @@ public:
         pushButton->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         label_14 = new QLabel(createTeam);
         label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setGeometry(QRect(780, 170, 161, 31));
+        label_14->setGeometry(QRect(780, 170, 261, 31));
         label_14->setStyleSheet(QString::fromUtf8("font: 16pt \"\346\245\267\344\275\223\";"));
 
         retranslateUi(createTeam);

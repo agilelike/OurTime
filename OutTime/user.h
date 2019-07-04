@@ -41,6 +41,7 @@ public:
     void updateMessage(Message *);
     void createDesktop();
     void deleteDesktop();
+    Desktop* getDesktop();
 };
 extern User *user;
 #endif // USER_H

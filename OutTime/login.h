@@ -5,6 +5,7 @@
 #include "BaseWindow.h"
 #include <QStringList>
 #include <QSqlQuery>
+#include <mainwindow.h>
 
 namespace Ui {
 class login;
@@ -31,6 +32,7 @@ signals:
 private:
     void initTitleBar();
     Ui::login *ui;
+    MainWindow m;
 };
 
 #endif // LOGIN_H

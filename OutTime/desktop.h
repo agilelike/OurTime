@@ -24,6 +24,9 @@ private slots:
     void on_Button2_clicked();
     void timeUpdate();
 
+signals:
+    showMainwindow();
+
 private:
     Ui::Desktop *ui;
     QSystemTrayIcon *trayIcon;

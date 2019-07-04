@@ -43,3 +43,7 @@ void Team::updateTeam(int teamid)//重新获取对应team信息
 QList<QPair<int,int> > Team::getMember(){
     return member;
 }
+
+QString Team::getTeamName(){
+    return name;
+}

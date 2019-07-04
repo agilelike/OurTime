@@ -349,7 +349,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>760</x>
      <y>120</y>
-     <width>291</width>
+     <width>311</width>
      <height>41</height>
     </rect>
    </property>
@@ -406,22 +406,6 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text">
     <string>申请已发出，请耐心等待！</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_17">
-   <property name="geometry">
-    <rect>
-     <x>720</x>
-     <y>230</y>
-     <width>391</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;宋体&quot;;</string>
-   </property>
-   <property name="text">
-    <string>（2天内没有接受，可重新申请）</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_5">

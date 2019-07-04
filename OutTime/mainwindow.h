@@ -34,7 +34,8 @@ private slots:
     void receiveShowMainwindow();
     void receiveHideMain();
 
-
+protected:
+    void closeEvent(QCloseEvent *event);
 private:
     void initTitleBar();
     Ui::MainWindow *ui;

@@ -205,6 +205,5 @@ void Desktop::on_Button1_clicked()
 
 void Desktop::on_Button2_clicked()
 {
-    MainWindow * win = new MainWindow;
-    win->show();
+    emit showMainwindow();
 }

@@ -12,8 +12,8 @@ class Team
 public:
     Team();
     void updateTeam(int teamid);//重新获取对应team信息
-    void uploadTeam();
     QList<QPair<int,int> > getMember();
+    QString getTeamName();
 };
 extern Team *team;
 #endif // TEAM_H

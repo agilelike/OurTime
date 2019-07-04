@@ -46,6 +46,7 @@ void information::receivePersonalDetails()
         ui->label_2->hide();
         ui->label_3->show();
         ui->label_4->show();
+        ui->label_4->setText(QString::number(user->getTeamid()));
         ui->label_5->show();
     }
     else{

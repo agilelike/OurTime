@@ -61,7 +61,6 @@ void personalDetails::haveTeam()
         ui->label_14->show();
         ui->label_15->show();
         ui->label_16->hide();
-        ui->label_17->hide();
         ui->pushButton_3->show();
         ui->pushButton_4->show();
         ui->tableWidget->hide();
@@ -81,13 +80,14 @@ void personalDetails::haveTeam()
         ui->label_14->hide();
         ui->label_15->hide();
         ui->label_16->hide();
-        ui->label_17->hide();
         ui->pushButton_3->hide();
         ui->pushButton_4->hide();
         ui->tableWidget->show();
         ui->label_3->show();
         ui->label_4->show();
         ui->textBrowser->show();
+        team->updateTeam(user->getTeamid());
+        ui->textBrowser->setText(team->getTeamName());
         ui->pushButton_2->show();
         ui->pushButton_5->hide();
         ui->label_18->hide();
@@ -101,7 +101,6 @@ void personalDetails::haveTeam()
         ui->label_14->hide();
         ui->label_15->hide();
         ui->label_16->hide();
-        ui->label_17->hide();
         ui->pushButton_3->hide();
         ui->pushButton_4->hide();
         ui->tableWidget->show();
@@ -121,7 +120,6 @@ void personalDetails::haveTeam()
         ui->label_14->hide();
         ui->label_15->hide();
         ui->label_16->show();
-        ui->label_17->show();
         ui->pushButton_3->hide();
         ui->pushButton_4->hide();
         ui->tableWidget->hide();
@@ -412,7 +410,7 @@ void personalDetails::paintEvent(QPaintEvent *){
     PaintImage2();
 
     ui->textBrowser_2->setText(user->getName());
-    ui->textBrowser->setText(QString::number(user->getTeamid()));
+    ui->textBrowser->setText(team->getTeamName());
     haveTeam();
 }
 

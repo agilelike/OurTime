@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <desktop.h>
 
-
 User *user;
 User::User()
 {
@@ -280,4 +279,8 @@ void User::createDesktop(){
 void User::deleteDesktop(){
     delete w;
     w=0;
+}
+
+Desktop* User::getDesktop(){
+    return w;
 }

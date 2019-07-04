@@ -52,7 +52,6 @@ public:
     QLabel *label_15;
     QPushButton *pushButton_4;
     QLabel *label_16;
-    QLabel *label_17;
     QPushButton *pushButton_5;
     QLabel *label_18;
     QTableWidget *tableWidget_2;
@@ -156,7 +155,7 @@ public:
         lineEdit->setStyleSheet(QStringLiteral("font: 14pt \"Verdana\";"));
         label_14 = new QLabel(personalDetails);
         label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setGeometry(QRect(760, 120, 291, 41));
+        label_14->setGeometry(QRect(760, 120, 311, 41));
         label_14->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\256\213\344\275\223\";"));
         label_15 = new QLabel(personalDetails);
         label_15->setObjectName(QStringLiteral("label_15"));
@@ -170,10 +169,6 @@ public:
         label_16->setObjectName(QStringLiteral("label_16"));
         label_16->setGeometry(QRect(740, 200, 351, 31));
         label_16->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\256\213\344\275\223\";"));
-        label_17 = new QLabel(personalDetails);
-        label_17->setObjectName(QStringLiteral("label_17"));
-        label_17->setGeometry(QRect(720, 230, 391, 31));
-        label_17->setStyleSheet(QString::fromUtf8("font: 16pt \"\345\256\213\344\275\223\";"));
         pushButton_5 = new QPushButton(personalDetails);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(1090, 420, 93, 31));
@@ -235,7 +230,6 @@ public:
         label_15->setText(QApplication::translate("personalDetails", "\345\277\253\345\212\240\345\205\245/\345\210\233\345\273\272\345\233\242\351\230\237\345\220\247\357\274\201", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("personalDetails", "\345\210\233\345\273\272\345\233\242\351\230\237", Q_NULLPTR));
         label_16->setText(QApplication::translate("personalDetails", "\347\224\263\350\257\267\345\267\262\345\217\221\345\207\272\357\274\214\350\257\267\350\200\220\345\277\203\347\255\211\345\276\205\357\274\201", Q_NULLPTR));
-        label_17->setText(QApplication::translate("personalDetails", "\357\274\2102\345\244\251\345\206\205\346\262\241\346\234\211\346\216\245\345\217\227\357\274\214\345\217\257\351\207\215\346\226\260\347\224\263\350\257\267\357\274\211", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("personalDetails", "\350\247\243\346\225\243\345\233\242\351\230\237", Q_NULLPTR));
         label_18->setText(QApplication::translate("personalDetails", "\347\224\263\350\257\267\344\272\272", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("personalDetails", "\345\220\214\346\204\217", Q_NULLPTR));

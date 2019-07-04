@@ -43,13 +43,17 @@ void login::on_pushButton_clicked()
     QString str1 = ui->lineEdit->text();
     QString str2 = ui->lineEdit_2->text();
     if(user->login(str1.toInt(),str2)){
-        team->updateTeam(user->getTeamid());
-        emit showMainwindow();
+        team->updateTeam(user->getTeamid());  
         ui->lineEdit->clear();
         ui->lineEdit_2->clear();
         ui->label_4->hide();
         this->hide();
+
         user->createDesktop();
+        QObject::connect(m.getInformation(),SIGNAL(showLogin()),this,SLOT(receiveShowLogin()));
+        QObject::connect(this,SIGNAL(showMainwindow()),&m,SLOT(receiveShowMainwindow()));
+        QObject::connect(user->getDesktop(),SIGNAL(showMainwindow()),&m,SLOT(receiveShowMainwindow()));
+        emit showMainwindow();
     }
     else{
         ui->lineEdit_2->clear();

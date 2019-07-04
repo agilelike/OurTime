@@ -26,13 +26,12 @@ int main(int argc, char *argv[])
     showID si;
     QObject::connect(&L,SIGNAL(showsignup()),&Sign,SLOT(receivelogin()));
     QObject::connect(&Sign,SIGNAL(showLogin()),&L,SLOT(receiveShowLogin()));
-    QObject::connect(&L,SIGNAL(showMainwindow()),&m,SLOT(receiveShowMainwindow()));
-    QObject::connect(m.getInformation(),SIGNAL(showLogin()),&L,SLOT(receiveShowLogin()));
+    //QObject::connect(&L,SIGNAL(showMainwindow()),&m,SLOT(receiveShowMainwindow()));
+    //QObject::connect(m.getInformation(),SIGNAL(showLogin()),&L,SLOT(receiveShowLogin()));
     QObject::connect(&Sign,SIGNAL(showID(int)),&si,SLOT(receiveShowID(int)));
     QObject::connect(&si,SIGNAL(showLogin()),&L,SLOT(receiveShowLogin()));
-
+    //QObject::connect(user->getDesktop(),SIGNAL(showMainwindow()),&m,SLOT(receiveShowMainwindow()));
     L.show();
-    //L.show();
 
 //数据库的测试
 //    qDebug() << QSqlDatabase::drivers();
