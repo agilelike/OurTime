@@ -336,14 +336,14 @@ release/moc_mainwindow.cpp: ../../../Qt/5.8/mingw53_32/include/QtWidgets/QWidget
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
-		../../../Git/OurTime/OutTime/edittable2.h \
-		../../../Git/OurTime/OutTime/edittable3.h \
 		../../../Git/OurTime/OutTime/pschedule.h \
 		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/edittable3.h \
 		../../../Git/OurTime/OutTime/mainwindow.h \
 		release/moc_predefs.h \
 		../../../Qt/5.8/mingw53_32/bin/moc.exe
@@ -1374,14 +1374,14 @@ release/moc_timetable.cpp: ../../../Qt/5.8/mingw53_32/include/QtWidgets/QWidget 
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
-		../../../Git/OurTime/OutTime/edittable2.h \
-		../../../Git/OurTime/OutTime/edittable3.h \
 		../../../Git/OurTime/OutTime/pschedule.h \
 		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/edittable3.h \
 		../../../Git/OurTime/OutTime/timetable.h \
 		release/moc_predefs.h \
 		../../../Qt/5.8/mingw53_32/bin/moc.exe
@@ -1506,6 +1506,12 @@ release/moc_edittable.cpp: ../../../Qt/5.8/mingw53_32/include/QtWidgets/QWidget 
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Git/OurTime/OutTime/pschedule.h \
+		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
+		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
 		../../../Git/OurTime/OutTime/edittable.h \
 		release/moc_predefs.h \
 		../../../Qt/5.8/mingw53_32/bin/moc.exe
@@ -1864,6 +1870,12 @@ release/moc_edittable3.cpp: ../../../Qt/5.8/mingw53_32/include/QtWidgets/QWidget
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Git/OurTime/OutTime/pschedule.h \
+		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
+		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
 		../../../Git/OurTime/OutTime/edittable3.h \
 		release/moc_predefs.h \
 		../../../Qt/5.8/mingw53_32/bin/moc.exe
@@ -2062,14 +2074,14 @@ release/main.o: ../../../Git/OurTime/OutTime/main.cpp ../../../Git/OurTime/OutTi
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
-		../../../Git/OurTime/OutTime/edittable2.h \
-		../../../Git/OurTime/OutTime/edittable3.h \
 		../../../Git/OurTime/OutTime/pschedule.h \
 		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/edittable3.h \
 		../../../Git/OurTime/OutTime/desktop.h \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
@@ -2222,14 +2234,14 @@ release/mainwindow.o: ../../../Git/OurTime/OutTime/mainwindow.cpp ../../../Git/O
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
-		../../../Git/OurTime/OutTime/edittable2.h \
-		../../../Git/OurTime/OutTime/edittable3.h \
 		../../../Git/OurTime/OutTime/pschedule.h \
 		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/edittable3.h \
 		ui_mainwindow.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QVariant \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/QAction \
@@ -3571,14 +3583,14 @@ release/timetable.o: ../../../Git/OurTime/OutTime/timetable.cpp ../../../Git/Our
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
-		../../../Git/OurTime/OutTime/edittable2.h \
-		../../../Git/OurTime/OutTime/edittable3.h \
 		../../../Git/OurTime/OutTime/pschedule.h \
 		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/edittable3.h \
 		ui_timetable.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QVariant \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/QAction \
@@ -3738,6 +3750,12 @@ release/edittable.o: ../../../Git/OurTime/OutTime/edittable.cpp ../../../Git/Our
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Git/OurTime/OutTime/pschedule.h \
+		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
+		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
 		ui_edittable.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QVariant \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/QAction \
@@ -3954,14 +3972,14 @@ release/desktop.o: ../../../Git/OurTime/OutTime/desktop.cpp ../../../Git/OurTime
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
-		../../../Git/OurTime/OutTime/edittable2.h \
-		../../../Git/OurTime/OutTime/edittable3.h \
 		../../../Git/OurTime/OutTime/pschedule.h \
 		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
 		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Git/OurTime/OutTime/edittable2.h \
+		../../../Git/OurTime/OutTime/edittable3.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QString \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDateTime
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\desktop.o ..\..\..\Git\OurTime\OutTime\desktop.cpp
@@ -4245,6 +4263,12 @@ release/edittable3.o: ../../../Git/OurTime/OutTime/edittable3.cpp ../../../Git/O
 		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
 		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Git/OurTime/OutTime/pschedule.h \
+		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
+		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
 		ui_edittable3.h \
 		../../../Qt/5.8/mingw53_32/include/QtCore/QVariant \
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/QAction \
@@ -4291,93 +4315,7 @@ release/edittable3.o: ../../../Git/OurTime/OutTime/edittable3.cpp ../../../Git/O
 		../../../Qt/5.8/mingw53_32/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\edittable3.o ..\..\..\Git\OurTime\OutTime\edittable3.cpp
 
-release/pschedule.o: ../../../Git/OurTime/OutTime/pschedule.cpp ../../../Git/OurTime/OutTime/pschedule.h \
-		../../../Qt/5.8/mingw53_32/include/QtGui/QList \
-		../../../Qt/5.8/mingw53_32/include/QtGui/qevent.h \
-		../../../Qt/5.8/mingw53_32/include/QtGui/qtguiglobal.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qglobal.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qconfig.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qtcore-config.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qsystemdetection.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qprocessordetection.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qcompilerdetection.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qtypeinfo.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qsysinfo.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qlogging.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qflags.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qtypetraits.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qatomic.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qbasicatomic.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qatomic_bootstrap.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qgenericatomic.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qatomic_cxx11.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qatomic_msvc.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qglobalstatic.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qmutex.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qnumeric.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qversiontagging.h \
-		../../../Qt/5.8/mingw53_32/include/QtGui/qtgui-config.h \
-		../../../Qt/5.8/mingw53_32/include/QtGui/qwindowdefs.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qobjectdefs.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qnamespace.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qobjectdefs_impl.h \
-		../../../Qt/5.8/mingw53_32/include/QtGui/qwindowdefs_win.h \
-		../../../Qt/5.8/mingw53_32/include/QtGui/qregion.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qrect.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qmargins.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qsize.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qpoint.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qdatastream.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qscopedpointer.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qiodevice.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qobject.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qstring.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qchar.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qbytearray.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qrefcount.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qarraydata.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qstringbuilder.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qlist.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qalgorithms.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qiterator.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qhashfunctions.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qpair.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qbytearraylist.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qstringlist.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qregexp.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qstringmatcher.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qcoreevent.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qmetatype.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qvarlengtharray.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qcontainerfwd.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qobject_impl.h \
-		../../../Qt/5.8/mingw53_32/include/QtGui/qkeysequence.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qvariant.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qmap.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qdebug.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qhash.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qtextstream.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qlocale.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qshareddata.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qvector.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qset.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qcontiguouscache.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qsharedpointer.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qsharedpointer_impl.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qurl.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qurlquery.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qfile.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qfiledevice.h \
-		../../../Qt/5.8/mingw53_32/include/QtGui/qvector2d.h \
-		../../../Qt/5.8/mingw53_32/include/QtGui/qtouchdevice.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/QDate \
-		../../../Qt/5.8/mingw53_32/include/QtCore/qdatetime.h \
-		../../../Qt/5.8/mingw53_32/include/QtCore/QTime \
-		../../../Qt/5.8/mingw53_32/include/QtSql/QSqlQuery \
-		../../../Qt/5.8/mingw53_32/include/QtSql/qsqlquery.h \
-		../../../Qt/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
-		../../../Qt/5.8/mingw53_32/include/QtSql/qsqldatabase.h
+release/pschedule.o: ../../../Git/OurTime/OutTime/pschedule.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\pschedule.o ..\..\..\Git\OurTime\OutTime\pschedule.cpp
 
 release/qrc_image.o: release/qrc_image.cpp 

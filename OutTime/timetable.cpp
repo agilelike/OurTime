@@ -40,7 +40,7 @@ TimeTable::TimeTable(QWidget *parent) :
 {
 
     //应该有7个pSchedule，好像还得new..，得声明、分配空间
-    pSchedule *p[7];
+   // pSchedule *p[7];
 
     //进行数据库操作，完成QList<Schedule> s的读入
 
@@ -53,27 +53,40 @@ TimeTable::TimeTable(QWidget *parent) :
     //初始化时就读取数据库，进行绘制,按理说应当读取本周的一周的数据
     //可以根据上面写的判断周几函数，得到今天是周几
     //循环，将按钮绘制，并进行一系列绑定
+    QDate date;
+    QString content;
+    QTime bt;
+    QTime et;
+    bool checked;
+
     int len;
     QTime b;
     b = QTime(8,0);
     int begin;
 
+
+
     for(int i=0;i<7;i++){
-        for(int j=0;j<p[i]->s.length();j++){
-            len = p[i]->s[j].start.secsTo(p[i]->s[j].end)/60;
-            begin = b.secsTo(p[i]->s[j].start)/60;
+        for(int j=0;j<2;j++){
             btn[i]<<new QPushButton(this);
-            btn[i][j]->setText(p[i]->s[j].name+"\n"+p[i]->s[j].start.toString("h:mm")+"-"+p[i]->s[j].end.toString("h:mm"));
+            date = QDate(2019,7,i+1);
+            content = "任务";
+            bt = QTime(8+j*3,0);
+            et = QTime(10+j*3,0);
+            len = bt.secsTo(et)/60;
+            b = QTime(8,0);
+            begin = b.secsTo(bt)/60;
+            btn[i][j]->setText(content+"\n"+bt.toString("h:mm")+"-"+et.toString("h:mm"));
             btn[i][j]->setGeometry(280+i*80,70+begin/2,80,len/2);
 
-            if(p[i]->s[j].isGrabed==true)
-            {
-                btn[i][j]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-            }
-            else
-            {
-                btn[i][j]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-            }
+
+
+                btn[i][j]->setStyleSheet("background: rgb(255,170,0);font-size:8pt");
+
+
+
+
+
 
             btn[i][j]->show();
             btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
@@ -173,41 +186,7 @@ void TimeTable::getcontent1(Schedule sche){
 
 
     //重绘
-    for(int i=0;i<7;i++){
-        qDeleteAll(btn[i]);
-        btn[i].clear();
-    }
-    for(int i=0;i<7;i++){
-        for(int j=0;j<p[i]->s.length();j++){
-            len = p[i]->s[j].start.secsTo(p[i]->s[j].end)/60;
-            begin = b.secsTo(p[i]->s[j].start)/60;
-            btn[i]<<new QPushButton(this);
-            btn[i][j]->setText(p[i]->s[j].name+"\n"+p[i]->s[j].start.toString("h:mm")+"-"+p[i]->s[j].end.toString("h:mm"));
-            btn[i][j]->setGeometry(280+i*80,70+begin/2,80,len/2);
 
-            if(p[i]->s[j].isGrabed==true)
-            {
-                btn[i][j]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-            }
-            else
-            {
-                btn[i][j]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-            }
-
-            btn[i][j]->show();
-            btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
-            //添加点击
-            connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
-            //按钮绑定右键编辑与删除操作
-            editAct[i]<<new QAction("编辑日程",btn[i][j]);
-            delAct[i]<<new QAction("删除日程",btn[i][j]);
-            btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
-            btn[i][j]->addAction(editAct[i][j]);
-            btn[i][j]->addAction(delAct[i][j]);
-            connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
-            connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
-        }
-    }
 }
 
 //从编辑页面上得到数据，删除数据库相应内容，重新绘制
@@ -226,48 +205,8 @@ void TimeTable::getcontent2(Schedule sche){
 
 
 
-
-
     //重绘
-    int len;
-    QTime b;
-    b = QTime(8,0);
-    int begin;
-    for(int i=0;i<7;i++){
-        qDeleteAll(btn[i]);
-        btn[i].clear();
-    }
-    for(int i=0;i<7;i++){
-        for(int j=0;j<p[i]->s.length();j++){
-            len = p[i]->s[j].start.secsTo(p[i]->s[j].end)/60;
-            begin = b.secsTo(p[i]->s[j].start)/60;
-            btn[i]<<new QPushButton(this);
-            btn[i][j]->setText(p[i]->s[j].name+"\n"+p[i]->s[j].start.toString("h:mm")+"-"+p[i]->s[j].end.toString("h:mm"));
-            btn[i][j]->setGeometry(280+i*80,70+begin/2,80,len/2);
 
-            if(p[i]->s[j].isGrabed==true)
-            {
-                btn[i][j]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-            }
-            else
-            {
-                btn[i][j]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-            }
-
-            btn[i][j]->show();
-            btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
-            //添加点击
-            connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
-            //按钮绑定右键编辑与删除操作
-            editAct[i]<<new QAction("编辑日程",btn[i][j]);
-            delAct[i]<<new QAction("删除日程",btn[i][j]);
-            btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
-            btn[i][j]->addAction(editAct[i][j]);
-            btn[i][j]->addAction(delAct[i][j]);
-            connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
-            connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
-        }
-    }
 }
 
 //编辑日程，右键点击编辑日程
@@ -281,10 +220,6 @@ void TimeTable::editSchedule(){
 
     //根据m,n来操作
     //读取数据库的内容给et3，设置好et3的每一项，然后显示et3
-
-
-
-
 
 
     et3->show();
@@ -301,50 +236,6 @@ void TimeTable::delSchedule(){
     //得到i，j之后可以进行数据库操作
     //在数据库里删除，然后重绘页面
     //数据库删除
-
-
-
-
-    //重绘
-    int len;
-    QTime b;
-    b = QTime(8,0);
-    int begin;
-    for(int i=0;i<7;i++){
-        qDeleteAll(btn[i]);
-        btn[i].clear();
-    }
-    for(int i=0;i<7;i++){
-        for(int j=0;j<p[i]->s.length();j++){
-            len = p[i]->s[j].start.secsTo(p[i]->s[j].end)/60;
-            begin = b.secsTo(p[i]->s[j].start)/60;
-            btn[i]<<new QPushButton(this);
-            btn[i][j]->setText(p[i]->s[j].name+"\n"+p[i]->s[j].start.toString("h:mm")+"-"+p[i]->s[j].end.toString("h:mm"));
-            btn[i][j]->setGeometry(280+i*80,70+begin/2,80,len/2);
-
-            if(p[i]->s[j].isGrabed==true)
-            {
-                btn[i][j]->setStyleSheet("background: rgb(85,170,255);font-size:8pt");
-            }
-            else
-            {
-                btn[i][j]->setStyleSheet("background: rgb(0,85,255);font-size:8pt");
-            }
-
-            btn[i][j]->show();
-            btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
-            //添加点击
-            connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
-            //按钮绑定右键编辑与删除操作
-            editAct[i]<<new QAction("编辑日程",btn[i][j]);
-            delAct[i]<<new QAction("删除日程",btn[i][j]);
-            btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
-            btn[i][j]->addAction(editAct[i][j]);
-            btn[i][j]->addAction(delAct[i][j]);
-            connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
-            connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
-        }
-    }
 
 
 

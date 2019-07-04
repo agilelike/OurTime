@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_editTable_t {
-    QByteArrayData data[11];
-    char stringdata0[105];
+    QByteArrayData data[8];
+    char stringdata0[92];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,18 +34,15 @@ static const qt_meta_stringdata_editTable_t qt_meta_stringdata_editTable = {
 QT_MOC_LITERAL(0, 0, 9), // "editTable"
 QT_MOC_LITERAL(1, 10, 11), // "passcontent"
 QT_MOC_LITERAL(2, 22, 0), // ""
-QT_MOC_LITERAL(3, 23, 4), // "date"
-QT_MOC_LITERAL(4, 28, 7), // "content"
-QT_MOC_LITERAL(5, 36, 2), // "bt"
-QT_MOC_LITERAL(6, 39, 2), // "et"
-QT_MOC_LITERAL(7, 42, 7), // "checked"
-QT_MOC_LITERAL(8, 50, 8), // "makeEdit"
-QT_MOC_LITERAL(9, 59, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(10, 81, 23) // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(3, 23, 8), // "Schedule"
+QT_MOC_LITERAL(4, 32, 4), // "sche"
+QT_MOC_LITERAL(5, 37, 8), // "makeEdit"
+QT_MOC_LITERAL(6, 46, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(7, 68, 23) // "on_pushButton_2_clicked"
 
     },
-    "editTable\0passcontent\0\0date\0content\0"
-    "bt\0et\0checked\0makeEdit\0on_pushButton_clicked\0"
+    "editTable\0passcontent\0\0Schedule\0sche\0"
+    "makeEdit\0on_pushButton_clicked\0"
     "on_pushButton_2_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -64,15 +61,15 @@ static const uint qt_meta_data_editTable[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    5,   34,    2, 0x06 /* Public */,
+       1,    1,   34,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       8,    0,   45,    2, 0x0a /* Public */,
-       9,    0,   46,    2, 0x08 /* Private */,
-      10,    0,   47,    2, 0x08 /* Private */,
+       5,    0,   37,    2, 0x0a /* Public */,
+       6,    0,   38,    2, 0x08 /* Private */,
+       7,    0,   39,    2, 0x08 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::QDate, QMetaType::QString, QMetaType::QTime, QMetaType::QTime, QMetaType::Bool,    3,    4,    5,    6,    7,
+    QMetaType::Void, 0x80000000 | 3,    4,
 
  // slots: parameters
     QMetaType::Void,
@@ -88,7 +85,7 @@ void editTable::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         editTable *_t = static_cast<editTable *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->passcontent((*reinterpret_cast< QDate(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QTime(*)>(_a[3])),(*reinterpret_cast< QTime(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5]))); break;
+        case 0: _t->passcontent((*reinterpret_cast< Schedule(*)>(_a[1]))); break;
         case 1: _t->makeEdit(); break;
         case 2: _t->on_pushButton_clicked(); break;
         case 3: _t->on_pushButton_2_clicked(); break;
@@ -98,7 +95,7 @@ void editTable::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (editTable::*_t)(QDate , QString , QTime , QTime , bool );
+            typedef void (editTable::*_t)(Schedule );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&editTable::passcontent)) {
                 *result = 0;
                 return;
@@ -144,9 +141,9 @@ int editTable::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void editTable::passcontent(QDate _t1, QString _t2, QTime _t3, QTime _t4, bool _t5)
+void editTable::passcontent(Schedule _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)), const_cast<void*>(reinterpret_cast<const void*>(&_t5)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP

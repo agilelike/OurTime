@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_TimeTable_t {
-    QByteArrayData data[15];
-    char stringdata0[182];
+    QByteArrayData data[11];
+    char stringdata0[145];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,23 +35,18 @@ QT_MOC_LITERAL(0, 0, 9), // "TimeTable"
 QT_MOC_LITERAL(1, 10, 28), // "on_commandLinkButton_clicked"
 QT_MOC_LITERAL(2, 39, 0), // ""
 QT_MOC_LITERAL(3, 40, 30), // "on_commandLinkButton_2_clicked"
-QT_MOC_LITERAL(4, 71, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(5, 95, 11), // "getcontent1"
-QT_MOC_LITERAL(6, 107, 4), // "date"
-QT_MOC_LITERAL(7, 112, 7), // "content"
-QT_MOC_LITERAL(8, 120, 2), // "bt"
-QT_MOC_LITERAL(9, 123, 2), // "et"
-QT_MOC_LITERAL(10, 126, 7), // "checked"
-QT_MOC_LITERAL(11, 134, 11), // "getcontent2"
-QT_MOC_LITERAL(12, 146, 10), // "clickevent"
-QT_MOC_LITERAL(13, 157, 12), // "editSchedule"
-QT_MOC_LITERAL(14, 170, 11) // "delSchedule"
+QT_MOC_LITERAL(4, 71, 11), // "getcontent1"
+QT_MOC_LITERAL(5, 83, 8), // "Schedule"
+QT_MOC_LITERAL(6, 92, 4), // "sche"
+QT_MOC_LITERAL(7, 97, 11), // "getcontent2"
+QT_MOC_LITERAL(8, 109, 10), // "clickevent"
+QT_MOC_LITERAL(9, 120, 12), // "editSchedule"
+QT_MOC_LITERAL(10, 133, 11) // "delSchedule"
 
     },
     "TimeTable\0on_commandLinkButton_clicked\0"
     "\0on_commandLinkButton_2_clicked\0"
-    "on_pushButton_2_clicked\0getcontent1\0"
-    "date\0content\0bt\0et\0checked\0getcontent2\0"
+    "getcontent1\0Schedule\0sche\0getcontent2\0"
     "clickevent\0editSchedule\0delSchedule"
 };
 #undef QT_MOC_LITERAL
@@ -62,7 +57,7 @@ static const uint qt_meta_data_TimeTable[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -70,21 +65,19 @@ static const uint qt_meta_data_TimeTable[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   54,    2, 0x08 /* Private */,
-       3,    0,   55,    2, 0x08 /* Private */,
-       4,    0,   56,    2, 0x08 /* Private */,
-       5,    5,   57,    2, 0x08 /* Private */,
-      11,    5,   68,    2, 0x08 /* Private */,
-      12,    0,   79,    2, 0x08 /* Private */,
-      13,    0,   80,    2, 0x08 /* Private */,
-      14,    0,   81,    2, 0x08 /* Private */,
+       1,    0,   49,    2, 0x08 /* Private */,
+       3,    0,   50,    2, 0x08 /* Private */,
+       4,    1,   51,    2, 0x08 /* Private */,
+       7,    1,   54,    2, 0x08 /* Private */,
+       8,    0,   57,    2, 0x08 /* Private */,
+       9,    0,   58,    2, 0x08 /* Private */,
+      10,    0,   59,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::QDate, QMetaType::QString, QMetaType::QTime, QMetaType::QTime, QMetaType::Bool,    6,    7,    8,    9,   10,
-    QMetaType::Void, QMetaType::QDate, QMetaType::QString, QMetaType::QTime, QMetaType::QTime, QMetaType::Bool,    6,    7,    8,    9,   10,
+    QMetaType::Void, 0x80000000 | 5,    6,
+    QMetaType::Void, 0x80000000 | 5,    6,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -100,12 +93,11 @@ void TimeTable::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         switch (_id) {
         case 0: _t->on_commandLinkButton_clicked(); break;
         case 1: _t->on_commandLinkButton_2_clicked(); break;
-        case 2: _t->on_pushButton_2_clicked(); break;
-        case 3: _t->getcontent1((*reinterpret_cast< QDate(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QTime(*)>(_a[3])),(*reinterpret_cast< QTime(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5]))); break;
-        case 4: _t->getcontent2((*reinterpret_cast< QDate(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QTime(*)>(_a[3])),(*reinterpret_cast< QTime(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5]))); break;
-        case 5: _t->clickevent(); break;
-        case 6: _t->editSchedule(); break;
-        case 7: _t->delSchedule(); break;
+        case 2: _t->getcontent1((*reinterpret_cast< Schedule(*)>(_a[1]))); break;
+        case 3: _t->getcontent2((*reinterpret_cast< Schedule(*)>(_a[1]))); break;
+        case 4: _t->clickevent(); break;
+        case 5: _t->editSchedule(); break;
+        case 6: _t->delSchedule(); break;
         default: ;
         }
     }
@@ -136,13 +128,13 @@ int TimeTable::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 7;
     }
     return _id;
 }
