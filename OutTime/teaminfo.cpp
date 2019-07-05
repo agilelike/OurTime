@@ -11,6 +11,7 @@
 #include <QList>
 #include<QMessageBox>
 #include "desktop.h"
+#include <QDebug>
 teaminfo::teaminfo(QWidget *parent):
     QWidget(parent),
     ui(new Ui::teaminfo)
@@ -24,29 +25,7 @@ teaminfo::teaminfo(QWidget *parent):
 //    界面美化
 //    ui->pushButton->setStyleSheet("“border:2px white;border-radius:10px;padding:2px 4px;");
 //    下拉列表生成
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
 
-    db.setHostName("localhost");
-    db.setDatabaseName("ourtime");
-    db.setUserName("team");
-    db.setPassword("123456");
-    db.setPort(3306);
-    db.open();
-    //链接数据库
-    QSqlQuery query(db);
-    query.exec("SET NAMES 'GBK'");
-    QString str = QString("select userName from user "
-                          "where teamID = '%1' and userID <> '%2'"
-                          " ORDER BY userID ASC ").arg(user->getTeamid()).arg(user->getid());
-    query.prepare(str);
-    query.exec();
-
-    while(query.next())
-    {
-        QString cstr = query.value("userName").toString() ;
-        ui->comboBox->addItem(cstr);
-    }
-    db.close();
 
 
     //滑动窗口
@@ -65,6 +44,33 @@ teaminfo::teaminfo(QWidget *parent):
 teaminfo::~teaminfo()
 {
     delete ui;
+}
+
+void teaminfo::setcombo()
+{
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+
+    db.setHostName("localhost");
+    db.setDatabaseName("ourtime");
+    db.setUserName("team");
+    db.setPassword("123456");
+    db.setPort(3306);
+    db.open();
+    //链接数据库
+    QSqlQuery query(db);
+    query.exec("SET NAMES 'GBK'");
+    qDebug()<<user->getTeamid()<<user->getid();
+    QString str = QString("select userName from user "
+                          "where teamID = '%1' and userID <> '%2'"
+                          " ORDER BY userID ASC ").arg(user->getTeamid()).arg(user->getid());
+    query.exec(str);
+
+    while(query.next())
+    {
+        QString cstr = query.value(0).toString() ;
+        ui->comboBox->addItem(cstr);
+    }
+    db.close();
 }
 
 QString teaminfo::findname(int userID)    //根据用户ID找名字
@@ -174,7 +180,7 @@ void teaminfo::showmessage()//显示消息和排序
             strdate.append("\r\n    ");
             strdate.append(context);
             strdate.append("\r\n");
-            for(int i =0;i<28-len*2;i++)
+            for(int i =0;i<22-len*2;i++)
             {
                 strdate.append(" ");
             }
@@ -221,7 +227,7 @@ void teaminfo::showmessage()//显示消息和排序
             strdate.append("\r\n    ");
             strdate.append(context);
             strdate.append("\r\n");
-            for(int i =0;i<28-len*2;i++)
+            for(int i =0;i<22-len*2;i++)
             {
                 strdate.append(" ");
             }

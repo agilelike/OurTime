@@ -22,6 +22,7 @@ public:
     void currentInterfaceHide();
     information* getInformation();
     ~MainWindow();
+    teaminfo * getTeamInfo();
 
 private slots:
     void on_commandLinkButton_clicked();
@@ -33,6 +34,7 @@ private slots:
     void receiveShowCreateTeam();
     void receiveShowMainwindow();
     void receiveHideMain();
+
 
 protected:
     void closeEvent(QCloseEvent *event);

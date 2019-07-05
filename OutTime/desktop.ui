@@ -239,7 +239,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -257,7 +257,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -275,7 +275,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -293,7 +293,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -311,7 +311,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -329,7 +329,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
@@ -347,7 +347,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
@@ -365,7 +365,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
@@ -383,7 +383,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_10">
@@ -401,7 +401,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_11">
@@ -419,7 +419,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_12">
@@ -437,7 +437,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_13">
@@ -455,7 +455,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_14">
@@ -473,7 +473,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
  </widget>

@@ -184,7 +184,8 @@ void Desktop::on_Button1_clicked()
             for(int i=0;i<14;i++){
                 label[i]->hide();
             }
-
+            ui->label_20->hide();
+            ui->time_value_2->hide();
             //获取当前日期的所有日程读到控件中
             pSchedule *s=user->psche[QDate::currentDate().dayOfWeek()-1];
             for(int i = 0;i<s->s.length();i++){
@@ -194,12 +195,14 @@ void Desktop::on_Button1_clicked()
                 {
                     label[i]->setStyleSheet("color: rgb(179, 179, 179);");
                 }
-                if(x.start>QTime::currentTime())
+                else if(x.start>QTime::currentTime())
                 {
                     label[i]->setStyleSheet("color: rgb(0, 0, 0);");
                 }
                 else{
                     label[i]->setStyleSheet("color: rgb(200, 30, 30);");
+                    ui->time_value_2->setText(x.name);
+                    ui->time_value_2->show();
                 }
                 label[i]->show();
             }
@@ -225,7 +228,8 @@ void Desktop::on_Button1_clicked()
             for(int i=0;i<14;i++){
                 label[i]->hide();
             }
-
+            ui->label_20->hide();
+            ui->time_value_2->hide();
             //获取当前日期的所有日程读到控件中
             pSchedule *s=user->tsche[QDate::currentDate().dayOfWeek()-1];
             for(int i = 0;i<s->s.length();i++){
@@ -238,12 +242,15 @@ void Desktop::on_Button1_clicked()
                 {
                     label[i]->setStyleSheet("color: rgb(179, 179, 179);");
                 }
-                if(x.start>QTime::currentTime())
+                else if(x.state==2||x.start>QTime::currentTime())
                 {
                     label[i]->setStyleSheet("color: rgb(0, 0, 0);");
                 }
                 else{
                     label[i]->setStyleSheet("color: rgb(200, 30, 30);");
+                    ui->label_20->show();
+                    ui->time_value_2->setText(x.name);
+                    ui->time_value_2->show();
                 }
                 label[i]->show();
             }
@@ -253,14 +260,22 @@ void Desktop::on_Button1_clicked()
 
 void Desktop::on_Button2_clicked()
 {
+    ui->label_mes->hide();
     emit showMainwindow();
 }
 
 void Desktop::on_start_tomato_clicked()
 {
+    int clocknum = 1;
+    pSchedule *s=user->psche[QDate::currentDate().dayOfWeek()-1];
+    for(int i = 0;i<s->s.length();i++){
+        Schedule x = s->s[i];
+        if(x.end>=QTime::currentTime()&&x.start<=QTime::currentTime())
+            clocknum=x.start.secsTo(x.end)/1800;
+    }
     if(tomatoClo == 0)
     {
-        tomatoClo = new tomatoClock(this ,"mathematical modeling" ,6);
+        tomatoClo = new tomatoClock(this ,"mathematical modeling" ,clocknum);
         tomatoClo->move(20,70);
         tomatoClo->show();
         ui->label->hide();
@@ -282,19 +297,7 @@ void Desktop::on_start_tomato_clicked()
     {
         delete tomatoClo;
         tomatoClo = 0;
-        ui->label->show();
-        ui->label_2->show();
-        ui->label_3->show();
-        ui->label_4->show();
-        ui->label_5->show();
-        ui->label_6->show();
-        ui->label_7->show();
-        ui->label_8->show();
-        ui->label_9->show();
-        ui->label_10->show();
-        ui->label_11->show();
-        ui->label_12->show();
-        ui->label_13->show();
-        ui->label_14->show();
+        ui->Button1->click();
+        ui->Button1->click();
     }
 }

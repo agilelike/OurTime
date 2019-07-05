@@ -157,8 +157,8 @@
    </property>
    <property name="font">
     <font>
-     <family>华文行楷</family>
-     <pointsize>10</pointsize>
+     <family>黑体</family>
+     <pointsize>12</pointsize>
     </font>
    </property>
   </widget>

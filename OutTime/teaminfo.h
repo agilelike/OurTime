@@ -21,6 +21,7 @@ public:
     void judge();
     void update();
     Message readMessage(int i);
+    void setcombo();
 private slots:
     void on_pushButton_clicked();
     void showmessage();

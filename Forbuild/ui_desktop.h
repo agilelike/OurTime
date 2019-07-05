@@ -230,20 +230,20 @@ public:
         label_20->setText(QApplication::translate("Desktop", "teamTask:", Q_NULLPTR));
         time_value_2->setText(QApplication::translate("Desktop", "\347\224\265\350\257\235\344\274\232\350\256\256", Q_NULLPTR));
         label_mes->setText(QString());
-        label->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_2->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_3->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_4->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_5->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_6->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_7->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_8->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_9->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_10->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_11->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_12->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_13->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
-        label_14->setText(QApplication::translate("Desktop", "TextLabel", Q_NULLPTR));
+        label->setText(QString());
+        label_2->setText(QString());
+        label_3->setText(QString());
+        label_4->setText(QString());
+        label_5->setText(QString());
+        label_6->setText(QString());
+        label_7->setText(QString());
+        label_8->setText(QString());
+        label_9->setText(QString());
+        label_10->setText(QString());
+        label_11->setText(QString());
+        label_12->setText(QString());
+        label_13->setText(QString());
+        label_14->setText(QString());
     } // retranslateUi
 
 };

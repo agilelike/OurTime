@@ -56,6 +56,7 @@ void login::on_pushButton_clicked()
         QObject::connect(m->getInformation(),SIGNAL(showLogin()),this,SLOT(receiveShowLogin()));
         QObject::connect(this,SIGNAL(showMainwindow()),m,SLOT(receiveShowMainwindow()));
         QObject::connect(user->getDesktop(),SIGNAL(showMainwindow()),m,SLOT(receiveShowMainwindow()));
+        m->getTeamInfo()->setcombo();
         emit showMainwindow();
     }
     else{

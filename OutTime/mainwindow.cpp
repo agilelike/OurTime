@@ -140,3 +140,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     t->hideMain();
     this->hide();
 }
+
+teaminfo* MainWindow::getTeamInfo(){
+    return w_teaminfo;
+}

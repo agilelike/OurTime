@@ -94,8 +94,8 @@ public:
         comboBox->setObjectName(QStringLiteral("comboBox"));
         comboBox->setGeometry(QRect(940, 50, 111, 22));
         QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\215\216\346\226\207\350\241\214\346\245\267"));
-        font3.setPointSize(10);
+        font3.setFamily(QString::fromUtf8("\351\273\221\344\275\223"));
+        font3.setPointSize(12);
         comboBox->setFont(font3);
         label_3 = new QLabel(teaminfo);
         label_3->setObjectName(QStringLiteral("label_3"));
