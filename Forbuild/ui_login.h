@@ -68,7 +68,7 @@ public:
         label_3->setFont(font);
         label_4 = new QLabel(login);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(100, 250, 271, 16));
+        label_4->setGeometry(QRect(70, 250, 321, 16));
         label_4->setStyleSheet(QString::fromUtf8("font: 14pt \"\351\232\266\344\271\246\";"));
 
         retranslateUi(login);

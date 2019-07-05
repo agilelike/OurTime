@@ -8,5 +8,6 @@
         <file>Image/account.png</file>
         <file>Image/password.png</file>
         <file>Image/time.png</file>
+        <file>Image/bulb.png</file>
     </qresource>
 </RCC>

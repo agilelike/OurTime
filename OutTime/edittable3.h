@@ -29,6 +29,7 @@ private slots:
 private:
     Ui::edittable3 *ui;
     void initTitleBar();
+    bool flag;
 };
 
 #endif // EDITTABLE3_H

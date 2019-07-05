@@ -24,6 +24,7 @@ edittable3::~edittable3()
 void edittable3::on_pushButton_clicked()
 {
     Schedule s;
+    s.state=!flag;
     s.t = ui->dateEdit->date();
     s.name = ui->lineEdit_2->text();
     s.start = ui->timeEdit->time();
@@ -49,6 +50,7 @@ void edittable3::on_pushButton_2_clicked()
     this->hide();
 }
 void edittable3::get3(int m, int n, bool f){
+    flag = f;
 
     if(f==1){
         Schedule s = user->psche[m]->s[n];

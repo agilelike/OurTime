@@ -23,7 +23,6 @@ void edittable2::initTitleBar()
 void edittable2::makeEdit()
 {
     ui->dateEdit->setDate(QDate::currentDate());
-    ui->dateEdit->setDate(QDate(2019,1,1));
     ui->timeEdit->setTime(QTime(8,0));
     ui->lineEdit->clear();
     this->show();

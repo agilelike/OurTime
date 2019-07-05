@@ -57,6 +57,8 @@ public:
         tableWidget = new QTableWidget(journal);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setGeometry(QRect(20, 80, 601, 391));
+        tableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         line_3 = new QFrame(journal);
         line_3->setObjectName(QStringLiteral("line_3"));
         line_3->setGeometry(QRect(60, 70, 1091, 20));
@@ -66,6 +68,8 @@ public:
         journal_view->setObjectName(QStringLiteral("journal_view"));
         journal_view->setGeometry(QRect(680, 100, 491, 191));
         journal_view->setStyleSheet(QString::fromUtf8("font: 14pt \"\346\245\267\344\275\223\";"));
+        journal_view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        journal_view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         pushButton = new QPushButton(journal);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(870, 400, 93, 31));
@@ -108,7 +112,7 @@ public:
         label_3->setStyleSheet(QStringLiteral("font: 14pt \"Verdana\";"));
         clock_number = new QLabel(journal);
         clock_number->setObjectName(QStringLiteral("clock_number"));
-        clock_number->setGeometry(QRect(920, 340, 100, 30));
+        clock_number->setGeometry(QRect(950, 340, 100, 30));
         clock_number->setMaximumSize(QSize(16777215, 16777215));
         QFont font;
         font.setFamily(QStringLiteral("Segoe Print"));
@@ -116,7 +120,7 @@ public:
         clock_number->setFont(font);
         label_5 = new QLabel(journal);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(830, 340, 81, 30));
+        label_5->setGeometry(QRect(800, 340, 141, 30));
         label_5->setFont(font);
 
         retranslateUi(journal);
@@ -138,7 +142,7 @@ public:
         toolButton_6->setText(QString());
         label_3->setText(QApplication::translate("journal", "13", Q_NULLPTR));
         clock_number->setText(QApplication::translate("journal", "TextLabel", Q_NULLPTR));
-        label_5->setText(QApplication::translate("journal", "\347\225\252\350\214\204\351\222\237\357\274\232", Q_NULLPTR));
+        label_5->setText(QApplication::translate("journal", "tomatoClock:", Q_NULLPTR));
     } // retranslateUi
 
 };

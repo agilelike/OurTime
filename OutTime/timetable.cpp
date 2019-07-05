@@ -107,6 +107,7 @@ void TimeTable::refreshBox()
             }
         }
     }else{
+
         int len;
         QTime b;
         b = QTime(8,0);
@@ -117,6 +118,7 @@ void TimeTable::refreshBox()
                 Schedule tmp=p[i]->s[j];
                 if(tmp.state==1)
                 {
+
                     len = tmp.start.secsTo(tmp.end)/60;
                     begin = b.secsTo(tmp.start)/60;
                     btn[i]<<new QPushButton(this);
@@ -128,34 +130,40 @@ void TimeTable::refreshBox()
                     btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
                     //添加点击
                     connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
-                    //按钮绑定右键编辑与删除操作
-                    editAct[i]<<new QAction("编辑日程",btn[i][j]);
-                    delAct[i]<<new QAction("删除日程",btn[i][j]);
-                    btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
-                    btn[i][j]->addAction(editAct[i][j]);
-                    btn[i][j]->addAction(delAct[i][j]);
-                    connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
-                    connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
+                    if(user->getTeamState()==2)
+                    {
+                        //按钮绑定右键编辑与删除操作
+                        editAct[i]<<new QAction("编辑日程",btn[i][j]);
+                        delAct[i]<<new QAction("删除日程",btn[i][j]);
+                        btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
+                        btn[i][j]->addAction(editAct[i][j]);
+                        btn[i][j]->addAction(delAct[i][j]);
+                        connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
+                        connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
+                    }
                 }else{
                     len=5;
                     begin = b.secsTo(p[i]->s[j].end)/60;
 
                     btn[i]<<new QPushButton(this);
                     btn[i][j]->setGeometry(280+i*80,70+begin/2,80,len);
-                    btn[i][j]->setStyleSheet("background: rgb(255,255,127);font-size:8pt");
+                    btn[i][j]->setStyleSheet("background: rgb(250,5,5);font-size:8pt");
 
                     btn[i][j]->show();
                     btn[i][j]->setObjectName(QString::number(i)+"."+ QString::number(j));
                     //添加点击
                     connect(btn[i][j],SIGNAL(clicked()),this,SLOT(clickevent()));
-                    //按钮绑定右键编辑与删除操作
-                    editAct[i]<<new QAction("编辑日程",btn[i][j]);
-                    delAct[i]<<new QAction("删除日程",btn[i][j]);
-                    btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
-                    btn[i][j]->addAction(editAct[i][j]);
-                    btn[i][j]->addAction(delAct[i][j]);
-                    connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
-                    connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
+                    if(user->getTeamState()==2)
+                    {
+                        //按钮绑定右键编辑与删除操作
+                        editAct[i]<<new QAction("编辑日程",btn[i][j]);
+                        delAct[i]<<new QAction("删除日程",btn[i][j]);
+                        btn[i][j]->setContextMenuPolicy(Qt::ActionsContextMenu);
+                        btn[i][j]->addAction(editAct[i][j]);
+                        btn[i][j]->addAction(delAct[i][j]);
+                        connect(editAct[i][j],SIGNAL(triggered()),this,SLOT(editSchedule()));
+                        connect(delAct[i][j],SIGNAL(triggered()),this,SLOT(delSchedule()));
+                    }
                 }
             }
         }
@@ -174,6 +182,7 @@ void TimeTable::on_commandLinkButton_clicked()
 {
     //ui->label->setStyleSheet("border-image: url(:/image/personaltable.png);");
     ui->pushButton_4->hide();
+    ui->pushButton->show();
     flag = true;
     //应当绘制个人的日程(重绘)
     refreshBox();
@@ -185,6 +194,11 @@ void TimeTable::on_commandLinkButton_2_clicked()
     ui->pushButton_4->show();
     flag = false;
    //应当绘制团队的日程(重绘)
+    if(user->getTeamState()!=2)
+    {
+        ui->pushButton->hide();
+        ui->pushButton_4->hide();
+    }
     refreshBox();
 }
 
@@ -272,18 +286,7 @@ void TimeTable::clickevent(){
 
 //从另一个页面点确定后传到该页面，对数据处理，增加到数据库并重新绘制
 void TimeTable::getschecontent(Schedule sche){
-    //把sche的一些东西重新写到数据库重新读取重新绘制
-    if(flag==true){
-        //把sche写到个人日程的数据库
-        pSchedule::addSche(sche);
-    }
-    else{
-        //把sche写到团队日程的数据库
-        pSchedule::addSche(sche);
-    }
-
-    //重绘
-    //flag为真则重绘个人的，否则绘制团队的
+    pSchedule::addSche(sche);
     refreshBox();
 
 }
@@ -298,30 +301,15 @@ void TimeTable::getscheedit(Schedule sche){
     }else{
         user->tsche[m]->deleteSche(n);
     }
-    //然后将得到的信息sche加入数据库，重新绘制
-    if(flag==true){
-        //把sche写到个人日程的数据库
-        pSchedule::addSche(sche);
-    }
-    else{
-        //把sche写到团队日程的数据库
-        pSchedule::addSche(sche);
-    }
+    pSchedule::addSche(sche);
     refreshBox();
 }
 
 
 //添加团队任务后，应该去修改数据库，然后重新绘制团队的日程
 void TimeTable::gettaskcontent(Schedule sche){
-    //根据传来的sche的信息，修改数据库
-    if(flag==true){
-        //把sche写到个人日程的数据库
-        pSchedule::addSche(sche);
-    }
-    else{
         //把sche写到团队日程的数据库
-        pSchedule::addSche(sche);
-    }
+    pSchedule::addSche(sche);
     refreshBox();
 }
 
@@ -335,15 +323,7 @@ void TimeTable::gettaskedit(Schedule sche){
     }else{
         user->tsche[m]->deleteSche(n);
     }
-    //然后将得到的信息sche加入数据库，重新绘制
-    if(flag==true){
-        //把sche写到个人日程的数据库
-        pSchedule::addSche(sche);
-    }
-    else{
-        //把sche写到团队日程的数据库
-        pSchedule::addSche(sche);
-    }
+    pSchedule::addSche(sche);
     refreshBox();
 }
 

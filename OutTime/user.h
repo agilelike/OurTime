@@ -17,6 +17,8 @@ private:
     int teamid;
     Desktop *w;
 public:
+    int mesnum;
+public:
     QList<pSchedule *> psche;
     QList<pSchedule *> tsche;
 public:
@@ -41,9 +43,8 @@ public:
     bool dismissTeam();
     bool exitTeam();
 
-
+    int messagenum();
     bool sendMessage(int toID,QString context);
-    void updateMessage(Message *);
     void createDesktop();
     void deleteDesktop();
     Desktop* getDesktop();

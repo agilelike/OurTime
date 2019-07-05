@@ -162,7 +162,7 @@ public:
         label_21 = new QLabel(TimeTable);
         label_21->setObjectName(QStringLiteral("label_21"));
         label_21->setGeometry(QRect(1090, 380, 20, 40));
-        label_21->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 127);"));
+        label_21->setStyleSheet(QStringLiteral("background-color: rgb(250, 5, 5);"));
         pushButton_4 = new QPushButton(TimeTable);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(130, 210, 93, 28));

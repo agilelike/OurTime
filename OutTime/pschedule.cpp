@@ -8,7 +8,7 @@ Schedule::Schedule()
 
 pSchedule::pSchedule(QDate day,bool person)
 {
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL","mysql4");
 
     db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
     db.setDatabaseName("ourtime");       //要连接的数据库名
@@ -106,7 +106,7 @@ bool pSchedule::deleteSche(int index)
 
 bool pSchedule::addSche(Schedule sc)
 {
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL","mysql3");
 
     db.setHostName("localhost");      //如果填入localhost,则表示链接本地的数据库
     db.setDatabaseName("ourtime");       //要连接的数据库名
@@ -125,26 +125,26 @@ bool pSchedule::addSche(Schedule sc)
     QString s4=sc.name;
     if(sc.state==0)
     {
-        qDebug()<<1<<endl;
+
         query.exec("select scheduleID from pSchedule");
         if(query.first()){
             query.last();
-            id = query.value(4).toInt()+1;
+            id = query.value(0).toInt()+1;
         }
         else
             id = 1;
-        str = QString("insert into pSchedule values('%1','%2','%3','%4','%5','%6','%7')").arg(s1).arg(s2).arg(s3).arg(s4).arg(id).arg(user->getid()).arg(sc.isGrabed);
+        str = QString("insert into pSchedule values('%1','%2','%3','%4','%5','%6','%7')").arg(s1).arg(s2).arg(s3).arg(s4).arg(id).arg(user->getid()).arg(int(sc.isGrabed));
     }else if(sc.state==1)
     {
         qDebug()<<2<<endl;
-        query.exec("select tscheduleID from tSchedule");
+        query.exec("select scheduleID from tSchedule");
         if(query.first()){
             query.last();
-            id = query.value(4).toInt()+1;
+            id = query.value(0).toInt()+1;
         }
         else
             id = 1;
-        str = QString("insert into tSchedule values('%1','%2','%3','%4','%5')").arg(s1).arg(s2).arg(s3).arg(s4).arg(id).arg(user->getTeamid());
+        str = QString("insert into tSchedule values('%1','%2','%3','%4','%5','%6')").arg(s1).arg(s2).arg(s3).arg(s4).arg(id).arg(user->getTeamid());
     }else{
         query.exec("select taskID from task");
         if(query.first()){

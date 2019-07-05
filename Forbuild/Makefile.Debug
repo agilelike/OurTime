@@ -222,6 +222,7 @@ debug/qrc_image.cpp: ../OutTime/image.qrc \
 		../../../Qt5.8/5.8/mingw53_32/bin/rcc.exe \
 		../OutTime/Image/account.png \
 		../OutTime/Image/password.png \
+		../OutTime/Image/bulb.png \
 		../OutTime/Image/time.png \
 		../OutTime/Image/2.png \
 		../OutTime/Image/1.png \
@@ -596,16 +597,21 @@ debug/moc_mainwindow.cpp: ../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QWidge
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTimer \
 		../OutTime/teaminfo.h \
+		../OutTime/message.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
 		../OutTime/timetable.h \
 		../OutTime/pschedule.h \
-		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../OutTime/edittable.h \
 		../OutTime/user.h \
 		../OutTime/team.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
-		../OutTime/message.h \
 		../OutTime/desktop.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
@@ -1083,14 +1089,19 @@ debug/moc_login.cpp: ../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QWidget \
 		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qtguiversion.h \
 		../OutTime/information.h \
 		../OutTime/teaminfo.h \
+		../OutTime/message.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
 		../OutTime/timetable.h \
 		../OutTime/pschedule.h \
-		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../OutTime/edittable.h \
 		../OutTime/user.h \
 		../OutTime/team.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
-		../OutTime/message.h \
 		../OutTime/desktop.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
@@ -2003,6 +2014,16 @@ debug/moc_teaminfo.cpp: ../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QWidget 
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qfiledevice.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qvector2d.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qtouchdevice.h \
+		../OutTime/message.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QString \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QDate \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qdatetime.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
 		../OutTime/teaminfo.h \
 		debug/moc_predefs.h \
 		../../../Qt5.8/5.8/mingw53_32/bin/moc.exe
@@ -2994,6 +3015,21 @@ debug/moc_edittable3.cpp: ../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QWidge
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../OutTime/user.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QString \
+		../OutTime/team.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
+		../OutTime/message.h \
+		../OutTime/desktop.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QMenu \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qmenu.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qaction.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../OutTime/tomatoclock.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QDialog \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../OutTime/edittable3.h \
 		debug/moc_predefs.h \
 		../../../Qt5.8/5.8/mingw53_32/bin/moc.exe
@@ -3124,6 +3160,21 @@ debug/moc_edittable4.cpp: ../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QWidge
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../OutTime/user.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QString \
+		../OutTime/team.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
+		../OutTime/message.h \
+		../OutTime/desktop.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QMenu \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qmenu.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qaction.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../OutTime/tomatoclock.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QDialog \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../OutTime/edittable4.h \
 		debug/moc_predefs.h \
 		../../../Qt5.8/5.8/mingw53_32/bin/moc.exe
@@ -3554,16 +3605,21 @@ debug/main.o: ../OutTime/main.cpp ../OutTime/mainwindow.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTimer \
 		../OutTime/teaminfo.h \
+		../OutTime/message.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
 		../OutTime/timetable.h \
 		../OutTime/pschedule.h \
-		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../OutTime/edittable.h \
 		../OutTime/user.h \
 		../OutTime/team.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
-		../OutTime/message.h \
 		../OutTime/desktop.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
@@ -3932,16 +3988,21 @@ debug/mainwindow.o: ../OutTime/mainwindow.cpp ../OutTime/mainwindow.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTimer \
 		../OutTime/teaminfo.h \
+		../OutTime/message.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
 		../OutTime/timetable.h \
 		../OutTime/pschedule.h \
-		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../OutTime/edittable.h \
 		../OutTime/user.h \
 		../OutTime/team.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
-		../OutTime/message.h \
 		../OutTime/desktop.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
@@ -5176,14 +5237,19 @@ debug/login.o: ../OutTime/login.cpp ../OutTime/login.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qtguiversion.h \
 		../OutTime/information.h \
 		../OutTime/teaminfo.h \
+		../OutTime/message.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
 		../OutTime/timetable.h \
 		../OutTime/pschedule.h \
-		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../OutTime/edittable.h \
 		../OutTime/user.h \
 		../OutTime/team.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
-		../OutTime/message.h \
 		../OutTime/desktop.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
@@ -5448,7 +5514,52 @@ debug/teaminfo.o: ../OutTime/teaminfo.cpp ../OutTime/teaminfo.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qfiledevice.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qvector2d.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_teaminfo.h
+		../OutTime/message.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QString \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QDate \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qdatetime.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
+		ui_teaminfo.h \
+		../OutTime/user.h \
+		../OutTime/team.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtGui/QList \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
+		../../../Qt5.8/5.8/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../OutTime/desktop.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qicon.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QMenu \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qmenu.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qaction.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../OutTime/tomatoclock.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QDialog \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qdialog.h \
+		../OutTime/pschedule.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QDateTime \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTimer \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qtimer.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qbasictimer.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QTextEdit \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qframe.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qtextdocument.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qtextoption.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtGui/qpen.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QMessageBox \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\teaminfo.o ..\OutTime\teaminfo.cpp
 
 debug/timetable.o: ../OutTime/timetable.cpp ../OutTime/timetable.h \
@@ -6105,16 +6216,21 @@ debug/desktop.o: ../OutTime/desktop.cpp ../OutTime/desktop.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTimer \
 		../OutTime/teaminfo.h \
+		../OutTime/message.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qgridlayout.h \
 		../OutTime/timetable.h \
 		../OutTime/pschedule.h \
-		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/QSqlQuery \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../OutTime/edittable.h \
 		../OutTime/user.h \
 		../OutTime/team.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
-		../OutTime/message.h \
 		../OutTime/edittable2.h \
 		../OutTime/edittable3.h \
 		../OutTime/edittable4.h \
@@ -6648,7 +6764,11 @@ debug/message.o: ../OutTime/message.cpp ../OutTime/message.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qstringlist.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qregexp.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qstringmatcher.h \
-		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QTime \
+		../../../Qt5.8/5.8/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqldatabase.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\message.o ..\OutTime\message.cpp
 
 debug/showid.o: ../OutTime/showid.cpp ../OutTime/showid.h \
@@ -7155,10 +7275,24 @@ debug/edittable3.o: ../OutTime/edittable3.cpp ../OutTime/edittable3.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../OutTime/user.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QString \
+		../OutTime/team.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
+		../OutTime/message.h \
+		../OutTime/desktop.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QMenu \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qmenu.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qaction.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../OutTime/tomatoclock.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QDialog \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		ui_edittable3.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QMessageBox \
-		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qmessagebox.h \
-		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qdialog.h
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\edittable3.o ..\OutTime\edittable3.cpp
 
 debug/edittable4.o: ../OutTime/edittable4.cpp ../OutTime/edittable4.h \
@@ -7287,9 +7421,23 @@ debug/edittable4.o: ../OutTime/edittable4.cpp ../OutTime/edittable4.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../../Qt5.8/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../OutTime/user.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/QString \
+		../OutTime/team.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtCore/qpair \
+		../OutTime/message.h \
+		../OutTime/desktop.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QSystemTrayIcon \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qsystemtrayicon.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QMenu \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qmenu.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qaction.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../OutTime/tomatoclock.h \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/QDialog \
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		ui_edittable4.h \
-		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qmessagebox.h \
-		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qdialog.h
+		../../../Qt5.8/5.8/mingw53_32/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\edittable4.o ..\OutTime\edittable4.cpp
 
 debug/qrc_image.o: debug/qrc_image.cpp 

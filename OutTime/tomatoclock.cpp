@@ -79,7 +79,7 @@ void tomatoClock::clockUpdata()
                 number.sprintf("X%d" ,tomato_number);
                 ui->tomatoNum->setText(number);
             }
-            addTomatoClock();
+            //addTomatoClock();
         }
     }
 
@@ -114,7 +114,7 @@ void tomatoClock::addTomatoClock()
     QString current_date;
     current_date.sprintf("%d-%02d-%02d" ,date.currentDate().year() ,date.currentDate().month() ,date.currentDate().day());
 
-    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL");
+    QSqlDatabase  db =  QSqlDatabase::addDatabase("QMYSQL","mysql5");
     db.setHostName("localhost");      //连接数据库主机名，这里需要注意（若填的为”127.0.0.1“，出现不能连接，则改为localhost)
     db.setPort(3306);                 //连接数据库端口号，与设置一致
     db.setDatabaseName("ourtime");      //连接数据库名，与设置一致

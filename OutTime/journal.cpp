@@ -1,6 +1,5 @@
 ﻿#include "journal.h"
 #include "ui_journal.h"
-
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
@@ -10,6 +9,7 @@
 #include <QDateTime>
 #include <QString>
 #include <user.h>
+#include <QMessageBox>
 
 journal::journal(QWidget *parent) :
     QDialog(parent),
@@ -158,7 +158,6 @@ void journal::showJournal()
         journalID = query.value("journalID").toInt();
         ui->journal_view->setText(query.value("journalContent").toString());
         ui->clock_number->setText("X" + query.value("clockNumber").toString());
-        ui->clock_number->setText(QString::number(journalID));
     }
 
     db.close();
@@ -332,6 +331,12 @@ void journal::on_toolButton_5_clicked()
 
 void journal::on_pushButton_clicked()
 {
+    if(ui->journal_view->toPlainText().length() > 300)
+    {
+        QMessageBox::information(NULL, "警告", "文本长度过长", QString(tr("确定")), NULL);
+        return;
+    }
+
     //获取当前日期
     QString current_date;
     current_date = getLabelDate();
@@ -357,6 +362,8 @@ void journal::on_pushButton_clicked()
        query.addBindValue(journalID);
     }
     query.exec();
+
+    QMessageBox::information(NULL, "提示", "日志已保存", QString(tr("确定")), NULL);
 
     db.close();
 }

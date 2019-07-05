@@ -35,6 +35,12 @@
      <height>391</height>
     </rect>
    </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOn</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
   </widget>
   <widget class="Line" name="line_3">
    <property name="geometry">
@@ -60,6 +66,12 @@
    </property>
    <property name="styleSheet">
     <string notr="true">font: 14pt &quot;楷体&quot;;</string>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOn</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -225,7 +237,7 @@
   <widget class="QLabel" name="clock_number">
    <property name="geometry">
     <rect>
-     <x>920</x>
+     <x>950</x>
      <y>340</y>
      <width>100</width>
      <height>30</height>
@@ -250,9 +262,9 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>800</x>
      <y>340</y>
-     <width>81</width>
+     <width>141</width>
      <height>30</height>
     </rect>
    </property>
@@ -263,7 +275,7 @@
     </font>
    </property>
    <property name="text">
-    <string>番茄钟：</string>
+    <string>tomatoClock:</string>
    </property>
   </widget>
  </widget>

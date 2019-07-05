@@ -32,6 +32,19 @@ HWND Desktop::findDesktopIconWnd()
     return resultHwnd;
 }
 
+
+void Desktop::messagetip()
+{
+   int num = user->messagenum();
+   if(num > user->mesnum)
+   {
+       user->mesnum = num;
+       ui->label_mes->show();
+   }
+   ui->Button1->click();
+   ui->Button1->click();
+}
+
 Desktop::Desktop(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Desktop)
@@ -43,18 +56,6 @@ Desktop::Desktop(QWidget *parent) :
     setAttribute(Qt::WA_TranslucentBackground, true);
 
     this->move(1400,150);
-    ui->Button1->setStyleSheet("QPushButton{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255 ,200);}"
-                                "QPushButton:hover{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255 ,200);}"
-                                "QPushButton:pressed{font:bold;border-radius:20px;font-size:16px;color: rgb(85, 175, 255);\
-                                background-color: rgb(255, 255, 255 ,200);}");
-    ui->Button2->setStyleSheet("QPushButton{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255 ,200);}"
-                              "QPushButton:hover{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255 ,200);}"
-                              "QPushButton:pressed{font:bold;border-radius:5px;font-size:16px;color: rgb(85, 175, 255);\
-                              background-color: rgb(255, 255, 255 ,200);}");
 
     //开启番茄钟按钮
     ui->start_tomato->setStyleSheet("border-image: url(:/imag/Image/tomato.png)");
@@ -81,10 +82,19 @@ Desktop::Desktop(QWidget *parent) :
     trayIconMenu->addAction(quitAction);
     trayIcon->setContextMenu(trayIconMenu);
 
+    ui->Button1->setText("团队");
+    ui->Button1->click();
     //显示时间
     QTimer *timer=new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timeUpdate()));
     timer->start(1000); // 每次发射timeout信号时间间隔为1秒
+
+    //定时刷新消息
+    //int mesnum = user->messagenum();
+    ui->label_mes->hide();
+    QTimer* timer2 = new QTimer(this);
+    connect(timer2, SIGNAL(timeout()), this, SLOT(messagetip()));
+    timer2->start(30000);
 }
 
 
@@ -155,49 +165,89 @@ Desktop::~Desktop()
 void Desktop::on_Button1_clicked()
 {
     if(ui->Button1->text()=="团队"){
-        ui->Button1->setText("个人");
-        ui->label->setText("6:00~6:30       wake up");
-        ui->label_2->setText("6:30~7:00       wash and rinse");
-        ui->label_3->setText("7:00~8:00       have a breakfast");
-        ui->label_4->setText("8:00~9:30       computer network");
-        ui->label_5->show();
-        ui->label_6->show();
-        ui->label_7->show();
-        ui->label_8->show();
-        ui->label_9->show();
-        ui->label_10->show();
-        ui->label_11->show();
-        ui->label_12->show();
-        ui->label_13->show();
-        ui->label_14->show();
-        ui->label_15->show();
-        ui->label_16->show();
-        ui->label_17->show();
-        ui->label_18->show();
-        ui->label_19->show();
-    }
-    else{
-        ui->Button1->setText("团队");
-        ui->label->setText("6:00~6:30       task1");
-        ui->label_2->setText("6:30~7:00       task2");
-        ui->label_3->setText("7:00~8:00       task3");
-        ui->label_4->setText("8:00~9:30       task4");
-        ui->label_5->hide();
-        ui->label_6->hide();
-        ui->label_7->hide();
-        ui->label_8->hide();
-        ui->label_9->hide();
-        ui->label_10->hide();
-        ui->label_11->hide();
-        ui->label_12->hide();
-        ui->label_13->hide();
-        ui->label_14->hide();
-        ui->label_15->hide();
-        ui->label_16->hide();
-        ui->label_17->hide();
-        ui->label_18->hide();
-        ui->label_19->hide();
-    }
+            ui->Button1->setText("个人");
+            QList<QLabel* >label;
+            label<<ui->label;
+            label<<ui->label_2;
+            label<<ui->label_3;
+            label<<ui->label_4;
+            label<<ui->label_5;
+            label<<ui->label_6;
+            label<<ui->label_7;
+            label<<ui->label_8;
+            label<<ui->label_9;
+            label<<ui->label_10;
+            label<<ui->label_11;
+            label<<ui->label_12;
+            label<<ui->label_13;
+            label<<ui->label_14;
+            for(int i=0;i<14;i++){
+                label[i]->hide();
+            }
+
+            //获取当前日期的所有日程读到控件中
+            pSchedule *s=user->psche[QDate::currentDate().dayOfWeek()-1];
+            for(int i = 0;i<s->s.length();i++){
+                Schedule x = s->s[i];
+                label[i]->setText(x.start.toString("h:mm")+"-"+x.end.toString("h:mm")+"    "+x.name);
+                if(x.end<QTime::currentTime())
+                {
+                    label[i]->setStyleSheet("color: rgb(179, 179, 179);");
+                }
+                if(x.start>QTime::currentTime())
+                {
+                    label[i]->setStyleSheet("color: rgb(0, 0, 0);");
+                }
+                else{
+                    label[i]->setStyleSheet("color: rgb(200, 30, 30);");
+                }
+                label[i]->show();
+            }
+
+        }
+        else{
+            ui->Button1->setText("团队");
+            QList<QLabel* >label;
+            label<<ui->label;
+            label<<ui->label_2;
+            label<<ui->label_3;
+            label<<ui->label_4;
+            label<<ui->label_5;
+            label<<ui->label_6;
+            label<<ui->label_7;
+            label<<ui->label_8;
+            label<<ui->label_9;
+            label<<ui->label_10;
+            label<<ui->label_11;
+            label<<ui->label_12;
+            label<<ui->label_13;
+            label<<ui->label_14;
+            for(int i=0;i<14;i++){
+                label[i]->hide();
+            }
+
+            //获取当前日期的所有日程读到控件中
+            pSchedule *s=user->tsche[QDate::currentDate().dayOfWeek()-1];
+            for(int i = 0;i<s->s.length();i++){
+                Schedule x = s->s[i];
+                if(x.state==1)
+                    label[i]->setText(x.start.toString("h:mm")+"-"+x.end.toString("h:mm")+"    "+x.name);
+                else
+                    label[i]->setText(x.end.toString("h:mm")+"     "+x.name);
+                if(x.end<QTime::currentTime())
+                {
+                    label[i]->setStyleSheet("color: rgb(179, 179, 179);");
+                }
+                if(x.start>QTime::currentTime())
+                {
+                    label[i]->setStyleSheet("color: rgb(0, 0, 0);");
+                }
+                else{
+                    label[i]->setStyleSheet("color: rgb(200, 30, 30);");
+                }
+                label[i]->show();
+            }
+        }
 
 }
 
@@ -227,11 +277,6 @@ void Desktop::on_start_tomato_clicked()
         ui->label_12->hide();
         ui->label_13->hide();
         ui->label_14->hide();
-        ui->label_15->hide();
-        ui->label_16->hide();
-        ui->label_17->hide();
-        ui->label_18->hide();
-        ui->label_19->hide();
     }
     else
     {
@@ -251,10 +296,5 @@ void Desktop::on_start_tomato_clicked()
         ui->label_12->show();
         ui->label_13->show();
         ui->label_14->show();
-        ui->label_15->show();
-        ui->label_16->show();
-        ui->label_17->show();
-        ui->label_18->show();
-        ui->label_19->show();
     }
 }

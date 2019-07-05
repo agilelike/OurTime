@@ -11,6 +11,7 @@ login::login(QWidget *parent) :
 {
     initTitleBar();
     ui->setupUi(this);
+    ui->lineEdit_2->setEchoMode(QLineEdit::Password);
     ui->label_4->hide();
     m=new MainWindow();
 }
@@ -50,7 +51,7 @@ void login::on_pushButton_clicked()
         ui->label_4->hide();
         this->hide();
 
-
+        user->freshSchedule();
         user->createDesktop();
         QObject::connect(m->getInformation(),SIGNAL(showLogin()),this,SLOT(receiveShowLogin()));
         QObject::connect(this,SIGNAL(showMainwindow()),m,SLOT(receiveShowMainwindow()));
